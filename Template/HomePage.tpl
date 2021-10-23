@@ -26,6 +26,7 @@
                         <p class="name">Mr. Leo</p>
                         <p class="des">To your hotel room <span>198</span></p>
                         <p class="des">We hope you will enjoy your stay at our hotel</p>
+                        <div id="log">dfghdhe</div>
                     </div>
                 </div>
                 <div class="language text-center">
