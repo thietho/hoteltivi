@@ -1,0 +1,52 @@
+# Prevent Directoy listing
+Options -Indexes
+
+# Prevent Direct Access to files
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|(?<!robots)\.txt))">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+
+RewriteEngine On
+#RewriteRule ^([a-zA-Z0-9_]*).html$ index.php?sitemapid=$1&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([^?]*).html$ index.php?sitemapid=$1&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([^?]*)/([a-zA-Z0-9_]*).html$ index.php?&sitemapid=$1&id=$2&%{QUERY_STRING} [L,QSA]
+#RewriteRule ^([a-zA-Z0-9_]*)/([a-zA-Z0-9_]*)/([^?]*).html$ index.php?page=$1&sitemapid=$2&id=$3&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-zA-Z0-9_]*).api$ index.php?object=$1&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-zA-Z0-9_]*)/([a-zA-Z0-9_]*).api$ index.php?&object=$1&method=$2&%{QUERY_STRING} [L,QSA]
+
+<IfModule mod_headers.c>
+   Header add Access-Control-Allow-Origin: *
+</IfModule>
+
+<Limit GET POST PUT DELETE>
+order deny,allow
+allow from all
+</Limit>
+
+<FilesMatch "\.(?i:pdf)$">
+    ForceType application/octet-stream
+    Header set Content-Disposition attachment
+</FilesMatch>
+
+Header set Connection keep-alive
+Header set Cache-Control "cache, max-age=31536000, pre-check=86400, public"
+
+FileETag none
+
+
+#encoding for files
+AddDefaultCharset utf-8
+AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
+
+
+#add mime type
+AddType application/javascript          js
+AddType application/vnd.ms-fontobject   eot
+AddType application/x-font-ttf          ttf ttc
+AddType font/opentype                   otf
+AddType application/x-font-woff         woff
+AddType image/svg+xml                   svg svgz
+AddEncoding gzip                        svgz
+AddType  application/font-woff2         .woff2

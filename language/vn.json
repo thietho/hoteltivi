@@ -1,0 +1,17 @@
+{
+  "roombooking": {
+    "new": "Mới",
+    "waitpayment": "Chờ thanh toán",
+    "order": "Đã đặt",
+    "checkin": "Nhận phòng",
+    "checkout": "Trả phòng",
+    "cancel": "Hủy"
+  },
+  "ticketbooking": {
+    "new": "Mới",
+    "waitpayment": "Chờ thanh toán",
+    "order": "Đã đặt",
+    "checkin": "Đã sử dụng",
+    "cancel": "Hủy"
+  }
+}
