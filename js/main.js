@@ -1,10 +1,10 @@
  $('.list-item').slick({
      arrows: false,
      dots: false,
-     infinite: true,
+     infinite: false,
      slidesToShow: 7,
-     slidesToScroll: 2,
-     loop: true
+     slidesToScroll: 1,
+     loop: false
 });
 
 $('.slider-for').slick({
