@@ -7,42 +7,10 @@ class HomePage extends Page
 {
     public function index()
     {
-        //Header
-        $this->sitemap->loadTree(14);
-        $mainmenu = $this->sitemap->renderMenu(14);
-        $this->setData('header', $this->section->loadView('Common/header.tpl', array('mainmenu' => $mainmenu)));
-        //Footer
-        $this->setData('footer', $this->section->loadView('Common/footer.tpl'));
-        //Body
-        $bannerctr = new \Lib\Banner($this->api);
-        $homebanner = $bannerctr->getBanner(1);
-        $this->setData('banner',$this->section->loadViewPage('Home/banner.tpl',['banners' => $homebanner]));
-        //Thực đơn
-        $arr_sitmapid = array(50,51,52,53);
-        $datasitemap = array();
-        foreach ($arr_sitmapid as $id){
-            $datasitemap[] = $this->sitemap->getItem($id);
-        }
-        $ctlPrduct = new \Lib\Product($this->api);
-        foreach ($datasitemap as &$sitemap){
-            $result = $ctlPrduct->getProducts("&paging=true&limit=8&page=1&sitemapids=containsin_".$sitemap['id']);
-            $products = $result['data'];
-            foreach ($products as &$product){
-                $product = $ctlPrduct->formate($product,$sitemap['sitemapid']);
-            }
-            $sitemap['products'] = $products;
-        }
-        $this->setData('menu',$this->section->loadViewPage('Home/menu.tpl',['sitemaps' => $datasitemap]));
-        $result = $ctlPrduct->getProducts("&paging=true&limit=8&page=1&type=containsin_bestsaler");
-        $products = $result['data'];
-        foreach ($products as &$product){
+        $sitemaps = $this->sitemap->getChilds(50);
+        $this->setData('sitemaps',json_encode($sitemaps));
 
-            $product = $ctlPrduct->formate($product);
-        }
-        $this->setData('bestsale',$this->section->loadViewPage('Home/bestsale.tpl',['products'=>$products]));
 
-        $newpost = $this->loadNewPost();
-        $this->setData('newpost',$this->section->loadViewPage('Home/newpost.tpl',['newsposts'=>$newpost]));
         $this->setTemplate('HomePage.tpl');
         $this->setLayout('default.tpl');
         return $this->render();
