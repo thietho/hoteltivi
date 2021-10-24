@@ -1,29 +1,7 @@
 <section class="main-wrapper info-sunset">
     <div class="lang-icon"><img src="img/lang-vi.png"/></div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 sub-menu-title">
-                <div class="text-wrapper">
-                    <p class="top">info</p>
-                    <p class="bottom">sunset sanato</p>
-                </div>
-            </div>
-            <div class="col-lg-6 sub-menu-breadcrumb">
-                <div class="text-wrapper">
-                    <div class="top text-right">
-                        <p class="name">Mr Leo</p>
-                        <p>room 198</p>
-                    </div>
-                    <div class="bottom">
-                        <p>Home <img src="img/right-arrow.png"/> Info Sunset Sanato</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 sub-menu-logo text-center">
-                <img src="img/logo-w.png"/>
-            </div>
-        </div>
-
+        <?php echo $header?>
         <div class="row">
             <div class="col-lg-4 main-sidebar">
                 <div class="sidebar-carousel">
