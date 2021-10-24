@@ -1,14 +1,14 @@
-<section class="main-wrapper room-service">
+<section class="main-wrapper list-channel">
     <div class="lang-icon"><img src="img/lang-vi.png"/></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 sub-menu-title">
                 <div class="text-wrapper">
-                    <p class="top">room</p>
-                    <p class="bottom">service</p>
+                    <p class="top">list</p>
+                    <p class="bottom">channel</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="img/room-service-sub.png"/>
+                    <img src="img/list-channel-sub.png"/>
                 </div>
             </div>
             <div class="col-lg-6 sub-menu-breadcrumb">
@@ -18,7 +18,7 @@
                         <p>room 198</p>
                     </div>
                     <div class="bottom">
-                        <p>Home <img src="img/right-arrow.png"/> room service</p>
+                        <p>Home <img src="img/right-arrow.png"/> list channel</p>
                     </div>
                 </div>
             </div>
@@ -28,61 +28,88 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12 px-0 main-content">
+            <div class="col-lg-3 pl-0">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">SUNSET SANATO</a>
+                    <a href="#" class="list-group-item list-group-item-action">KÊNH VTV</a>
+                    <a href="#" class="list-group-item list-group-item-action">KÊNH HTV/HTVC</a>
+                    <a href="#" class="list-group-item list-group-item-action">KÊNH VTC</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH VTVCab</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH QUỐC TẾ</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH ĐỊA PHƯƠNG</a>
+                </div>
+            </div>
+            <div class="col-lg-9 px-0 main-content">
                 <div class="content-wrapper">
-                    <div class="room-service-carousel">
+                    <div class="list-channel-carousel">
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>TRANSFER</p>
-                                <img src="img/service-transfer.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>CALL TAXI</p>
-                                <img src="img/service-transfer-2.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>ROOM CLEAN</p>
-                                <img src="img/service-transfer-3.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>LAUNDRY</p>
-                                <img src="img/service-transfer-4.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>wake up call</p>
-                                <img src="img/service-transfer-5.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>food order</p>
-                                <img src="img/service-transfer-6.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
                         <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#">
+                                <img src="img/list-channel-1.jpg">
                             </a>
                         </div>
 
@@ -140,35 +167,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="room-service-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">call <span>taxi</span></h5>
-                </div>
-                <div class="modal-body">
-                    <p>Please help us book taxi:</p>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group form-inline col-lg-12">
-                                <label class="title" for="">Number of seats</label>
-                                <input type="number" class="form-control number-seat qlt" id="" placeholder="">
-                                <label class="title" for="">Qlt</label>
-                                <input type="number" class="form-control number-seat qlt" id="" placeholder="">
-                                <label class="title" for="">At time</label>
-                                <input type="datetime-local" class="form-control datetime at-time" id="" placeholder="">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-ok">OK</button>
-                    <button type="button" class="btn btn-cancel" data-dismiss="modal">CANCEL</button>
                 </div>
             </div>
         </div>

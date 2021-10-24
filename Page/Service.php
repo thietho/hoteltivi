@@ -1,11 +1,11 @@
 <?php
 
-class Tivi extends Page
+class Service extends Page
 {
     public function index()
     {
         //Body
-        $this->setTemplate('Tivi.tpl');
+        $this->setTemplate('Service.tpl');
         $this->setLayout('default.tpl');
         return $this->render();
     }

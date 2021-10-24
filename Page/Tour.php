@@ -1,11 +1,11 @@
 <?php
 
-class Tivi extends Page
+class Tour extends Page
 {
     public function index()
     {
         //Body
-        $this->setTemplate('Tivi.tpl');
+        $this->setTemplate('Tour.tpl');
         $this->setLayout('default.tpl');
         return $this->render();
     }
