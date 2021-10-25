@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XAIT>
+	<versionNumber>8011</versionNumber>
+	<AbstractService>
+		<svcName>HotelTV</svcName>
+		<svcId>0x1920</svcId>
+		<isAutoSelect>true</isAutoSelect>
+		<ApplicationList>
+			<Application>
+				<appName>HotelTVApp</appName>
+				<applicationIdentifier>
+					<orgId>1</orgId>
+					<appId>1</appId>
+				</applicationIdentifier>
+				<applicationDescriptor>
+					<type>Hcap-h</type>
+					<controlCode>AUTOSTART</controlCode>
+					<visibility>NOT_VISIBLE_USERS</visibility>
+					<priority>255</priority>
+					<version>8011</version>
+				</applicationDescriptor>
+				<HcapDescriptor>							
+					<url>http://tivi.cntech.com.vn</url>
+				</HcapDescriptor>
+			</Application>
+		</ApplicationList>
+	</AbstractService>
+</XAIT>

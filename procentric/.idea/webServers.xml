@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3cdc5928-fca6-41c6-95b6-6da009bf42a1" name="103.42.56.167" url="http://tivi.cntech.com.vn/procentric/">
+        <fileTransfer rootFolder="/tivi.cntech.com.vn/procentric" host="103.42.56.167" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
