@@ -5,7 +5,9 @@ session_start();
 //error_reporting(E_ALL);
 require 'startup.php';
 $request = new \Lib\Request();
+$cache = new \Lib\Cache();
 $api = new \Lib\Api();
+
 $ctlSetting = new \Lib\Setting($api);
 $ctlSitemap = new \Lib\Sitemap($api);
 $data = $ctlSetting->getGetList();
@@ -15,13 +17,21 @@ foreach($data as $item){
 }
 if($request->get('object') == ''){
     $api->checkCacheVersion();
-    $sitemapid = $request->get('sitemapid')==''?'Home':$request->get('sitemapid');
+    $cachefile = md5(json_encode($request->getDataGet())).'.tpl';
+    $output = $cache->get($cachefile);
+    if(empty($output)){
+        $sitemapid = $request->get('sitemapid')==''?'Home':$request->get('sitemapid');
 
-    $sitemap = $ctlSitemap->getSitemap($sitemapid);
-    $page = $sitemap['sitemaptype'];
-    require_once('Page/'.$page.'.php');
-    $objPage = new $page($api);
-    echo $objPage->index();
+        $sitemap = $ctlSitemap->getSitemap($sitemapid);
+        $page = $sitemap['sitemaptype'];
+        require_once('Page/'.$page.'.php');
+        $objPage = new $page($api);
+        echo $output = $objPage->index();
+        $cache->create($cachefile,$output);
+    }else{
+        echo $output;
+    }
+
 }else{
     $object = $request->get('object');
     require_once('RestAPI/'.$object.'.php');

@@ -439,6 +439,11 @@ common = {
             }
         });
 
+    },
+    clearCache:function () {
+        $.getJSON(HTTPSERVER+'Member/clearCache.api',function (result) {
+            console.log(result);
+        });
     }
 }
 String.prototype.replaceAll = function(search, replacement) {

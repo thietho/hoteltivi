@@ -67,7 +67,6 @@ class Member extends Page
         }
 
     }
-
     private function validateRegister($data)
     {
         $errors = array();
@@ -85,7 +84,40 @@ class Member extends Page
         }
         return $errors;
     }
+    public function ReActiveAccount(){
+        $email = $this->request->get('email');
+        $ctlContact = new \Lib\Contact($this->api);
+        $contacts = $ctlContact->getGetList("&email=equal_$email");
+        $contact = $contacts[0];
+        $contact_update = array(
+            'id' =>$contact['id'],
+            'activecode' => $this->string->generateRandStr(16),
+        );
+        $ctlContact->save($contact_update);
+        //Gửi mail kích hoạt tài khoản
+        $body = $this->section->loadView('Register/RegisterEmail.html', array(
+            'email' => $contact['email'],
+            'activecode' => $contact_update['activecode'],
+            'linkactive' => $this->request->createLink('activeaccount')
+        ));
+        $mail = array(
+            'mailto' => array(
+                array('email' => $contact['email'], 'name' => $contact['fullname'])
+            ),
+            'mailreply' => '',
+            'mailreplyname' => '',
+            'mailcc' => '',
+            'mailbcc' => '',
+            'attachments' => '',
+            'subject' => 'Bạn đã đăng ký tài khoản thành công',
+            'body' => $body,
+            'bodytext' => strip_tags($body),
+        );
+        $ctlMail = new \Lib\Mail($this->api);
+        $data = $ctlMail->sendMail($mail);
+        return json_encode($data);
 
+    }
     public function UpdateInformation()
     {
         $data = $this->request->getDataPost();
@@ -232,21 +264,31 @@ class Member extends Page
                 ));
             } else {
                 $contact = $contacts[0];
-                if ($contact['password'] == $this->string->encryptionPassword($password)) {
-                    $this->loadData($contact);
+                if($contact['status']!='active'){
+                    $errors['password'] = "Tài khoản đã bị vô hiệu hóa! Bạn vui lòng <a href='".$this->request->createLink('activeaccount')."'>kích hoat lại tài khoản</a>";
                     return json_encode(array(
-                        'statuscode' => 1,
-                        'text' => 'Login success',
-                        'data' => array()
-                    ));
-                } else {
-                    $errors['password'] = "Mật khẩu không đúng!";
-                    return json_encode(array(
-                        'statuscode' => 0,
+                        'statuscode' => -1,
                         'text' => 'Login failed',
                         'data' => $errors
                     ));
+                }else{
+                    if ($contact['password'] == $this->string->encryptionPassword($password)) {
+                        $this->loadData($contact);
+                        return json_encode(array(
+                            'statuscode' => 1,
+                            'text' => 'Login success',
+                            'data' => array()
+                        ));
+                    } else {
+                        $errors['password'] = "Mật khẩu không đúng!";
+                        return json_encode(array(
+                            'statuscode' => 0,
+                            'text' => 'Login failed',
+                            'data' => $errors
+                        ));
+                    }
                 }
+
             }
         }
     }
@@ -370,6 +412,14 @@ class Member extends Page
             'text' => 'Logout success',
             'linklogout' => $this->request->createLink(''),
             'data' => array()
+        ));
+    }
+    public function clearCache(){
+        $cache = new \Lib\Cache();
+        $cache->clear();
+        $this->response->jsonOutput(array(
+            'statuscode' => 1,
+            'text' => 'clearCache success',
         ));
     }
 }
