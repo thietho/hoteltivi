@@ -35,6 +35,7 @@ class Page
     protected $content;
     protected $session;
     protected $member;
+    protected $optionset;
     public $language;
     protected $setting = array();
 
@@ -49,6 +50,7 @@ class Page
         $this->string = new ObjString();
         $this->date = new Date();
         $this->content = new Content($api);
+        $this->optionset = new \Lib\OptionSet($api);
         $this->session = new Session();
         $this->language = new \Lib\Language('vn');
         $this->setting = $setting;

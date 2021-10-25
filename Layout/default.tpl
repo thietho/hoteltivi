@@ -33,13 +33,12 @@
     <link href="<?php echo CSS?>hlstyle.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo HTTPSERVER?>slick/slick.css"/>
 </head>
-<style>
-    body {
-        zoom: 50%;
-    }
-</style>
+
 <body id="top">
 <?php echo $this->body?>
+<script type="text/javascript">
+    var HTTPSERVER = "<?php echo HTTPSERVER?>";
+</script>
 <script src="<?php echo JS?>jquery.slim.min.js"></script>
 <script src="<?php echo JS?>bootstrap.bundle.min.js"></script>
 <script src="<?php echo JS?>main.js"></script>

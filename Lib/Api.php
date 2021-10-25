@@ -115,7 +115,17 @@ class Api
     public function postJSON($url,$data){
         $curl = curl_init();
         if(!function_exists('apache_request_headers')){
+            if(substr_count($url,'?')){
+                $url .= "&token=".$this->token;
+            }else{
+                $url .= "?token=".$this->token;
+            }
+
+        }
+        if(substr_count($url,'?')){
             $url .= "&token=".$this->token;
+        }else{
+            $url .= "?token=".$this->token;
         }
         curl_setopt_array($curl, array(
             CURLOPT_URL => $this->http.$url,
@@ -143,16 +153,6 @@ class Api
 
         $result = json_decode($response,true);
         return $result;
-        // if($result == null){
-        //     return $this->logindata;
-        // }
-        // if($result['statuscode'] == 2 || $result['statuscode'] == 0){
-        //     $this->login();
-        //     $result = $this->post($url,$data);
-        //     return $result;
-        // }else{
-        //     return $result;
-        // }
 
     }
     public function get($url,$debuger = false){

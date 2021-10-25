@@ -2,7 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
+<<<<<<< HEAD
       <webServer id="e7b4f60a-e33c-48b7-8ecc-b42947e3163a" name="103.42.56.167" url="http://tivi.cntech.com.vn/">
+=======
+      <webServer id="cf24d523-dabe-4a12-8772-c2f9e77481fb" name="103.42.56.167" url="http://103.42.56.167">
+>>>>>>> origin/master
         <fileTransfer rootFolder="/tivi.cntech.com.vn" host="103.42.56.167" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
