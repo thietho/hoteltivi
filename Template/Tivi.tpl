@@ -5,41 +5,20 @@
         <div class="row">
             <div class="col-lg-4 main-sidebar">
                 <div class="sidebar-carousel">
-                    <div class="item">
+                    <?php foreach($sitemaps as $sitemap){ ?>
+                    <div class="item" video="<?php echo $sitemap['video']?>">
                         <a href="#">
-                            <p>VIDEO INFO</p>
-                            <img src="img/video-info.jpg">
+                            <p><?php echo $sitemap['sitemapname']?></p>
+                            <img src="<?php echo $sitemap['image']?>">
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="#">
-                            <p>BEACH CLUB</p>
-                            <img src="img/info-1.jpg">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <p>SUNSET TWIN DELUXE</p>
-                            <img src="img/info-2.jpg">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <p>VIDEO INFO</p>
-                            <img src="img/video-info.jpg">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <p>VIDEO INFO</p>
-                            <img src="img/video-info.jpg">
-                        </a>
-                    </div>
+                    <?php } ?>
+
                 </div>
             </div>
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RK1K2bCg4J8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video id="showvideo" autoplay src="<?php echo $sitemaps[0]['video']?>" controls width="100%" height="100%" muted></video>
                 </div>
                 <div class="menu-bottom">
                     <div class="row">
