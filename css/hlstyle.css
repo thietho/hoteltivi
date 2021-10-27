@@ -52,12 +52,13 @@ header nav{
     padding: 2px 0;
     border: 1px solid #ced4da;
 }
-.slick-current{
-    background: #f58220 !important;
-}
 .menucurent{
+    background: #f58220 !important;
     top: -40px!important;
 }
 .slick-current .title{
     color: #fff !important;
+}
+.serviceselect{
+    border: #F58220 solid 3px;
 }

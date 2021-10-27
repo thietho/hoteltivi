@@ -7,17 +7,8 @@
             <div class="col-lg-12 px-0 main-content">
                 <div class="content-wrapper">
                     <div class="room-service-carousel">
-                        <?php foreach($services as $service){ ?>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p><?php echo $service['servicename']?></p>
-                                <img src="<?php echo $service['image']?>">
-                            </a>
-                        </div>
-                        <?php } ?>
-
-                        <?php foreach($services as $service){ ?>
-                        <div class="item col-lg-12">
+                        <?php foreach($services as $key => $service){ ?>
+                        <div class="item col-lg-12" index="<?php echo $key?>">
                             <a href="#" data-toggle="modal" data-target="#room-service-popup">
                                 <p><?php echo $service['servicename']?></p>
                                 <img src="<?php echo $service['image']?>">
