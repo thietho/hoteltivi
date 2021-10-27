@@ -7,61 +7,23 @@
             <div class="col-lg-12 px-0 main-content">
                 <div class="content-wrapper">
                     <div class="room-service-carousel">
+                        <?php foreach($services as $service){ ?>
                         <div class="item col-lg-12">
                             <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>TRANSFER</p>
-                                <img src="img/service-transfer.jpg">
+                                <p><?php echo $service['servicename']?></p>
+                                <img src="<?php echo $service['image']?>">
                             </a>
                         </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>CALL TAXI</p>
-                                <img src="img/service-transfer-2.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>ROOM CLEAN</p>
-                                <img src="img/service-transfer-3.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>LAUNDRY</p>
-                                <img src="img/service-transfer-4.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>wake up call</p>
-                                <img src="img/service-transfer-5.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>food order</p>
-                                <img src="img/service-transfer-6.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/service-transfer.jpg">
-                            </a>
-                        </div>
+                        <?php } ?>
 
+                        <?php foreach($services as $service){ ?>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#room-service-popup">
+                                <p><?php echo $service['servicename']?></p>
+                                <img src="<?php echo $service['image']?>">
+                            </a>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

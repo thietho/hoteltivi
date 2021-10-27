@@ -23,7 +23,10 @@ function myEventHandler(event){
             if(mainmenu.current >= 0) {
                 mainmenu.current--;
                 $('.list-item-sub').removeClass('slick-current');
+                $('.list-item-sub').removeClass('menucurent');
                 $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
+                $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
+
                 console.log(mainmenu.current);
                 $('.list-item').slick('slickGoTo', mainmenu.current);
                 if (mainmenu.current < 0) {
@@ -35,7 +38,9 @@ function myEventHandler(event){
             if(mainmenu.current < mainmenu.max){
                 mainmenu.current++;
                 $('.list-item-sub').removeClass('slick-current');
-                $('[data-slick-index='+mainmenu.current+']').addClass('slick-current');
+                $('.list-item-sub').removeClass('menucurent');
+                $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
+                $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
                 console.log(mainmenu.current);
                 $('.list-item').slick('slickGoTo',mainmenu.current);
             }

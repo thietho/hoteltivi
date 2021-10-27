@@ -54,8 +54,9 @@ header nav{
 }
 .slick-current{
     background: #f58220 !important;
-    top: -40px !important;
-
+}
+.menucurent{
+    top: -40px!important;
 }
 .slick-current .title{
     color: #fff !important;

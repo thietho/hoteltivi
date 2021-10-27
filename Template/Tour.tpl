@@ -7,32 +7,13 @@
             <div class="col-lg-12 px-0 main-content">
                 <div class="content-wrapper">
                     <div class="tour-travel-carousel">
+                        <?php foreach($services as $service){ ?>
                         <div class="item col-lg-12">
                             <a href="#">
-                                <img src="img/tour-travel-1.jpg">
+                                <img src="<?php echo $service['image']?>">
                             </a>
                         </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/tour-travel-2.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/tour-travel-3.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/tour-travel-4.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/tour-travel-1.jpg">
-                            </a>
-                        </div>
-
+                        <?php } ?>
                     </div>
                 </div>
             </div>
