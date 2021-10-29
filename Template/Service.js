@@ -2,29 +2,78 @@ window.addEventListener("keyup", myEventHandler);
 function myEventHandler(event){
     //console.log(event);
     $('#log').html(event.keyCode);
-    switch (event.keyCode) {
-        case 13:
-            $('[index='+service.index+'] img').addClass('serviceselect')
-            break;
-        case 38: //Move top
+    if(service.lockui == false){
+        switch (event.keyCode) {
+            case 13:
+                $('[index='+service.index+'] img').addClass('serviceselect')
+                break;
+            case 38: //Move top
+                if(service.index - 1 >= 0) {
+                    service.index -= 1;
+                    service.selectService();
+                }
+                break;
+            case 40: //Move down
+                if(service.index < service.max){
+                    service.index +=1;
+                    service.selectService();
+                }
+                break;
+            case 37: //Move left
+                if(service.index - 2 >= 0){
+                    service.index -=2;
+                    service.selectService();
+                }
 
-            break;
-        case 40: //Move down
-
-            break;
-        case 37: //Move left
-            $('.slick-prev').click();
-            break;
-        case 39: //Move right
-            $('.slick-next').click();
-            break;
+                break;
+            case 39: //Move right
+                //$('.slick-next').click();
+                service.index +=2;
+                if(service.index > service.max){
+                    service.index = service.max;
+                }
+                service.selectService();
+                break;
+        }
     }
+
 }
 service ={
-    index:0
+    index:0,
+    iteminfram:6,
+    offset:0,
+    rows:2,
+    minindex:0,
+    maxindex:6,
+    max: $('.item').length -1,
+    lockui:false,
+    selectService:function () {
+
+        if(this.index > this.maxindex-1){
+            this.lockui = true;
+            $('.slick-next').click();
+            this.offset++;
+            this.minindex += this.rows;
+            this.maxindex += this.rows;
+        }
+        if(this.index < this.minindex){
+            this.lockui = true;
+            $('.slick-prev').click();
+            this.offset--;
+            this.minindex -= this.rows;
+            this.maxindex -= this.rows;
+        }
+        console.log("index: "+this.index)
+        console.log("offset: "+this.offset)
+        console.log("minindex: "+this.minindex)
+        console.log("maxindex: "+this.maxindex)
+        $('.item img').removeClass('serviceselect');
+        $('[index='+service.index+'] img').addClass('serviceselect');
+    }
 }
 $(document).ready(function () {
     $('.room-service-carousel').on('afterChange', function(event, slick, currentSlide){
-        service.index = Number($('[data-slick-index='+currentSlide+'] .col-lg-12')[0].getAttribute('index'));
+        service.lockui = false;
     });
+    $('[index='+service.index+'] img').addClass('serviceselect');
 });

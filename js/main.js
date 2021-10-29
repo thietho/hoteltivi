@@ -49,6 +49,7 @@ $('a[data-slide]').click(function(e) {
          rows: 2,
          slidesToShow: 3,
          slidesToScroll: 1,
+         infinite: false,
          verticalSwiping: true,
          prevArrow:"<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
          nextArrow:"<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
