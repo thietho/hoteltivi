@@ -39,13 +39,15 @@
 <script type="text/javascript">
     var HTTPSERVER = "<?php echo HTTPSERVER?>";
 </script>
+<script type="text/javascript" src="<?php echo JS?>jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<?php echo JS?>jquery-migrate-1.2.1.min.js"></script>
 <script src="<?php echo JS?>jquery.slim.min.js"></script>
 <script src="<?php echo JS?>bootstrap.bundle.min.js"></script>
 <script src="<?php echo JS?>main.js"></script>
+<script src="<?php echo JS?>hcap.js"></script>
 <script src="<?php echo HTTPSERVER?>js/common.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript" src="<?php echo HTTPSERVER?>slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo HTTPSERVER?>js/main.js"></script>
 <script type="text/javascript">
     <?php echo $this->loadPageResoure($sitemap['sitemaptype'].'.js')?>

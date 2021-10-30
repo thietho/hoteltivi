@@ -5,7 +5,12 @@ function myEventHandler(event){
     if(service.lockui == false){
         switch (event.keyCode) {
             case 13:
-                $('[index='+service.index+'] img').addClass('serviceselect')
+                if(service.popupshow == false){
+                    $('#room-service-popup').modal();
+                }else {
+                    $('.btn-ok').click();
+                }
+
                 break;
             case 38: //Move top
                 if(service.index - 1 >= 0) {
@@ -38,6 +43,17 @@ function myEventHandler(event){
     }
 
 }
+$('#room-service-popup').on('show.bs.modal', function (e) {
+    // do something...
+    service.popupshow = true;
+})
+$('#room-service-popup').on('hidden.bs.modal', function (e) {
+    // do something...
+    service.popupshow = false;
+})
+$('.btn-ok').click(function () {
+    alert('Ok click')
+});
 service ={
     index:0,
     iteminfram:6,
@@ -47,6 +63,7 @@ service ={
     maxindex:6,
     max: $('.item').length -1,
     lockui:false,
+    popupshow:false,
     selectService:function () {
 
         if(this.index > this.maxindex-1){
