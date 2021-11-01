@@ -5,88 +5,22 @@
         <div class="row">
             <div class="col-lg-3 pl-0">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">SUNSET SANATO</a>
-                    <a href="#" class="list-group-item list-group-item-action">KÊNH VTV</a>
-                    <a href="#" class="list-group-item list-group-item-action">KÊNH HTV/HTVC</a>
-                    <a href="#" class="list-group-item list-group-item-action">KÊNH VTC</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH VTVCab</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH QUỐC TẾ</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">KÊNH ĐỊA PHƯƠNG</a>
+                    <?php foreach($channelGroups as $key => $group){ ?>
+                    <a href="<?php echo $this->request->createLink('listchannel')?>?group=<?php echo $key?>" class="list-group-item list-group-item-action"><?php echo $group?></a>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-lg-9 px-0 main-content">
                 <div class="content-wrapper">
                     <div class="list-channel-carousel">
-                        <div class="item col-lg-12">
+                        <?php foreach($channels as $key => $channel){ ?>
+                        <div class="item col-lg-12" index="<?php echo $key?>" ip="<?php echo $channel['channelip']?>" port="<?php echo $channel['channelport']?>">
                             <a href="#">
-                                <img src="img/list-channel-1.jpg">
+                                <img src="<?php echo $channel['logo']?>">
                             </a>
                         </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#">
-                                <img src="img/list-channel-1.jpg">
-                            </a>
-                        </div>
+                        <?php } ?>
+
 
                     </div>
                 </div>

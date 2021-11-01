@@ -25,15 +25,15 @@ function myEventHandler(event){
                 }
                 break;
             case 37: //Move left
-                if(service.index - 2 >= 0){
-                    service.index -=2;
+                if(service.index - service.rows >= 0){
+                    service.index -= service.rows;
                     service.selectService();
                 }
 
                 break;
             case 39: //Move right
                 //$('.slick-next').click();
-                service.index +=2;
+                service.index +=service.rows;
                 if(service.index > service.max){
                     service.index = service.max;
                 }
