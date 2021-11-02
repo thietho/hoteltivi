@@ -56,61 +56,12 @@
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
                     <div class="food-menu-carousel">
-
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
+                        <?php foreach($foods as $key => $food){ ?>
+                        <div class="item col-lg-12" index="<?php echo $key?>">
+                            <p><?php echo $food['foodname']?></p>
+                            <img src="<?php echo $food['image']?>">
                         </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>DESSERT</p>
-                                <img src="img/food-order-2.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>MAIN DISHES</p>
-                                <img src="img/food-order-3.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>KIDS MENU</p>
-                                <img src="img/food-order-4.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
-                        </div>
-                        <div class="item col-lg-12">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p>VIDEO INFO</p>
-                                <img src="img/food-order-1.jpg">
-                            </a>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -186,7 +137,8 @@
                                         <td class=""></td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input id="after" class="form-control" type="number" value="1" min="1" max="10" />
+                                                <input id="after" class="form-control" type="number" value="1" min="1"
+                                                       max="10"/>
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>
@@ -216,7 +168,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title food-name"><img src="img/cart-icon.png"/> <span class="cart-number">7</span>Shopping <span>Basket</span></h5>
+                    <h5 class="modal-title food-name"><img src="img/cart-icon.png"/> <span class="cart-number">7</span>Shopping
+                        <span>Basket</span></h5>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -237,7 +190,8 @@
                                         <td class="food-name">Mỳ xào giòn</td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input class="form-control basket" type="number" value="1" min="1" max="10" />
+                                                <input class="form-control basket" type="number" value="1" min="1"
+                                                       max="10"/>
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>
@@ -247,7 +201,8 @@
                                         <td class="food-name">Mỳ xào giòn</td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input class="form-control basket" type="number" value="1" min="1" max="10" />
+                                                <input class="form-control basket" type="number" value="1" min="1"
+                                                       max="10"/>
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>
@@ -257,7 +212,8 @@
                                         <td class="food-name">Mỳ xào giòn</td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input class="form-control basket" type="number" value="1" min="1" max="10" />
+                                                <input class="form-control basket" type="number" value="1" min="1"
+                                                       max="10"/>
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>
@@ -278,13 +234,16 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-lg-4 px-0">
-                        <h5 class="modal-title food-name  mr-2"><img src="img/level-back-icon.png"/> level <span>back</span></h5>
+                        <h5 class="modal-title food-name  mr-2"><img src="img/level-back-icon.png"/> level
+                            <span>back</span></h5>
                     </div>
                     <div class="col-lg-4 px-0">
-                        <h5 class="modal-title food-name"><img src="img/empty-basket-icon.png"/> empty <span>basket</span></h5>
+                        <h5 class="modal-title food-name"><img src="img/empty-basket-icon.png"/> empty
+                            <span>basket</span></h5>
                     </div>
                     <div class="col-lg-4 px-0">
-                        <h5 class="modal-title food-name ml-2"><img src="img/order-now-icon.png"/> order <span>now</span></h5>
+                        <h5 class="modal-title food-name ml-2"><img src="img/order-now-icon.png"/> order
+                            <span>now</span></h5>
                     </div>
                 </div>
             </div>

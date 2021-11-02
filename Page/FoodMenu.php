@@ -12,7 +12,7 @@ class FoodMenu extends Page
         $foods = $result['data'];
 
         foreach ($foods as &$food){
-            $food['logo'] = IMAGESERVER."fixsize-313x319/upload/hotel_food/".$food['id']."/".$food['image'];
+            $food['image'] = IMAGESERVER."fixsize-313x270/upload/hotel_food/".$food['id']."/".$food['image'];
         }
         $this->setData('foods',$foods);
         $this->setTemplate('FoodMenu.tpl');
