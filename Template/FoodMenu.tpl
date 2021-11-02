@@ -55,15 +55,62 @@
             </div>
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
-                    <div class="food-order-carousel">
-                        <?php foreach($sitemaps as $key => $sitemap){ ?>
-                        <div class="item col-lg-12" index="<?php echo $key?>" sitemapid="<?php echo $sitemap['sitemapid']?>">
+                    <div class="food-menu-carousel">
+
+                        <div class="item col-lg-12">
                             <a href="#" data-toggle="modal" data-target="#food-order-popup">
-                                <p><?php echo $sitemap['sitemapname']?></p>
-                                <img src="<?php echo $sitemap['image']?>">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
                             </a>
                         </div>
-                        <?php } ?>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>DESSERT</p>
+                                <img src="img/food-order-2.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>MAIN DISHES</p>
+                                <img src="img/food-order-3.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>KIDS MENU</p>
+                                <img src="img/food-order-4.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
+                            </a>
+                        </div>
+                        <div class="item col-lg-12">
+                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                                <p>VIDEO INFO</p>
+                                <img src="img/food-order-1.jpg">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

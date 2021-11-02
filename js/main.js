@@ -89,6 +89,17 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         rows: 2,
+        infinite: false,
+        verticalSwiping: true,
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+    });
+    $('.food-menu-carousel').slick({
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        rows: 2,
+        infinite: false,
         verticalSwiping: true,
         prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
         nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"

@@ -828,6 +828,50 @@ section.list-channel{
   padding-top: 40px;
   height: 630px;
 }
+
+.food-order-carousel .item{
+  position: relative;
+  margin: 0 0 10px;
+  max-height: 309px;
+  overflow: hidden;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+.food-menu-carousel .item{
+  max-height: 100%;
+}
+.food-menu-carousel .item p{
+  width: 290px;
+  background: #F58220;
+  padding: 5px 10px;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 29px;
+  position: absolute;
+  bottom: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.food-menu-carousel .item img{
+  width: 100%;
+}
+.food-menu-carousel .slick-arrow{
+  position: absolute;
+  right: -36px;
+  top: 44%;
+  cursor: pointer;
+}
+.food-menu-carousel .slick-prev.slick-arrow{
+  left: -630px;
+}
+.food-menu-carousel .slick-next{
+  bottom: 7px;
+}
+.food-order .main-sidebar{
+  background: #05577abf;
+  padding-top: 40px;
+  height: 630px;
+}
+
 .food-order table{
   color: #fff;
   font-size: 22px;
