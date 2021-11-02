@@ -57,8 +57,15 @@
                 <div class="content-wrapper">
                     <div class="food-menu-carousel">
                         <?php foreach($foods as $key => $food){ ?>
-                        <div class="item col-lg-12" index="<?php echo $key?>">
-                            <p><?php echo $food['foodname']?></p>
+                        <div class="item col-lg-12" index="<?php echo $key?>"
+                             foodid="<?php echo $food['id']?>"
+                             foodname="<?php echo $food['foodname']?>"
+                             price="<?php echo $food['price']?>"
+                        >
+                            <div class="food-name">
+                                <?php echo $food['foodname']?>
+                                <div class="text-right"><?php echo $this->string->numberFormate($food['price'])?></div>
+                            </div>
                             <img src="<?php echo $food['image']?>">
                         </div>
                         <?php } ?>

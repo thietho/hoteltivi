@@ -839,13 +839,14 @@ section.list-channel{
 }
 .food-menu-carousel .item{
   max-height: 100%;
+  position: relative;
 }
-.food-menu-carousel .item p{
-  width: 290px;
+.food-menu-carousel .item .food-name{
   background: #F58220;
+  width: 364px;
   padding: 5px 10px;
   font-family: 'Big Shoulders Display', cursive;
-  font-size: 29px;
+  font-size: 20px;
   position: absolute;
   bottom: 28px;
   font-weight: bold;
