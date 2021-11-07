@@ -93,4 +93,9 @@ $(document).ready(function () {
         service.lockui = false;
     });
     $('[index='+service.index+'] img').addClass('serviceselect');
+    if(localStorage.getItem('roomid') == null){
+        window.location = HTTPSERVER;
+    }else {
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
 });

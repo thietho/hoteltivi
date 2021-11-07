@@ -39,9 +39,8 @@
 <script type="text/javascript">
     var HTTPSERVER = "<?php echo HTTPSERVER?>";
 </script>
-<script type="text/javascript" src="<?php echo JS?>jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<?php echo JS?>jquery-migrate-1.2.1.min.js"></script>
-<script src="<?php echo JS?>jquery.slim.min.js"></script>
+<script type="text/javascript" src="<?php echo JS?>jquery-3.6.0.js"></script>
+
 <script src="<?php echo JS?>bootstrap.bundle.min.js"></script>
 <script src="<?php echo JS?>main.js"></script>
 <script src="<?php echo JS?>hcap.js"></script>

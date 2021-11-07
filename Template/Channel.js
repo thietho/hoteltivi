@@ -112,4 +112,9 @@ $(document).ready(function () {
         channel.lockui = false;
     });
     $('[index=' + channel.index + '] img').addClass('channelselect');
+    if(localStorage.getItem('roomid') == null){
+        window.location = HTTPSERVER;
+    }else {
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
 })

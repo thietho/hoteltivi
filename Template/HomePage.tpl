@@ -24,7 +24,7 @@
                     <div class="content">
                         <h1 class="title">Welcome</h1>
                         <p class="name">Mr. Leo</p>
-                        <p class="des">To your hotel room <span>198</span></p>
+                        <p class="des">To your hotel room <span id="roomnumber">198</span></p>
                         <p class="des">We hope you will enjoy your stay at our hotel</p>
                         <div id="log">dfghdhe</div>
                     </div>

@@ -19,4 +19,9 @@ function myEventHandler(event){
             $('.slick-next').click();
             break;
     }
+    if(localStorage.getItem('roomid') == null){
+        window.location = HTTPSERVER;
+    }else {
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
 }

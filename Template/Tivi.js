@@ -26,4 +26,9 @@ $(document).ready(function () {
         console.log($('[data-slick-index='+currentSlide+']').attr('video'));
         $('#showvideo').attr('src',$('[data-slick-index='+currentSlide+']').attr('video'));
     });
+    if(localStorage.getItem('roomid') == null){
+        window.location = HTTPSERVER;
+    }else {
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
 });

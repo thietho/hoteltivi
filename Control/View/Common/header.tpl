@@ -9,7 +9,7 @@
         <div class="text-wrapper">
             <div class="top text-right">
                 <p class="name">Mr Leo</p>
-                <p>room 198</p>
+                <p id="roomnumber">room 198</p>
             </div>
             <div class="bottom">
                 <p>Home <img src="img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
