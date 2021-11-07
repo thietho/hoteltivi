@@ -916,6 +916,14 @@ section.list-channel{
   font-size: 50px;
   text-transform: uppercase;
   display: flex;
+  position: relative;
+}
+.food-order .basket-wrapper #countitem{
+  position: absolute;
+  top: 32px;
+  left: 79px;
+  font-size: 0.4em;
+  color: #f58220;
 }
 .food-order .basket-wrapper .basket-text{
   padding-left: 30px;
@@ -1019,7 +1027,7 @@ section.list-channel{
 #basket-popup .modal-title span.cart-number{
   font-size: 20px;
   position: absolute;
-  left: 56px;
+  left: 52px;
   top: 35px;
   color: #F58220;
 }

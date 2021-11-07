@@ -15,7 +15,7 @@
                             <th class="sidebar food-price" scope="col">Price</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="listfoodorder">
                         <tr>
                             <td class="sidebar food-no"><span>1</span></td>
                             <td class="sidebar food-name"><span>Bánh kem</span></td>
@@ -38,12 +38,13 @@
                     </table>
                     <div class="row">
                         <div class="col-lg-6">
-                            <p class="total">Total: 100.000 VNĐ</p>
+                            <p class="total">Total: <span></span></p>
                         </div>
                         <div class="col-lg-6">
                             <a href="#" data-toggle="modal" data-target="#basket-popup">
                                 <div class="basket-wrapper">
-                                    <img class="basket-icon" src="img/basket-icon.png"/>
+                                    <div id="countitem"></div>
+                                    <img class="basket-icon" src="img/cart-icon.png"/>
                                     <p class="basket-text">basket</p>
                                 </div>
                             </a>
@@ -144,8 +145,10 @@
                                         <td class=""></td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input id="after" class="form-control" type="number" value="1" min="1"
-                                                       max="10"/>
+                                                <input id="after" class="form-control quantity" type="number" value="1" min="1"/>
+                                                <input type="hidden" id="foodid">
+                                                <input type="hidden" id="foodname">
+                                                <input type="hidden" id="price">
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>
@@ -191,14 +194,13 @@
                                         <th class="food-price" scope="col">Price</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="listfoodorderpopup">
                                     <tr>
                                         <td class="food-no">1</td>
                                         <td class="food-name">Mỳ xào giòn</td>
                                         <td class="food-qlt">
                                             <div class="form-group">
-                                                <input class="form-control basket" type="number" value="1" min="1"
-                                                       max="10"/>
+                                                <input class="form-control basket" type="number" value="1" min="1"/>
                                             </div>
                                         </td>
                                         <td class="food-price"><span>350.000 VNĐ</span></td>

@@ -45,6 +45,7 @@
 <script src="<?php echo JS?>main.js"></script>
 <script src="<?php echo JS?>hcap.js"></script>
 <script src="<?php echo HTTPSERVER?>js/common.js"></script>
+<script src="<?php echo HTTPSERVER?>js/foodorder.js"></script>
 
 <script type="text/javascript" src="<?php echo HTTPSERVER?>slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo HTTPSERVER?>js/main.js"></script>

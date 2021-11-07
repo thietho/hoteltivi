@@ -6,12 +6,23 @@ function myEventHandler(event) {
     if (service.lockui == false) {
         switch (event.keyCode) {
             case 13:
-                var foodid = $('[index=' + service.index + ']').attr('foodid');
-                var foodname = $('[index=' + service.index + ']').attr('foodname');
-                var price = $('[index=' + service.index + ']').attr('price');
-                $('#food-order-popup').modal();
-                $('#food-order-popup .modal-title').html(foodname);
-                $('#food-order-popup .food-price span').html(price);
+                if (service.popupshow == false) {
+                    var foodid = $('[index=' + service.index + ']').attr('foodid');
+                    var foodname = $('[index=' + service.index + ']').attr('foodname');
+                    var price = $('[index=' + service.index + ']').attr('price');
+                    $('#foodid').val(foodid);
+                    $('#foodname').val(foodname);
+                    $('#price').val(price);
+                    $('#food-order-popup').modal();
+                    $('#food-order-popup .modal-title').html(foodname);
+                    $('#food-order-popup .food-price span').html(common.formateNumber(price));
+                }else {
+                    var foodid = $('#foodid').val();
+                    var foodname = $('#foodname').val();
+                    var price = $('#price').val();
+                    var quantity = $('.quantity').val();
+                    FoodOrder.add(foodid,foodname,price,quantity);
+                }
                 break;
             case 38: //Move top
                 if (service.popupshow == false) {
@@ -19,6 +30,9 @@ function myEventHandler(event) {
                         service.index -= 1;
                         service.selectService();
                     }
+                }else {
+                    var quantity = Number($('.quantity').val());
+                    $('.quantity').val(quantity+1);
                 }
 
                 break;
@@ -28,6 +42,12 @@ function myEventHandler(event) {
                         service.index += 1;
                         service.selectService();
                     }
+                }else {
+                    var quantity = Number($('.quantity').val());
+                    if(quantity > 1){
+                        $('.quantity').val(quantity-1);
+                    }
+
                 }
                 break;
             case 37: //Move left
@@ -97,9 +117,16 @@ service = {
         $('[index=' + service.index + '] img').addClass('serviceselect');
     }
 }
+
 $(document).ready(function () {
     $('.food-menu-carousel').on('afterChange', function (event, slick, currentSlide) {
         service.lockui = false;
     });
     $('[index=' + service.index + '] img').addClass('serviceselect');
+    FoodOrder.load();
+    if(localStorage.getItem('roomid') == null){
+        window.location = HTTPSERVER;
+    }else {
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
 });
