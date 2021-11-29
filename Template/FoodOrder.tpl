@@ -5,53 +5,7 @@
 
         <div class="row">
             <div class="col-lg-4 px-0">
-                <div class="col-lg-12 main-sidebar">
-                    <table width="100%" class="table">
-                        <thead>
-                        <tr class="head">
-                            <th class="sidebar food-no" scope="col">No.</th>
-                            <th class="sidebar food-name" scope="col">Name</th>
-                            <th class="sidebar food-qlt" scope="col">Qlt</th>
-                            <th class="sidebar food-price" scope="col">Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="sidebar food-no"><span>1</span></td>
-                            <td class="sidebar food-name"><span>Bánh kem</span></td>
-                            <td class="sidebar food-qlt"><span>1</span></td>
-                            <td class="sidebar food-price"><span>500.000 VNĐ</span></td>
-                        </tr>
-                        <tr>
-                            <td class="sidebar food-no"><span>1</span></td>
-                            <td class="sidebar food-name"><span>Bánh kem</span></td>
-                            <td class="sidebar food-qlt"><span>1</span></td>
-                            <td class="sidebar food-price"><span>500.000 VNĐ</span></td>
-                        </tr>
-                        <tr>
-                            <td class="sidebar food-no"><span>1</span></td>
-                            <td class="sidebar food-name"><span>Bánh kem</span></td>
-                            <td class="sidebar food-qlt"><span>1</span></td>
-                            <td class="sidebar food-price"><span>500.000 VNĐ</span></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <p class="total">Total: 100.000 VNĐ</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <a href="#" data-toggle="modal" data-target="#basket-popup">
-                                <div class="basket-wrapper">
-                                    <img class="basket-icon" src="img/basket-icon.png"/>
-                                    <p class="basket-text">basket</p>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
+                <?php echo $cart?>
             </div>
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
