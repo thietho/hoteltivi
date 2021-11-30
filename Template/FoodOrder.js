@@ -37,6 +37,9 @@ function myEventHandler(event){
                 }
                 service.selectService();
                 break;
+            case 66:
+                FoodOrder.openBasket();
+                break;
         }
     }
 

@@ -15,14 +15,11 @@
             <p class="total">Total: <span></span></p>
         </div>
         <div class="col-lg-6">
-            <a href="#" data-toggle="modal" data-target="#basket-popup">
-                <div class="basket-wrapper">
-                    <div id="countitem"></div>
-                    <img class="basket-icon" src="img/cart-icon.png"/>
-                    <p class="basket-text">basket</p>
-                </div>
-            </a>
-
+            <div class="basket-wrapper" id="btnBasket">
+                <div id="countitem"></div>
+                <img class="basket-icon" src="img/cart-icon.png"/>
+                <p class="basket-text">basket</p>
+            </div>
         </div>
     </div>
 </div>

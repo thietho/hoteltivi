@@ -26,8 +26,10 @@ common = {
     /***************************** END VALIDATION **************************/
 
     showLoading: function() {
-        $('html').append('<div id="hloverlay"></div>');
-        $('html').append('<div id="hlloader"></div>');
+        if($('#hloverlay').length==0){
+            $('html').append('<div id="hloverlay"></div>');
+            $('html').append('<div id="hlloader"></div>');
+        }
     },
 
     endLoading: function() {

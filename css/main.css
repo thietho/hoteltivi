@@ -921,9 +921,11 @@ section.list-channel{
 .food-order .basket-wrapper #countitem{
   position: absolute;
   top: 32px;
-  left: 79px;
+  left: 77px;
   font-size: 0.4em;
   color: #f58220;
+  width: 20px;
+  text-align: center;
 }
 .food-order .basket-wrapper .basket-text{
   padding-left: 30px;
@@ -1027,9 +1029,11 @@ section.list-channel{
 #basket-popup .modal-title span.cart-number{
   font-size: 20px;
   position: absolute;
-  left: 52px;
+  left: 50px;
   top: 35px;
   color: #F58220;
+  width: 20px;
+  text-align: center;
 }
 #basket-popup .modal-body{
   padding: 0;

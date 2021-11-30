@@ -68,3 +68,6 @@ header nav{
 .settingroom.selected{
     background: #f58220 !important;
 }
+.selectrow{
+    background: #ccc;
+}

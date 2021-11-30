@@ -31,8 +31,9 @@ function myEventHandler(event) {
                         service.selectService();
                     }
                 }else {
-                    var quantity = Number($('.quantity').val());
-                    $('.quantity').val(quantity+1);
+                    if(FoodOrder.basketOpen == true){
+                        FoodOrder.selectMoveUp();
+                    }
                 }
 
                 break;
@@ -43,11 +44,9 @@ function myEventHandler(event) {
                         service.selectService();
                     }
                 }else {
-                    var quantity = Number($('.quantity').val());
-                    if(quantity > 1){
-                        $('.quantity').val(quantity-1);
+                    if(FoodOrder.basketOpen == true) {
+                        FoodOrder.selectMoveDown();
                     }
-
                 }
                 break;
             case 37: //Move left
@@ -66,6 +65,30 @@ function myEventHandler(event) {
                     }
                     service.selectService();
                 }
+                break;
+            case 66:
+                FoodOrder.openBasket();
+                break;
+            case 107://+
+                if(FoodOrder.basketOpen == false){
+                    var quantity = Number($('.quantity').val());
+                    $('.quantity').val(quantity+1);
+                }else {
+                    FoodOrder.selectIncre();
+                }
+                break;
+            case 109://-
+                if(FoodOrder.basketOpen == false){
+                    var quantity = Number($('.quantity').val());
+                    if(quantity > 1){
+                        $('.quantity').val(quantity-1);
+                    }
+                }else {
+                    FoodOrder.selectReduce();
+                }
+                break;
+            case 8://return
+                FoodOrder.updateOrder();
                 break;
         }
     }
@@ -123,7 +146,6 @@ $(document).ready(function () {
         service.lockui = false;
     });
     $('[index=' + service.index + '] img').addClass('serviceselect');
-    FoodOrder.load();
     if(localStorage.getItem('roomid') == null){
         window.location = HTTPSERVER;
     }else {
