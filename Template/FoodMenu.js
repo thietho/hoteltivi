@@ -43,8 +43,8 @@ function myEventHandler(event) {
                         service.index += 1;
                         service.selectService();
                     }
-                }else {
-                    if(FoodOrder.basketOpen == true) {
+                } else {
+                    if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveDown();
                     }
                 }
@@ -66,9 +66,7 @@ function myEventHandler(event) {
                     service.selectService();
                 }
                 break;
-            case 66:
-                FoodOrder.openBasket();
-                break;
+
             case 107://+
                 if(FoodOrder.basketOpen == false){
                     var quantity = Number($('.quantity').val());
@@ -87,8 +85,19 @@ function myEventHandler(event) {
                     FoodOrder.selectReduce();
                 }
                 break;
+            case 66:
+                FoodOrder.openBasket();
+                break;
             case 8://return
-                FoodOrder.updateOrder();
+                if(FoodOrder.basketOpen == true) {
+                    FoodOrder.updateOrder();
+                }
+                break;
+            case 69://E
+                if(FoodOrder.basketOpen == true){
+                    FoodOrder.emptyOrder();
+                }
+
                 break;
         }
     }

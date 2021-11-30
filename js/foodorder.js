@@ -41,6 +41,15 @@ FoodOrder = {
         $('#basket-popup').modal('hide');
         this.load();
     },
+    emptyOrder:function () {
+        common.showLoading();
+        $('#basket-popup').modal('hide');
+        $.getJSON(HTTPSERVER+'FoodOrder/clear.api',function (result) {
+            console.log(result);
+            FoodOrder.load();
+
+        });
+    },
     load:function () {
         common.showLoading();
         $.getJSON(HTTPSERVER+'FoodOrder/get.api',function (result) {
@@ -75,6 +84,7 @@ FoodOrder = {
             $('.total span').html(common.formateNumber(sum));
             $('#countitem').html(common.formateNumber(count));
             $('.cart-number').html(common.formateNumber(count));
+            $('.food-price-total').html(common.formateNumber(sum));
         })
     },
     openBasket:function () {
