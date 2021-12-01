@@ -113,6 +113,9 @@ FoodOrder = {
         if(qty>0){
             $('.selectrow .basket').val(qty-1);
         }
+    },
+    orderFood:function () {
+        
     }
 }
 
