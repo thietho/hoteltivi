@@ -32,6 +32,7 @@
     <link href="<?php echo CSS?>main.css" rel="stylesheet">
     <link href="<?php echo CSS?>hlstyle.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo HTTPSERVER?>slick/slick.css"/>
+    <link href="<?php echo HTTPSERVER?>css/toastr.min.css" id="theme" rel="stylesheet">
 </head>
 
 <body id="top">
@@ -49,6 +50,7 @@
 
 <script type="text/javascript" src="<?php echo HTTPSERVER?>slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo HTTPSERVER?>js/main.js"></script>
+<script src="<?php echo HTTPSERVER?>js/toastr.min.js"></script>
 <script type="text/javascript">
     <?php echo $this->loadPageResoure($sitemap['sitemaptype'].'.js')?>
 </script>

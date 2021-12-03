@@ -119,6 +119,17 @@ FoodOrder = {
             roomnumber:localStorage.getItem('roomnumber')
         },function (result) {
             console.log(result);
+            if(result.statuscode){
+                $('#basket-popup').modal('hide');
+                FoodOrder.load();
+                toastr["success"]("Đặt thức ăn thành công", "Success");
+            }else {
+                var arr = new Array();
+                for (var i in result.errors) {
+                    arr.push(result.errors[i])
+                }
+                toastr["error"](arr.join('<br>'), result.text);
+            }
         });
     }
 }

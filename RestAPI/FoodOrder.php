@@ -53,7 +53,7 @@ class FoodOrder extends Page{
     }
     public function clear(){
         $this->session->remove('foodorder');
-        $this->response->jsonOutput(array('Cleared!'));
+        //$this->response->jsonOutput(array('Cleared!'));
     }
     public function saveOrder(){
         $data = $this->request->getDataPost();
