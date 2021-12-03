@@ -1,4 +1,5 @@
 <?php
+require CONTROL . "Notification.php";
 class FoodOrder extends Page{
     public function add(){
         $data = $this->request->getDataPost();
@@ -54,49 +55,50 @@ class FoodOrder extends Page{
         $this->session->remove('foodorder');
         $this->response->jsonOutput(array('Cleared!'));
     }
-    public function comfirmOrder(){
+    public function saveOrder(){
         $data = $this->request->getDataPost();
         $errors = $this->validate($data);
         if(empty($errors)){
-            $saleOrderCtr = new \Lib\SaleOrder($this->api);
-            $saleOrder_insert = array(
-                'accountid' => 0,
-                'contactid' => !empty($this->member['id'])?$this->member['id']:0,
-                'saleorder_title' => 'Đơn hàng khách mua từ website',
-                'status' => 'new',
-                'paymentmethod' => $data['paymentmethod'],
-                'billing_fullname' => $data['fullname'],
-                'billing_phone' => $data['phone'],
-                'billing_email' => $data['email'],
-                'billing_address' => $data['address'],
-                'billing_province' => $data['province'],
-                'billing_district' => $data['district'],
-                'billing_ward' => $data['ward'],
-                'shipping_fullname' => $data['fullname'],
-                'shipping_phone' => $data['phone'],
-                'shipping_email' => $data['email'],
-                'shipping_address' => $data['address'],
-                'shipping_province' => $data['province'],
-                'shipping_district' => $data['district'],
-                'shipping_ward' => $data['ward'],
-            );
-            $result = $saleOrderCtr->save($saleOrder_insert);
-            $result['link'] = $this->request->createLink('order-completed',$result['data']['id'].'-'.$result['data']['saleorder_code']);
-            if($result['statuscode']){
-                $saleorderid = $result['data']['id'];
-                $foodorder = $this->session->get('foodorder');
-                foreach ($foodorder as $item){
-                    $saleOrderProduct_insert = array(
-                        'saleorderid' => $saleorderid,
-                        'foodid' => $item['foodid'],
-                        'productname' => $item['productname'],
-                        'price' => $item['price'],
-                        'quantity' => $item['quantity'],
-                        'subtotal' => $item['price']*$item['quantity'],
-                    );
-                    $saleOrderCtr->saveSaleOrderProduct($saleOrderProduct_insert);
-                }
+            $ctrNotification = new \Lib\Notification($this->api);
+            $foodorder = $this->session->get('foodorder');
+            $content = '';
+            $total = 0;
+            $count = 0;
+            foreach ($foodorder as $key => $item){
+                $total += $item['price']*$item['quantity'];
+                $count += $item['quantity'];
+                $content .= '<tr>'.
+                        '<td>'.($key+1).'</td>'.
+                        '<td>'.$item['foodname'].'</td>'.
+                        '<td style="text-align: right">'.$item['quantity'].'</td>'.
+                        '<td style="text-align: right">'.$this->string->numberFormate($item['price']).'</td>'.
+                        '<td style="text-align: right">'.$this->string->numberFormate($item['price']*$item['quantity']) .'</td>'.
+                        '</tr>';
             }
+            $header = '<thead><tr>'.
+                        '<th>No.</th>'.
+                        '<th>Name</th>'.
+                        '<th>Quantity</th>'.
+                        '<th>Price</th>'.
+                        '<th>Subtotal</th>'.
+                        '</tr></thead>';
+            $footer = '<tfoot>'.
+                       '<tr>'.
+                       '<td></td>'.
+                       '<td>Count</td>'.
+                       '<td style="text-align: right">'.$count.'</td>'.
+                       '<td>Total</td>'.
+                       '<td style="text-align: right">'.$this->string->numberFormate($total).'</td>'.
+                       '</tr>'.
+                       '</tfoot>';
+            $content = '<table class="table table-bordered table-striped dataTable">'.$header.'<tbody>'.$content.'</tbody>'.$footer.'</table>';
+            $notification_insert = array(
+                'title' => 'Phòng '.$data['roomnumber'].' đặt món ăn',
+                'status' => 'new',
+                'content' => $content,
+            );
+            $result = $ctrNotification->save($notification_insert);
+
             $this->clear();
         }else{
             $result = array(
@@ -110,50 +112,13 @@ class FoodOrder extends Page{
     }
     private function validate($data){
         $errors = array();
-        if(empty(trim($data['fullname']))){
-            $errors['fullname'] = 'Bạn chưa nhập họ tên!';
-        }
-        if(empty(trim($data['address']))){
-            $errors['address'] = 'Bạn chưa nhập địa chỉ!';
-        }
-        if(empty(trim($data['address']))){
-            $errors['email'] = 'Bạn chưa nhập email!';
-        }
-        if(empty(trim($data['phone']))){
-            $errors['email'] = 'Bạn chưa số điện thoại!';
+        if(empty(trim($data['roomnumber']))){
+            $errors['roomnumber'] = 'Chư xát định được phòng!';
         }
         $foodorder = $this->session->get('foodorder');
         if(empty($foodorder)){
             $errors['foodorder'] = 'Giỏ hàng bạn đang trống!';
         }
         return $errors;
-    }
-    public function sendNoti($saleorderid = ''){
-        if($saleorderid == ''){
-            $saleorderid = $this->request->get('saleorderid');
-        }
-        $saleOrderCtr = new \Lib\SaleOrder($this->api);
-         $result = $saleOrderCtr->getItem($saleorderid);
-        $saleOrder = $result['data'];
-
-        //Gửi mail kích hoạt tài khoản
-        $body = $this->section->loadView('Cart/order-completed.tpl', array('saleOrder' => $saleOrder));
-
-        $mail = array(
-            'mailto' => array(
-                array('email' => $saleOrder['billing_email'], 'name' => $saleOrder['billing_fullname'])
-            ),
-            'mailreply' => '',
-            'mailreplyname' => '',
-            'mailcc' => '',
-            'mailbcc' => '',
-            'attachments' => '',
-            'subject' => 'Đặt hàng thành công',
-            'body' => $body,
-            'bodytext' => strip_tags($body),
-        );
-        $ctlMail = new \Lib\Mail($this->api);
-        $ctlMail->sendMail($mail);
-
     }
 }

@@ -93,11 +93,14 @@ function myEventHandler(event) {
                     FoodOrder.updateOrder();
                 }
                 break;
-            case 69://E
+            case 69://e
                 if(FoodOrder.basketOpen == true){
                     FoodOrder.emptyOrder();
                 }
-
+            case 79://o
+                if(FoodOrder.basketOpen == true){
+                    FoodOrder.orderFood();
+                }
                 break;
         }
     }

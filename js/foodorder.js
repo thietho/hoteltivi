@@ -115,7 +115,11 @@ FoodOrder = {
         }
     },
     orderFood:function () {
-        
+        $.post(HTTPSERVER+'FoodOrder/saveOrder.api',{
+            roomnumber:localStorage.getItem('roomnumber')
+        },function (result) {
+            console.log(result);
+        });
     }
 }
 

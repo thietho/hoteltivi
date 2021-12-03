@@ -77,7 +77,11 @@ function myEventHandler(event) {
                 if (FoodOrder.basketOpen == true) {
                     FoodOrder.emptyOrder();
                 }
-
+                break;
+            case 79://o
+                if(FoodOrder.basketOpen == true){
+                    FoodOrder.orderFood();
+                }
                 break;
         }
     }
