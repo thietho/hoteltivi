@@ -854,6 +854,9 @@ section.list-channel {
 .tour-travel-carousel .item {
     max-height: 100%;
 }
+.tour-travel-carousel .item img{
+    height: 382px;
+}
 
 .room-service-carousel .item p {
     width: 290px;
