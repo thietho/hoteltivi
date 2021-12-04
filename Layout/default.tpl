@@ -59,7 +59,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title food-name"><img src="img/cart-icon.png"/> <span class="cart-number">7</span>Shopping
+                <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/cart-icon.png"/> <span class="cart-number">7</span>Shopping
                     <span>Basket</span></h5>
             </div>
             <div class="modal-body">
@@ -124,15 +124,15 @@
             </div>
             <div class="modal-footer">
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name  mr-2"><img src="img/level-back-icon.png"/> level
+                    <h5 class="modal-title food-name  mr-2"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> level
                         <span>back</span></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name"><img src="img/empty-basket-icon.png"/> empty
+                    <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> empty
                         <span>basket</span></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name ml-2"><img src="img/order-now-icon.png"/> order
+                    <h5 class="modal-title food-name ml-2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> order
                         <span>now</span></h5>
                 </div>
             </div>

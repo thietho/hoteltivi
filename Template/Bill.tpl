@@ -1,5 +1,5 @@
 <section class="main-wrapper my-bill">
-    <div class="lang-icon"><img src="img/lang-vi.png"/></div>
+    <div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>
     <div class="container-fluid">
         <?php echo $header?>
         <div class="row">
@@ -89,7 +89,7 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span class="icon"><img src="img/level-up.png"/></span></p>
+                                            <p>press <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
                                             <p>to level up</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">

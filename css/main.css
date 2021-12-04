@@ -37,7 +37,9 @@ a:hover {
  */
 html,
 body {
-  height: 100%; }
+  height: 100%;
+  zoom: 75%;
+}
 
 body {
   background: url(../img/cover.jpg) no-repeat center center fixed;
@@ -417,9 +419,9 @@ body {
 section.main-wrapper{
   padding: 68px 55px 26px;
   position: relative;
+  height: 100%;
 }
 section.info-sunset{
-  background: url(../img/info-bg.jpg) no-repeat center center fixed;
 }
 section.my-bill{
   background: url(../img/my-bill-bg.jpg) no-repeat center center fixed;
@@ -511,8 +513,7 @@ section.list-channel{
   padding-right: 0;
 }
 .main-content .content-wrapper{
-  height: 638px;
-  background: #05577a;
+  height: 770px;
 }
 .main-content .menu-bottom .text-wrapper{
   height: 105px;
@@ -558,13 +559,13 @@ section.list-channel{
 }
 .main-sidebar{
   padding: 0;
-  height: 558px;
+  height: 695px;
   position: relative;
 }
 .sidebar-carousel .item{
   position: relative;
   margin: 0 0 5px;
-  max-height: 250px;
+  max-height: 294px;
   overflow: hidden;
 }
 .sidebar-carousel .item p{
@@ -703,8 +704,7 @@ section.list-channel{
 
 .room-service-carousel .item, .tour-travel-carousel .item{
   position: relative;
-  margin: 0 0 10px;
-  max-height: 309px;
+  margin: 10px 0 10px;
   overflow: hidden;
   padding-right: 7px;
   padding-left: 7px;
@@ -830,8 +830,7 @@ section.list-channel{
 
 .food-order-carousel .item{
   position: relative;
-  margin: 0 0 10px;
-  max-height: 309px;
+  margin: 10px 0 10px;
   overflow: hidden;
   padding-right: 7px;
   padding-left: 7px;
@@ -842,7 +841,7 @@ section.list-channel{
 }
 .food-menu-carousel .item .food-name{
   background: #F58220;
-  width: 364px;
+  width: 426px;
   padding: 5px 10px;
   font-family: 'Big Shoulders Display', cursive;
   font-size: 20px;
@@ -869,7 +868,7 @@ section.list-channel{
 .food-order .main-sidebar{
   background: #05577abf;
   padding-top: 40px;
-  height: 630px;
+  height: 733px;
 }
 
 .food-order table{

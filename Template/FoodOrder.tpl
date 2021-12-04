@@ -1,5 +1,5 @@
 <section class="main-wrapper food-order">
-    <div class="lang-icon"><img src="img/lang-vi.png"/></div>
+    <div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>
     <div class="container-fluid">
         <?php echo $header?>
 
@@ -31,7 +31,7 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span class="icon"><img src="img/ok-icon.png"/></span></p>
+                                            <p>press <span class="icon"><img src="<?php echo HTTPSERVER?>img/ok-icon.png"/></span></p>
                                             <p>to choise</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
@@ -46,7 +46,7 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span class="icon"><img src="img/level-up.png"/></span></p>
+                                            <p>press <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
                                             <p>to level up</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">

@@ -17,7 +17,7 @@
         <div class="col-lg-6">
             <div class="basket-wrapper" id="btnBasket">
                 <div id="countitem"></div>
-                <img class="basket-icon" src="img/cart-icon.png"/>
+                <img class="basket-icon" src="<?php echo HTTPSERVER?>img/cart-icon.png"/>
                 <p class="basket-text">basket</p>
             </div>
         </div>

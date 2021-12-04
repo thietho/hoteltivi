@@ -57,7 +57,6 @@
                 <div class="about-us">
                     <div class="item-wrapper">
                         <img src="<?php echo IMAGES?>logo.png"/>
-                        <h4 class="title">About <span>us</span></h4>
                     </div>
                 </div>
             </div>

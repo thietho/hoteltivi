@@ -12,11 +12,11 @@
                 <p id="roomnumber">room 198</p>
             </div>
             <div class="bottom">
-                <p>Home <img src="img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
+                <p>Home <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
             </div>
         </div>
     </div>
     <div class="col-lg-2 sub-menu-logo text-center">
-        <img src="img/logo-w.png"/>
+        <a href="<?php echo $this->request->createLink()?>"><img src="<?php echo HTTPSERVER?>img/logo-w.png"/></a>
     </div>
 </div>

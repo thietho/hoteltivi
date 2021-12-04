@@ -18,6 +18,12 @@ function myEventHandler(event){
         case 39: //Move right
             $('.slick-next').click();
             break;
+        case 461: //Back
+            window.history.back();
+            break;
+        case 602: //Portal
+            window.location = '<?php echo $this->request->createLink()?>';
+            break;
     }
     if(localStorage.getItem('roomid') == null){
         window.location = HTTPSERVER;

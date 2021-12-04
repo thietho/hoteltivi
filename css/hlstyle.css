@@ -71,3 +71,10 @@ header nav{
 .selectrow{
     background: #ccc;
 }
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    height: 100%;
+}
+.modal-backdrop{
+    height: 100%;
+    width: 100%;
+}

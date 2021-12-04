@@ -39,6 +39,12 @@ function myEventHandler(event) {
                 }
                 channel.selectChannel();
                 break;
+            case 461: //Back
+                window.history.back();
+                break;
+            case 602: //Portal
+                window.location = '<?php echo $this->request->createLink()?>';
+                break;
         }
     }
 

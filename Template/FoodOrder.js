@@ -83,6 +83,12 @@ function myEventHandler(event) {
                     FoodOrder.orderFood();
                 }
                 break;
+            case 461: //Back
+                window.history.back();
+                break;
+            case 602: //Portal
+                window.location = '<?php echo $this->request->createLink()?>';
+                break;
         }
     }
 

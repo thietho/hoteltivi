@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
                 <div id="login">
-                        <div class="text-center"><img src="img/logo_sticky.png" alt="Image" data-retina="true" ></div>
+                        <div class="text-center"><img src="<?php echo HTTPSERVER?>img/logo_sticky.png" alt="Image" data-retina="true" ></div>
                         <form id="frmActive">
                         <h3 class="text-center">Kích hoạt tài khoản</h3>
                         <hr>
