@@ -500,7 +500,7 @@ body {
 }
 
 section.main-wrapper {
-    padding: 68px 55px 26px;
+    padding: 26px 55px 26px;
     position: relative;
     height: 100%;
 }
@@ -614,10 +614,11 @@ section.list-channel {
 }
 .main-content {
     padding-right: 0;
+    height: 394px;
 }
 
 .main-content .content-wrapper {
-    height: 770px;
+
 }
 
 .main-content .menu-bottom .text-wrapper {
@@ -643,7 +644,7 @@ section.list-channel {
 }
 
 .menu-bottom .press-right {
-    font-size: 45px;
+    font-size: 2.5em;
     text-transform: uppercase;
     font-family: 'Big Shoulders Display', cursive;
 }
@@ -672,7 +673,7 @@ section.list-channel {
 
 .main-sidebar {
     padding: 0;
-    height: 329px;
+    height: 324px;
     position: relative;
 }
 
@@ -847,7 +848,9 @@ section.list-channel {
     padding-right: 7px;
     padding-left: 7px;
 }
-
+.room-service-carousel .item img{
+    height: 180px;
+}
 .tour-travel-carousel .item {
     max-height: 100%;
 }
