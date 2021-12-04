@@ -2,7 +2,7 @@ $('.list-item').slick({
     arrows: false,
     dots: false,
     infinite: false,
-    slidesToShow: 7,
+    slidesToShow: 6,
     slidesToScroll: 1,
     loop: false
 });

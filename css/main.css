@@ -162,7 +162,7 @@ body {
  * Cover
  */
 .cover {
-    background: #05577a6e;
+
 }
 
 .cover .btn-notify {
@@ -314,22 +314,20 @@ body {
 }
 
 .welcome-wrapper {
-    margin-top: 120px;
     position: relative;
 }
 
 .welcome-wrapper::before {
-    content: " ";
-    position: absolute;
-    height: 2px;
-    top: 44px;
-    width: 100%;
-    background-color: #f58220;
+    /*content: " ";*/
+    /*position: absolute;*/
+    /*height: 2px;*/
+    /*top: 44px;*/
+    /*width: 100%;*/
+    /*background-color: #f58220;*/
 }
 
 .welcome {
     position: relative;
-    top: -56px;
     margin-left: 175px;
 }
 
@@ -337,7 +335,9 @@ body {
     display: inline-block;
     vertical-align: top;
 }
-
+.welcome .logo img{
+    width: 250px;
+}
 .welcome .content {
     margin-left: 20px;
 }
@@ -346,28 +346,25 @@ body {
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
-    font-size: 65px;
     margin-top: -12px;
 }
 
 .welcome .content .name {
     font-family: 'Montserrat Alternates', sans-serif;
     color: #f58220;
-    font-size: 28px;
+    font-size: 1.5em;
     line-height: 15px;
-    margin-bottom: 35px;
 }
 
 .welcome .content .des {
     font-family: 'Bonheur Royale', cursive;
-    font-size: 50px;
+    font-size: 1.5em;
     line-height: 27px;
 }
 
 .welcome .content .des span {
     font-family: 'Oswald', sans-serif;
     color: #f58220;
-    font-size: 34px;
 }
 
 .language {
@@ -406,6 +403,7 @@ body {
 .home-menu .slick-slide img {
     margin: 0 auto;
     padding: 50px;
+    width: 150px;
 }
 
 .home-menu .about-us {
@@ -429,7 +427,9 @@ body {
 }
 
 .home-menu .about-us img {
+    margin-top: 20px;
     padding: 37px;
+    width: 205px;
 }
 
 .home-menu .list-item {
@@ -468,7 +468,7 @@ body {
 .home-menu .list-item .list-item-sub .title, .about-us .title {
     font-family: 'Big Shoulders Display', cursive;
     color: #05577a;
-    font-size: 30px;
+    font-size: 1.3em;
     margin-right: 44px;
 }
 
@@ -477,12 +477,12 @@ body {
 }
 
 .home-menu .img-wrapper {
-    height: 198px;
+    height: 145px;
 }
 
 .home-menu .item-wrapper {
     /*padding: 20px;*/
-    height: 238px;
+    height: 185px;
     -moz-transform: skewx(-15deg);
     -webkit-transform: skewx(
             15deg);
@@ -542,11 +542,11 @@ section.list-channel {
 .sub-menu-title {
     font-family: 'Big Shoulders Display', cursive;
     text-transform: uppercase;
-    font-size: 80px;
+    font-size: 40px;
     padding: 16px 20px;
     background: #05577a;
-    line-height: 84px;
-    height: 200px;
+
+    height: 150px;
 }
 
 .sub-menu-title .bottom {
@@ -576,7 +576,7 @@ section.list-channel {
     text-transform: uppercase;
     padding: 10px 20px;
     background: #05577a;
-    height: 200px;
+    height: 150px;
 }
 
 .sub-menu-breadcrumb .bottom {
@@ -594,24 +594,24 @@ section.list-channel {
 
 .sub-menu-breadcrumb .top {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 18px;
 }
 
 .sub-menu-breadcrumb .top .name {
     font-family: arial;
     text-transform: capitalize;
     font-weight: normal;
-    font-size: 56px;
-    line-height: 48px;
-    padding-top: 10px;
+    font-size: 27px;
 }
 
 .sub-menu-logo {
     background: #f58220;
-    height: 200px;
+    height: 150px;
     padding: 22px;
 }
-
+.sub-menu-logo img{
+    width: 150px;
+}
 .main-content {
     padding-right: 0;
 }
@@ -672,7 +672,7 @@ section.list-channel {
 
 .main-sidebar {
     padding: 0;
-    height: 695px;
+    height: 329px;
     position: relative;
 }
 
@@ -718,11 +718,10 @@ section.list-channel {
 }
 
 .my-bill table .head {
-    font-size: 35px;
     font-weight: bold;
     background: #f58220;
     text-transform: uppercase;
-    height: 78px;
+
 }
 
 .my-bill table .head:hover {
@@ -739,7 +738,6 @@ section.list-channel {
 }
 
 .my-bill tr {
-    height: 80px;
     border-bottom: 1px solid #05577a;
     background: #fffffa7a;
     text-transform: uppercase;
@@ -756,7 +754,6 @@ section.list-channel {
 }
 
 .my-bill td {
-    font-size: 25px;
     font-weight: bold;
     padding-bottom: 7px;
     vertical-align: middle;
@@ -785,13 +782,12 @@ section.list-channel {
 }
 
 .my-bill td.bill-price {
-    font-size: 35px;
+
 }
 
 .my-bill .bill-date.sidebar {
     text-align: left;
     padding-left: 30px;
-    font-size: 35px;
 }
 
 .my-bill .bill-price.sidebar {
@@ -799,7 +795,6 @@ section.list-channel {
 }
 
 .my-bill .main-sidebar tr {
-    height: 80px;
     border-bottom: 1px solid #f58220;
     color: #05577a;
     text-transform: uppercase;
@@ -821,18 +816,17 @@ section.list-channel {
 
 .my-bill .bill-total {
     background: #333;
-    height: 185px;
+    height: 128px;
     margin-top: 15px;
     position: relative;
 }
 
 .my-bill .bill-total .price-vat {
     padding: 8px 30px;
-    font-size: 24px;
 }
 
 .my-bill .bill-total .price-total {
-    font-size: 50px;
+    font-size: 2em;
     background: #f58220;
     padding: 0 30px;
     font-family: 'Big Shoulders Display', cursive;
