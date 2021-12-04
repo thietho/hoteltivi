@@ -52,18 +52,15 @@ FoodOrder = {
         });
     },
     load:function () {
-        //common.showLoading();
-        alert('Load list order1');
+        common.showLoading();
         $.getJSON(HTTPSERVER+'FoodOrder/get.api',function (result) {
-            //common.endLoading();
+            common.endLoading();
             //console.log(result);
-            alert('Load list order2');
             var html = '';
             var htmlpopup = '';
             var sum = 0;
             var count = 0;
             for (var i in result) {
-                alert(result[i].foodname);
                 html += '<tr>' +
                     '                            <td class="sidebar food-no"><span>'+ (Number(i)+1)+'</span></td>' +
                     '                            <td class="sidebar food-name"><span>'+result[i].foodname+'</span></td>' +
