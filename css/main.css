@@ -618,6 +618,7 @@ section.list-channel {
 }
 
 .main-content .content-wrapper {
+    height: 380px;
 
 }
 
@@ -673,8 +674,9 @@ section.list-channel {
 
 .main-sidebar {
     padding: 0;
-    height: 324px;
+    height: 360px;
     position: relative;
+    overflow: auto;
 }
 
 .sidebar-carousel .item {
@@ -708,7 +710,10 @@ section.list-channel {
 .sidebar-carousel .slick-next {
     bottom: 7px;
 }
-
+.bill-content{
+    overflow: auto;
+    height: 100%;
+}
 .my-bill table {
     font-family: 'Roboto', sans-serif;
     color: #fff;
