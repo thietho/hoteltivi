@@ -21,6 +21,9 @@ function myEventHandler(event) {
                     if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveUp();
                     }
+                    if(service.popupshow){
+                        FoodOrder.selectIncre();
+                    }
                 }
 
                 break;
@@ -34,6 +37,9 @@ function myEventHandler(event) {
                     if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveDown();
                     }
+                    if(service.popupshow){
+                        FoodOrder.selectReduce();
+                    }
                 }
 
                 break;
@@ -44,6 +50,9 @@ function myEventHandler(event) {
                         service.selectService();
                     }
                 }
+                if(FoodOrder.basketOpen){
+                    FoodOrder.selectReduce();
+                }
                 break;
             case 39: //Move right
                 //$('.slick-next').click();
@@ -53,6 +62,9 @@ function myEventHandler(event) {
                         service.index = service.max;
                     }
                     service.selectService();
+                }
+                if(FoodOrder.basketOpen){
+                    FoodOrder.selectIncre();
                 }
                 break;
             case 107://+

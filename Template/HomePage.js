@@ -105,6 +105,8 @@ function myEventHandler(event) {
                 console.log(mainmenu.current);
                 $('.list-item').slick('slickGoTo', mainmenu.current);
             }
+            break;
+        case 1001:
 
             break;
     }

@@ -11,7 +11,6 @@ FoodOrder = {
             console.log(result);
             $('.quantity').val(1);
             $('#food-order-popup').modal('hide');
-            alert('Load list order');
             FoodOrder.load();
         });
     },
@@ -159,5 +158,7 @@ $(document).ready(function () {
             }
         }
         $('.sub-menu-breadcrumb .name').html(customer.Name)
+        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+        $('.content .name').html(customer.Name)
     })
 });

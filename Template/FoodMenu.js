@@ -34,6 +34,10 @@ function myEventHandler(event) {
                     if(FoodOrder.basketOpen == true){
                         FoodOrder.selectMoveUp();
                     }
+                    if(service.popupshow){
+                        var quantity = Number($('.quantity').val());
+                        $('.quantity').val(quantity+1);
+                    }
                 }
 
                 break;
@@ -47,6 +51,12 @@ function myEventHandler(event) {
                     if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveDown();
                     }
+                    if(service.popupshow){
+                        var quantity = Number($('.quantity').val());
+                        if(quantity > 1){
+                            $('.quantity').val(quantity-1);
+                        }
+                    }
                 }
                 break;
             case 37: //Move left
@@ -56,6 +66,9 @@ function myEventHandler(event) {
                         service.selectService();
                     }
                 }
+                if(FoodOrder.basketOpen){
+                    FoodOrder.selectReduce();
+                }
                 break;
             case 39: //Move right
                 if (service.popupshow == false) {
@@ -64,6 +77,9 @@ function myEventHandler(event) {
                         service.index = service.max;
                     }
                     service.selectService();
+                }
+                if(FoodOrder.basketOpen){
+                    FoodOrder.selectIncre();
                 }
                 break;
 
