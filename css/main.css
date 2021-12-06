@@ -41,6 +41,7 @@ html,
 body {
     width: 1280px;
     height: 720px;
+    overflow: hidden;
 }
 
 body {
@@ -677,6 +678,7 @@ section.list-channel {
     height: 360px;
     position: relative;
     overflow: auto;
+    padding: 15px;
 }
 
 .sidebar-carousel .item {
@@ -994,7 +996,6 @@ section.list-channel {
 
 .food-order .main-sidebar {
     background: #05577a;
-    padding-top: 40px;
     height: 394px;
 }
 
@@ -1013,10 +1014,9 @@ section.list-channel {
 
 .food-menu-carousel .item .food-name {
     background: #F58220;
-    width: 426px;
+    width: 225px;
     padding: 5px 10px;
     font-family: 'Big Shoulders Display', cursive;
-    font-size: 20px;
     position: absolute;
     bottom: 28px;
     font-weight: bold;
@@ -1082,14 +1082,14 @@ section.list-channel {
     background: #808080;
     padding: 5px 10px;
     font-family: 'Big Shoulders Display', cursive;
-    font-size: 29px;
+    font-size: 1.3em;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .food-order .basket-wrapper {
     background: #808080;
-    padding: 10px 30px;
+    padding: 10px 43px;
     font-family: 'Big Shoulders Display', cursive;
     font-size: 50px;
     text-transform: uppercase;
@@ -1099,8 +1099,8 @@ section.list-channel {
 
 .food-order .basket-wrapper #countitem {
     position: absolute;
-    top: 32px;
-    left: 77px;
+    top: 30px;
+    left: 89px;
     font-size: 0.4em;
     color: #f58220;
     width: 20px;

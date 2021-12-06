@@ -150,4 +150,14 @@ $(document).ready(function () {
         service.popupshow = false;
         FoodOrder.selectindex = 0;
     })
+    $.getJSON(HTTPSERVER+'RoomItem/getGuestInfo.api?roomnumber='+localStorage.getItem('roomnumber'),function (result) {
+        console.log(result);
+        var customer = new Object();
+        for (var i in result.Data) {
+            if(result.Data[i].IsMainGuest){
+                customer = result.Data[i];
+            }
+        }
+        $('.sub-menu-breadcrumb .name').html(customer.Name)
+    })
 });
