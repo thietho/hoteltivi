@@ -677,7 +677,6 @@ section.list-channel {
     padding: 0;
     height: 360px;
     position: relative;
-    overflow: auto;
     padding: 15px;
 }
 

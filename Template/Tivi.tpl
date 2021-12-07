@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <?php echo $header?>
         <div class="row">
-            <div class="col-lg-4 main-sidebar">
+            <div class="col-lg-4 main-sidebar video-list">
                 <div class="sidebar-carousel">
                     <?php foreach($sitemaps as $sitemap){ ?>
                     <div class="item" video="<?php echo $sitemap['video']?>">
