@@ -510,23 +510,23 @@ section.info-sunset {
 }
 
 section.my-bill {
-    background: url(../img/my-bill-bg.jpg) no-repeat center center fixed;
+    background: url(../img/my-bill-bg.jpg) no-repeat center center ;
 }
 
 section.room-service {
-    background: url(../img/room-service-bg.jpg) no-repeat center center fixed;
+    background: url(../img/room-service-bg.jpg) no-repeat center center ;
 }
 
 section.tour-travel {
-    background: url(../img/tour-travel-bg.jpg) no-repeat center center fixed;
+    background: url(../img/tour-travel-bg.jpg) no-repeat center center ;
 }
 
 section.food-order {
-    background: url(../img/food-order-bg.jpg) no-repeat center center fixed;
+    background: url(../img/food-order-bg.jpg) no-repeat center center ;
 }
 
 section.list-channel {
-    background: url(../img/room-service-bg.jpg) no-repeat center center fixed;
+    background: url(../img/room-service-bg.jpg) no-repeat center center ;
 }
 
 .main-wrapper .lang-icon {
