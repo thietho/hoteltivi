@@ -9,7 +9,7 @@ $(document).ready(function () {
 window.addEventListener("keyup", myEventHandler);
 mainmenu = {
     current: -1,
-    max: 11,
+    max: 8,
     opensetting: false,
     settinginxdex: 0,
     opensettingAction:function () {

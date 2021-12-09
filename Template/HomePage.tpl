@@ -133,30 +133,6 @@
                         </div>
                     </a>
                 </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>youtube.png"/></div>
-                            <h4 class="title">you<span>tube</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>share-screen.png"/></div>
-                            <h4 class="title">share <span>screen</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>web-browser.png"/></div>
-                            <h4 class="title">web <span>browser</span></h4>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
