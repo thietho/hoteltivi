@@ -442,6 +442,25 @@ common = {
         });
 
     },
+    currentTimeShow: function() {
+        dt = new Date();
+        if (dt == "Invalid Date") {
+            return ''
+        } else {
+            return this.toDateNumber(dt.getHours()) + ':' + this.toDateNumber(dt.getMinutes());
+        }
+    },
+    currentDateShow: function() {
+        var dt = new Date();
+        if (dt == "Invalid Date") {
+            return ''
+        } else {
+            var day = this.toDateNumber(dt.getDate());
+            var month = dt.toLocaleString('default', { month: 'short' });
+            var year = dt.getFullYear();
+            return day + " " + month + " " + year; // eg: 13 Nov 2021
+        }
+    },
     clearCache:function () {
         $.getJSON(HTTPSERVER+'Member/clearCache.api',function (result) {
             console.log(result);

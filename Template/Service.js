@@ -40,9 +40,11 @@ function myEventHandler(event){
                 service.selectService();
                 break;
             case 461: //Back
+            case 8: //Back
                 window.history.back();
                 break;
             case 602: //Portal
+            case 80: //Portal
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
         }

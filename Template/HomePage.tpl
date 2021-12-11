@@ -5,13 +5,13 @@
                 <div class="inner">
                     <div class="weather">
                         <div class="temp">
-                            <img src="<?php echo IMAGES?>thoi-tiet.png">
-                            <span>27 <sup class="sup">o</sup>C</span>
+                            <img src="<?php echo IMAGES?>weather/02d.png" id="weather-icon"/>
+                            <span id="weather-current"></span>
                             <p class="des">have a nice day</p>
                         </div>
                         <div class="time">
-                            <span>09:30</span>
-                            <p class="date">15 oCT 2021</p>
+                            <span id="shorttime">09:30</span>
+                            <p class="date" id="fulltime">15 oCT 2021</p>
                         </div>
                     </div>
                 </div>
@@ -31,14 +31,14 @@
                 </div>
                 <div class="language text-center">
                     <table style="margin: 0 auto">
-                        <tr>
-                            <td>
-                                <img src="<?php echo IMAGES?>en-flag.png"/><br>
-                                <a href="#">English</a>
-                            </td>
+                        <tr id="langRegion">
                             <td>
                                 <img src="<?php echo IMAGES?>vi-flag.png"/><br>
                                 <a href="#">Việt Nam</a>
+                            </td>
+                            <td>
+                                <img src="<?php echo IMAGES?>en-flag.png"/><br>
+                                <a href="#">English</a>
                             </td>
                         </tr>
                     </table>
@@ -53,7 +53,7 @@
 <section class="home-menu">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 home-static">
+            <div class="col-lg-2 home-static curent">
                 <div class="about-us">
                     <div class="item-wrapper">
                         <img src="<?php echo IMAGES?>logo.png"/>
@@ -141,7 +141,7 @@
                         </div>
                     </a>
                 </div>
-                <!--<div class="list-item-sub">
+                <div class="list-item-sub" appname="Share Screen" appid="144115188075855880">
                     <a href="#">
                         <div class="item-wrapper">
                             <div class="img-wrapper"><img src="<?php echo IMAGES?>share-screen.png"/></div>
@@ -149,7 +149,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="list-item-sub">
+                <!--<div class="list-item-sub">
                     <a href="#">
                         <div class="item-wrapper">
                             <div class="img-wrapper"><img src="<?php echo IMAGES?>web-browser.png"/></div>

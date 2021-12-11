@@ -163,7 +163,7 @@ body {
  * Cover
  */
 .cover {
-
+    background: #05577a6e;
 }
 
 .cover .btn-notify {
@@ -278,7 +278,7 @@ body {
 }
 
 .weather .temp, .weather .time {
-    font-size: 60px;
+    font-size: 33px;
     display: inline-block;
 }
 
@@ -290,11 +290,11 @@ body {
 .weather .temp::after {
     content: " ";
     width: 4px;
-    height: 84px;
+    height: 53px;
     position: absolute;
     background: #fff;
     right: 0;
-    bottom: 5px;
+    bottom: 11px;
 }
 
 .weather .time {
@@ -304,27 +304,30 @@ body {
 .weather .temp span {
     vertical-align: middle;
 }
-
-.weather .temp span .sup {
-    font-size: 37px;
+.weather .temp img {
+    height: 27px;
+}
+.weather .temp sup {
+    font-size: 0.6em;
 }
 
 .weather .temp .des, .weather .time .date {
-    font-size: 31px;
+    font-size: 17px;
     line-height: 7px;
 }
 
 .welcome-wrapper {
     position: relative;
+    margin-top: 100px;
 }
 
 .welcome-wrapper::before {
-    /*content: " ";*/
-    /*position: absolute;*/
-    /*height: 2px;*/
-    /*top: 44px;*/
-    /*width: 100%;*/
-    /*background-color: #f58220;*/
+    content: " ";
+    position: absolute;
+    height: 2px;
+    top: 72px;
+    width: 100%;
+    background-color: #f58220;
 }
 
 .welcome {
@@ -341,6 +344,7 @@ body {
 }
 .welcome .content {
     margin-left: 20px;
+    padding-top: 3px;
 }
 
 .welcome .content .title {
@@ -370,8 +374,11 @@ body {
 
 .language {
     padding-bottom: 30px;
+    margin-top: 30px;
 }
-
+.language img{
+    width: 75px;
+}
 .language a {
     display: inline-grid;
     padding: 0 10px;
@@ -386,8 +393,11 @@ body {
 .home-menu .home-static {
     padding: 0 5px;
     z-index: 99999;
+    height: 182px;
 }
-
+.home-menu .home-static.curent{
+    margin-top: -40px;
+}
 .home-menu .home-static::before {
     content: " ";
     width: 49px;
@@ -535,7 +545,9 @@ section.list-channel {
     top: 5px;
     right: 5px;
 }
-
+.langcurrent{
+    border: 5px solid #f58220;
+}
 .main-wrapper p {
     margin: 0;
     vertical-align: middle;
