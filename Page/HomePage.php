@@ -15,20 +15,4 @@ class HomePage extends Page
         $this->setLayout('default.tpl');
         return $this->render();
     }
-    private function loadNewPost(){
-        $result = $this->content->getGetList('&sortcol=createdat&sorttype=desc&paging=true&limit=6&page=1');
-        $newpost = array();
-        if($result['statuscode']){
-            $news = $result['data'];
-            foreach ($news as $content){
-                $item['title'] = $content['title'];
-                $item['summary'] = $this->string->getTextLength($content['summary'],0,15);
-                $item['image'] = IMAGESERVER."fixsize-370x265/upload/cms_content/".$content['id']."/".$content['image'];
-                $item['createdat'] = $this->date->formatMySQLDate($content['createdat']);
-                $item['link'] = $this->request->createLink('News',$content['id'].'-'.$this->string->clean($this->string->utf8convert($content['title'])));
-                $newpost[] = $item;
-            }
-        }
-        return $newpost;
-    }
 }

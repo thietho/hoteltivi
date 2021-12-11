@@ -380,7 +380,7 @@ body {
 .home-menu {
     position: fixed;
     bottom: 15px;
-    width: 100%;
+    width: 1280px;
 }
 
 .home-menu .home-static {
@@ -467,9 +467,10 @@ body {
 }
 
 .home-menu .list-item .list-item-sub .title, .about-us .title {
-    font-family: 'Big Shoulders Display', cursive;
+    /*font-family: 'Big Shoulders Display', cursive;*/
+    font-family: Arial;
     color: #05577a;
-    font-size: 1.3em;
+    font-size: 0.8em;
     margin-right: 44px;
 }
 

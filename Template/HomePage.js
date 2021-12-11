@@ -5,11 +5,13 @@ $(document).ready(function () {
     }else {
         $('#roomnumber').html(localStorage.getItem('roomnumber'))
     }
+    //channel.playMediaSilent();
+
 });
 window.addEventListener("keyup", myEventHandler);
 mainmenu = {
     current: -1,
-    max: 8,
+    max: 9,
     opensetting: false,
     settinginxdex: 0,
     opensettingAction:function () {
@@ -44,9 +46,23 @@ function myEventHandler(event) {
             if(!mainmenu.opensetting){
                 console.log(mainmenu.current);
                 console.log(sitemaps[mainmenu.current + 1].sitemapid);
-                var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
-                var url = HTTPSERVER + sitemapid + ".html";
-                window.location = url;
+                if($('.menucurent').attr('appid')!=undefined){
+                    console.log($('.menucurent').attr('appid'))
+                    hcap.preloadedApplication.launchPreloadedApplication({
+                        "id" : "144115188075859002", //Youtube
+
+                        "onSuccess" : function() {
+                        },
+                        "onFailure" : function(f) {
+                            console.log("onFailure : errorMessage = " + f.errorMessage);
+                        }
+                    });
+                }else {
+                    var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
+                    var url = HTTPSERVER + sitemapid + ".html";
+                    window.location = url;
+                }
+
             }else {
                 localStorage.setItem('roomid',$('.settingroom.selected').attr('roomitemid'));
                 localStorage.setItem('roomnumber',$('.settingroom.selected').attr('roomnumber'));
