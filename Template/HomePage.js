@@ -1,11 +1,34 @@
 $(document).ready(function () {
+    hcap.property.setProperty({
+        "key" : "boot_sequence_option",
+        "value" : "1",
+        "onSuccess" : function() {
+            //alert("Ahihi");
+        },
+        "onFailure" : function(f) {
+            console.log("onFailure : errorMessage = " + f.errorMessage);
+        }
+    });
+
+    hcap.property.getProperty({
+        "key":"room_number",
+        "onSuccess" : function(s) {
+            var_room_info = s.value;
+            localStorage.setItem('roomnumber',var_room_info);
+            $('#roomnumber').html(localStorage.getItem('roomnumber'))
+        },
+        "onFailure" : function(f) {
+
+        }
+    });
     $('.list-item-sub').removeClass('slick-current');
-    if(localStorage.getItem('roomid') == null){
-        mainmenu.opensettingAction();
-    }else {
-        $('#roomnumber').html(localStorage.getItem('roomnumber'))
-    }
-    //channel.playMediaSilent();
+    // if(localStorage.getItem('roomid') == null){
+    //     mainmenu.opensettingAction();
+    // }else {
+    //     $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    // }
+    //channel.stopChannel();
+    channel.playMediaSilent();
 
 });
 window.addEventListener("keyup", myEventHandler);
@@ -74,9 +97,9 @@ function myEventHandler(event) {
             counttop++;
             console.log(counttop);
             if (mainmenu.opensetting == false) {
-                if (counttop > 10) {
-                    mainmenu.opensettingAction();
-                }
+                // if (counttop > 10) {
+                //     mainmenu.opensettingAction();
+                // }
             } else {
                 if (mainmenu.settinginxdex > 0) {
                     mainmenu.settinginxdex--;

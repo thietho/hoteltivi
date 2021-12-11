@@ -240,7 +240,6 @@ channel = {
         hcap.channel.stopCurrentChannel({
             "onSuccess": function () {
                 //log("onSuccess : stopCurrentChannel");
-                alert('close channel');
                 channel.playing = false;
             },
             "onFailure": function (f) {

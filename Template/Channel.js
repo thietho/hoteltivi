@@ -14,6 +14,7 @@ function myEventHandler(event) {
                 if(port == 1){
                     channel.playMedia(ip);
                 }else {
+                    channel.stopMedia();
                     channel.playIPChannel(ip, port);
                 }
                 break;
@@ -47,6 +48,7 @@ function myEventHandler(event) {
                 if(channel.playing){
                     channel.stopChannel();
                     channel.stopMedia();
+                    channel.playMediaSilent();
                 }else {
                     window.location.back();
                 }
@@ -55,11 +57,13 @@ function myEventHandler(event) {
             case 602: //Portal
                 channel.stopChannel();
                 channel.stopMedia();
+                channel.playMediaSilent();
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
             case 1001: //Exit
                 channel.stopMedia();
                 channel.stopChannel();
+                channel.playMediaSilent();
                 break;
         }
     }
@@ -74,6 +78,7 @@ $(document).ready(function () {
     $('.list-channel-carousel').on('afterChange', function(event, slick, currentSlide){
         channel.lockui = false;
     });
+    channel.playMediaSilent();
     $('[index=' + channel.index + '] img').addClass('channelselect');
     if(localStorage.getItem('roomid') == null){
         window.location = HTTPSERVER;
