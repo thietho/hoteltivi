@@ -1,5 +1,5 @@
 <section class="main-wrapper food-order">
-    <div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>
+    <!--<!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->-->
     <div class="container-fluid">
         <?php echo $header?>
 

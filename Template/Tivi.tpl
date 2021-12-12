@@ -1,5 +1,10 @@
+<style>
+    .slick-current{
+        border: 6px solid #F58220 !important;
+    }
+</style>
 <section class="main-wrapper info-sunset">
-    <div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>
+    <!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->
     <div class="container-fluid">
         <?php echo $header?>
         <div class="row">

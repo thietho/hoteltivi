@@ -1,4 +1,5 @@
 <div class="site-wrapper">
+    <!--<video style="position: absolute" src="http://coresystem.cntech.com.vn/FileServer/file/upload/cms_sitemap/64/bamboo.mp4" width="1280" height="720" autoplay muted></video>-->
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="text-right home-top clearfix">
@@ -81,7 +82,7 @@
                     <a href="#">
                         <div class="item-wrapper">
                             <div class="img-wrapper"><img src="<?php echo IMAGES?>culinary-service.png"/></div>
-                            <h4 class="title">culinary service</h4>
+                            <h4 class="title">culinary <span>service</span></h4>
                         </div>
                     </a>
                 </div>
