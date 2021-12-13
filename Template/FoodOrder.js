@@ -78,6 +78,7 @@ function myEventHandler(event) {
                 }
                 break;
             case 66:
+            case 403:
                 FoodOrder.openBasket();
                 break;
             case 8://return
