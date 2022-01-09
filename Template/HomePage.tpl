@@ -65,6 +65,14 @@
                 <div class="list-item-sub">
                     <a href="#">
                         <div class="item-wrapper">
+                            <div class="img-wrapper"><img src="<?php echo IMAGES?>list-channel.png"/></div>
+                            <h4 class="title">list <span>channel</span></h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="list-item-sub">
+                    <a href="#">
+                        <div class="item-wrapper">
                             <div class="img-wrapper"><img src="<?php echo IMAGES?>my-bill.png"/></div>
                             <h4 class="title">my <span>bill</span></h4>
                         </div>
@@ -126,14 +134,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>list-channel.png"/></div>
-                            <h4 class="title">list <span>channel</span></h4>
-                        </div>
-                    </a>
-                </div>
+
                 <div class="list-item-sub" appname="Youtube" appid="144115188075859002">
                     <a href="#">
                         <div class="item-wrapper">
