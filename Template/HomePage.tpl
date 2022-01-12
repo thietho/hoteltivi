@@ -51,6 +51,7 @@
         </div>
     </div>
 </div>
+
 <section class="home-menu">
     <div class="container-fluid">
         <div class="row">
@@ -62,103 +63,16 @@
                 </div>
             </div>
             <div class="col-lg-10 list-item">
+                <?php for($i=1; $i < count($sitemaps); $i++){ ?>
                 <div class="list-item-sub">
                     <a href="#">
                         <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>list-channel.png"/></div>
-                            <h4 class="title">list <span>channel</span></h4>
+                            <div class="img-wrapper"><img src="<?php echo IMAGESERVER?>root/upload/cms_sitemap/<?php echo $sitemaps[$i]['id']?>/<?php echo $sitemaps[$i]['image']?>"/></div>
+                            <h4 class="title"><?php echo $sitemaps[$i]['sitemapname']?></h4>
                         </div>
                     </a>
                 </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>my-bill.png"/></div>
-                            <h4 class="title">my <span>bill</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>room-service.png"/></div>
-                            <h4 class="title">room <span>service</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>culinary-service.png"/></div>
-                            <h4 class="title">culinary <span>service</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>food-order.png"/></div>
-                            <h4 class="title">food <span>order</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>tour-travel.png"/></div>
-                            <h4 class="title">tour <span>travel</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>health-activities.png"/></div>
-                            <h4 class="title">health <span>activities</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>event-service.png"/></div>
-                            <h4 class="title">event <span>service</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>other-service.png"/></div>
-                            <h4 class="title">other <span>service</span></h4>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="list-item-sub" appname="Youtube" appid="144115188075859002">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>youtube.png"/></div>
-                            <h4 class="title">you<span>tube</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-item-sub" appname="Share Screen" appid="144115188075855880">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>share-screen.png"/></div>
-                            <h4 class="title">share <span>screen</span></h4>
-                        </div>
-                    </a>
-                </div>
-                <!--<div class="list-item-sub">
-                    <a href="#">
-                        <div class="item-wrapper">
-                            <div class="img-wrapper"><img src="<?php echo IMAGES?>web-browser.png"/></div>
-                            <h4 class="title">web <span>browser</span></h4>
-                        </div>
-                    </a>
-                </div>-->
+                <?php } ?>
             </div>
         </div>
     </div>

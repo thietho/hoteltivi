@@ -1,24 +1,24 @@
 $(document).ready(function () {
     hcap.property.setProperty({
-        "key" : "boot_sequence_option",
-        "value" : "1",
-        "onSuccess" : function() {
+        "key": "boot_sequence_option",
+        "value": "1",
+        "onSuccess": function () {
             //alert("Ahihi");
         },
-        "onFailure" : function(f) {
+        "onFailure": function (f) {
             console.log("onFailure : errorMessage = " + f.errorMessage);
         }
     });
 
     hcap.property.getProperty({
-        "key":"room_number",
-        "onSuccess" : function(s) {
+        "key": "room_number",
+        "onSuccess": function (s) {
             var_room_info = s.value;
-            localStorage.setItem('roomnumber',var_room_info);
+            localStorage.setItem('roomnumber', var_room_info);
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
-        "onFailure" : function(f) {
-
+        "onFailure": function (f) {
+            localStorage.setItem('roomnumber', 'V0023');
         }
     });
     $('.list-item-sub').removeClass('slick-current');
@@ -30,29 +30,31 @@ $(document).ready(function () {
     //channel.stopChannel();
     channel.playMediaSilent();
     mainmenu.getWeather()
-    setInterval(function(){
+    setInterval(function () {
         mainmenu.getWeather();
     }, 30000);
 });
 window.addEventListener("keyup", myEventHandler);
+sitemaps = JSON.parse('<?php echo json_encode($sitemaps)?>');
+console.log(sitemaps);
 mainmenu = {
     current: -1,
-    max: 10,
+    max: sitemaps.length - 2,
     opensetting: false,
     settinginxdex: 0,
-    selectCurent:function () {
-        if(this.current == -1){
+    selectCurent: function () {
+        if (this.current == -1) {
             $('.home-static').addClass('curent');
-        }else {
+        } else {
             $('.home-static').removeClass('curent');
-            $('[data-slick-index='+this.current+']').addClass('menucurent')
+            $('[data-slick-index=' + this.current + ']').addClass('menucurent')
         }
     },
-    exit:function () {
+    exit: function () {
         $('.home-static').removeClass('curent');
         $('.list-item-sub').removeClass('menucurent')
     },
-    opensettingAction:function () {
+    opensettingAction: function () {
         console.log('open room setting');
         counttop = 0;
         mainmenu.opensetting = true;
@@ -68,7 +70,7 @@ mainmenu = {
             mainmenu.opensetting = false;
         })
     },
-    getWeather:function () {
+    getWeather: function () {
         var temp = 27;
         var weatherIcon = '02d';
         var imgPath = HTTPSERVER + "img/weather/";
@@ -92,63 +94,62 @@ mainmenu = {
 }
 lang = {
     current: 0,
-    selectCurent:function (){
+    selectCurent: function () {
         $('#langRegion td').removeClass('langcurrent');
         $($('#langRegion').children()[this.current]).addClass('langcurrent');
     },
-    next:function () {
-        if(this.current < $('#langRegion td').length-1){
+    next: function () {
+        if (this.current < $('#langRegion td').length - 1) {
             this.current++;
             this.selectCurent();
         }
 
     },
-    back:function () {
-        if(this.current > 0){
+    back: function () {
+        if (this.current > 0) {
             this.current--;
             this.selectCurent();
         }
 
     },
-    exit:function () {
+    exit: function () {
         $('#langRegion td').removeClass('langcurrent');
     }
 }
-var sitemaps = JSON.parse('<?php echo $sitemaps?>');
-console.log(sitemaps);
 var counttop = 0;
 var timer = setInterval(function () {
     counttop = 0;
 }, 3000)
 var currentRegion = 'menu';
+
 function myEventHandler(event) {
     //console.log(event);
     $('#log').html(event.keyCode);
     switch (event.keyCode) {
         case 13:
-            if(!mainmenu.opensetting){
+            if (!mainmenu.opensetting) {
                 console.log(mainmenu.current);
                 console.log(sitemaps[mainmenu.current + 1].sitemapid);
-                if($('.menucurent').attr('appid')!=undefined){
+                if ($('.menucurent').attr('appid') != undefined) {
                     console.log($('.menucurent').attr('appid'))
                     hcap.preloadedApplication.launchPreloadedApplication({
-                        "id" : $('.menucurent').attr('appid'),
+                        "id": $('.menucurent').attr('appid'),
 
-                        "onSuccess" : function() {
+                        "onSuccess": function () {
                         },
-                        "onFailure" : function(f) {
+                        "onFailure": function (f) {
                             console.log("onFailure : errorMessage = " + f.errorMessage);
                         }
                     });
-                }else {
+                } else {
                     var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
                     var url = HTTPSERVER + sitemapid + ".html";
                     window.location = url;
                 }
 
-            }else {
-                localStorage.setItem('roomid',$('.settingroom.selected').attr('roomitemid'));
-                localStorage.setItem('roomnumber',$('.settingroom.selected').attr('roomnumber'));
+            } else {
+                localStorage.setItem('roomid', $('.settingroom.selected').attr('roomitemid'));
+                localStorage.setItem('roomnumber', $('.settingroom.selected').attr('roomnumber'));
                 window.location.reload();
             }
 
@@ -186,7 +187,7 @@ function myEventHandler(event) {
 
             break;
         case 37: //Move left
-            switch (currentRegion){
+            switch (currentRegion) {
                 case "menu":
                     if (mainmenu.current >= 0) {
                         $('.home-static').removeClass('curent');
@@ -202,7 +203,7 @@ function myEventHandler(event) {
                             $('.list-item-sub').removeClass('slick-current');
                             $('.home-static').addClass('curent');
                         }
-                    }else {
+                    } else {
                         $('.home-static').addClass('curent');
                     }
                     break;

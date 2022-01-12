@@ -80,7 +80,7 @@ $(document).ready(function () {
     });
     channel.playMediaSilent();
     $('[index=' + channel.index + '] img').addClass('channelselect');
-    if(localStorage.getItem('roomid') == null){
+    if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {
         $('#roomnumber').html(localStorage.getItem('roomnumber'))
