@@ -5,39 +5,27 @@ function myEventHandler(event){
     if(service.lockui == false){
         switch (event.keyCode) {
             case 13:
-                if(service.popupshow == false){
-                    $('#room-service-popup').modal();
-                }else {
-                    $('.btn-ok').click();
-                }
-
+                window.location = $('.serviceselect').parent().attr('href');
                 break;
             case 38: //Move top
-                if(service.index - 1 >= 0) {
-                    service.index -= 1;
-                    service.selectService();
-                }
+
                 break;
             case 40: //Move down
-                if(service.index < service.max){
-                    service.index +=1;
-                    service.selectService();
-                }
+
                 break;
             case 37: //Move left
-                if(service.index - service.rows >= 0){
-                    service.index -= service.rows;
+                if(service.index - 1 >= 0) {
+                    service.index -= 1;
                     service.selectService();
                 }
 
                 break;
             case 39: //Move right
                 //$('.slick-next').click();
-                service.index +=service.rows;
-                if(service.index > service.max){
-                    service.index = service.max;
+                if(service.index < service.max){
+                    service.index +=1;
+                    service.selectService();
                 }
-                service.selectService();
                 break;
             case 461: //Back
             case 8: //Back

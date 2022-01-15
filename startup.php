@@ -11,9 +11,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost'){
 
 define('CONTROLVIEW','Control/View/');
 define('CONTROL','Control/');
-define('IMAGESERVER','http://coresystem.cntech.com.vn/FileServer/images/');
-define('FILESERVER','http://coresystem.cntech.com.vn/FileServer/file/');
-define('CORESYSTEM','http://coresystem.cntech.com.vn/');
+define('IMAGESERVER','https://admin.sunsetsanato.com/FileServer/images/');
+define('FILESERVER','https://admin.sunsetsanato.com/FileServer/file/');
+define('CORESYSTEM','https://admin.sunsetsanato.com/');
 
 define('JS',HTTPSERVER.'scripts/');
 define('CSS',HTTPSERVER.'css/');

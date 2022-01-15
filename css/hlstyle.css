@@ -78,3 +78,24 @@ header nav{
     height: 100%;
     width: 100%;
 }
+.item img{
+    max-width: 100%;
+}
+.bodyview{
+    height: 394px;
+}
+.bodyview .item{
+    height: 200px;
+    position: relative;
+}
+.bodyview .item p {
+    width: 290px;
+    background: #F58220;
+    padding: 5px 10px;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 29px;
+    position: absolute;
+    bottom: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -25,7 +25,7 @@ function myEventHandler(event){
             window.location = '<?php echo $this->request->createLink()?>';
             break;
     }
-    if(localStorage.getItem('roomid') == null){
+    if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {
         $('#roomnumber').html(localStorage.getItem('roomnumber'))
