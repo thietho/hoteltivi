@@ -7,21 +7,40 @@ function myEventHandler(event) {
         switch (event.keyCode) {
             case 13:
                 if (service.popupshow == false) {
-                    var foodid = $('[index=' + service.index + ']').attr('foodid');
-                    var foodname = $('[index=' + service.index + ']').attr('foodname');
-                    var price = $('[index=' + service.index + ']').attr('price');
-                    $('#foodid').val(foodid);
-                    $('#foodname').val(foodname);
-                    $('#price').val(price);
-                    $('#food-order-popup').modal();
-                    $('#food-order-popup .modal-title').html(foodname);
-                    $('#food-order-popup .food-price span').html(common.formateNumber(price));
+                    if(service.index >= 0){
+                        var foodid = $('#main-region [index=' + service.index + ']').attr('foodid');
+                        var foodname = $('#main-region [index=' + service.index + ']').attr('foodname');
+                        var price = $('#main-region [index=' + service.index + ']').attr('price');
+                        $('#foodid').val(foodid);
+                        $('#foodname').val(foodname);
+                        $('#price').val(price);
+                        $('#food-order-popup').modal();
+                        $('#food-order-popup .modal-title').html(foodname);
+                        $('#food-order-popup .food-price span').html(common.formateNumber(price));
+                    }else {
+                        FoodOrder.openBasket();
+                    }
                 }else {
-                    var foodid = $('#foodid').val();
-                    var foodname = $('#foodname').val();
-                    var price = $('#price').val();
-                    var quantity = $('.quantity').val();
-                    FoodOrder.add(foodid,foodname,price,quantity);
+                    if(FoodOrder.basketOpen == false){
+                        var foodid = $('#foodid').val();
+                        var foodname = $('#foodname').val();
+                        var price = $('#price').val();
+                        var quantity = $('.quantity').val();
+                        FoodOrder.add(foodid,foodname,price,quantity);
+                    }else {
+                        var action = $('#basket-popup .serviceselect').attr('action')!=undefined?$('#basket-popup .serviceselect').attr('action'):'';
+                        switch (action) {
+                            case 'back':
+                                FoodOrder.updateOrder();
+                                break;
+                            case 'emptybasket':
+                                FoodOrder.emptyOrder();
+                                break;
+                            case 'ordernow':
+                                FoodOrder.orderFood();
+                                break;
+                        }
+                    }
                 }
                 break;
             case 38: //Move top
@@ -64,6 +83,10 @@ function myEventHandler(event) {
                     if (service.index - service.rows >= 0) {
                         service.index -= service.rows;
                         service.selectService();
+                    }else {
+                        $('.item img').removeClass('serviceselect');
+                        $('#btnBasket').addClass('serviceselect');
+                        service.index = -2;
                     }
                 }
                 if(FoodOrder.basketOpen){
@@ -71,6 +94,9 @@ function myEventHandler(event) {
                 }
                 break;
             case 39: //Move right
+                if(service.index == -2){
+                    $('#btnBasket').removeClass('serviceselect');
+                }
                 if (service.popupshow == false) {
                     service.index += service.rows;
                     if (service.index > service.max) {
@@ -101,10 +127,11 @@ function myEventHandler(event) {
                     FoodOrder.selectReduce();
                 }
                 break;
-            case 66:
-            case 403:
+            case 66://b
+            case 403://
                 FoodOrder.openBasket();
                 break;
+            case 27://esc
             case 8://return
                 if(FoodOrder.basketOpen == true) {
                     FoodOrder.updateOrder();
@@ -114,6 +141,7 @@ function myEventHandler(event) {
                 if(FoodOrder.basketOpen == true){
                     FoodOrder.emptyOrder();
                 }
+                break;
             case 79://o
                 if(FoodOrder.basketOpen == true){
                     FoodOrder.orderFood();
@@ -176,7 +204,7 @@ service = {
         console.log("minindex: " + this.minindex)
         console.log("maxindex: " + this.maxindex)
         $('.item img').removeClass('serviceselect');
-        $('[index=' + service.index + '] img').addClass('serviceselect');
+        $('#main-region [index=' + service.index + '] img').addClass('serviceselect');
     }
 }
 
@@ -184,7 +212,7 @@ $(document).ready(function () {
     $('.food-menu-carousel').on('afterChange', function (event, slick, currentSlide) {
         service.lockui = false;
     });
-    //$('[index=' + service.index + '] img').addClass('serviceselect');
+    $('#main-region [index=' + service.index + '] img').addClass('serviceselect');
     if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {

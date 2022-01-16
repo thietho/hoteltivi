@@ -6,10 +6,29 @@ function myEventHandler(event) {
     if (service.lockui == false) {
         switch (event.keyCode) {
             case 13:
-                var sitemapid = $('[index=' + service.index + ']').attr('sitemapid');
-                console.log(sitemapid);
-                var url = HTTPSERVER + sitemapid + ".html";
-                window.location = url;
+                if(FoodOrder.basketOpen){
+                    var action = $('#basket-popup .serviceselect').attr('action')!=undefined?$('#basket-popup .serviceselect').attr('action'):'';
+                    switch (action) {
+                        case 'back':
+                            FoodOrder.updateOrder();
+                            break;
+                        case 'emptybasket':
+                            FoodOrder.emptyOrder();
+                            break;
+                        case 'ordernow':
+                            FoodOrder.orderFood();
+                            break;
+                    }
+                }else {
+                    if(service.index >= 0){
+                        var sitemapid = $('[index=' + service.index + ']').attr('sitemapid');
+                        console.log(sitemapid);
+                        var url = HTTPSERVER + sitemapid + ".html";
+                        window.location = url;
+                    }else {
+                        FoodOrder.openBasket();
+                    }
+                }
                 break;
             case 38: //Move top
                 if (service.popupshow == false) {
@@ -20,9 +39,6 @@ function myEventHandler(event) {
                 } else {
                     if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveUp();
-                    }
-                    if(service.popupshow){
-                        FoodOrder.selectIncre();
                     }
                 }
 
@@ -37,9 +53,6 @@ function myEventHandler(event) {
                     if (FoodOrder.basketOpen == true) {
                         FoodOrder.selectMoveDown();
                     }
-                    if(service.popupshow){
-                        FoodOrder.selectReduce();
-                    }
                 }
 
                 break;
@@ -48,6 +61,10 @@ function myEventHandler(event) {
                     if (service.index - service.rows >= 0) {
                         service.index -= service.rows;
                         service.selectService();
+                    }else {
+                        $('.item img').removeClass('serviceselect');
+                        $('#btnBasket').addClass('serviceselect');
+                        service.index = -2;
                     }
                 }
                 if(FoodOrder.basketOpen){
@@ -55,7 +72,9 @@ function myEventHandler(event) {
                 }
                 break;
             case 39: //Move right
-                //$('.slick-next').click();
+                if(service.index == -2){
+                    $('#btnBasket').removeClass('serviceselect');
+                }
                 if (service.popupshow == false) {
                     service.index += service.rows;
                     if (service.index > service.max) {
@@ -151,14 +170,14 @@ service = {
         console.log("minindex: " + this.minindex)
         console.log("maxindex: " + this.maxindex)
         $('.item img').removeClass('serviceselect');
-        $('[index=' + service.index + '] img').addClass('serviceselect');
+        $('#main-region [index=' + service.index + '] img').addClass('serviceselect');
     }
 }
 $(document).ready(function () {
     $('.food-order-carousel').on('afterChange', function (event, slick, currentSlide) {
         service.lockui = false;
     });
-    $('[index=' + service.index + '] img').addClass('serviceselect');
+    $('#main-region [index=' + service.index + '] img').addClass('serviceselect');
     if (localStorage.getItem('roomnumber') == null) {
         window.location = HTTPSERVER;
     } else {

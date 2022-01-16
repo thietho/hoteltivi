@@ -47,7 +47,7 @@ FoodOrder = {
         $.getJSON(HTTPSERVER+'FoodOrder/clear.api',function (result) {
             console.log(result);
             FoodOrder.load();
-
+            common.endLoading();
         });
     },
     load:function () {
@@ -89,20 +89,41 @@ FoodOrder = {
     },
     openBasket:function () {
         $('#basket-popup').modal();
+        $('#basket-popup .modal-title').removeClass('serviceselect');
     },
     selectMoveUp:function () {
-        if(this.selectindex > 0){
+        var countrow = $('#listfoodorderpopup').children().length;
+        if(this.selectindex > countrow){
             this.selectindex--;
             $('#listfoodorderpopup').children().removeClass('selectrow');
-            $($('#listfoodorderpopup').children()[ this.selectindex]).addClass('selectrow');
+            $('#basket-popup .modal-title').removeClass('serviceselect');
+            $('#basket-popup [index='+(this.selectindex - countrow)+']').addClass('serviceselect');
+        }else {
+            if(this.selectindex > 0){
+                $('#basket-popup .modal-title').removeClass('serviceselect');
+                this.selectindex--;
+                $('#listfoodorderpopup').children().removeClass('selectrow');
+                $($('#listfoodorderpopup').children()[ this.selectindex]).addClass('selectrow');
+            }
         }
+        console.log(this.selectindex);
     },
     selectMoveDown:function () {
-        if(this.selectindex < $('#listfoodorderpopup').children().length-1){
+        var countrow = $('#listfoodorderpopup').children().length;
+        if(this.selectindex < countrow-1){
             this.selectindex++;
             $('#listfoodorderpopup').children().removeClass('selectrow');
             $($('#listfoodorderpopup').children()[ this.selectindex]).addClass('selectrow');
+        }else {
+            if(this.selectindex < countrow+3-1){
+                this.selectindex++;
+                $('#listfoodorderpopup').children().removeClass('selectrow');
+                $('#basket-popup .modal-title').removeClass('serviceselect');
+                $('#basket-popup [index='+(this.selectindex - countrow)+']').addClass('serviceselect');
+            }
+
         }
+        console.log(this.selectindex);
     },
     selectIncre:function () {
         var qty = Number($('.selectrow .basket').val());
@@ -162,16 +183,16 @@ $(document).ready(function () {
         $('.content .name').html(customer.Name)
     })
 });
-MainRegion ={
-    indexcurrent:0
-}
-CartRegion ={
-    indexcurrent:0
-}
-CartPopupRegion ={
-    indexcurrent:0
-}
-RegionSelect = {
-    regioncurrent:'main-region',
-    indexcurrent:0,
-};
+// MainRegion ={
+//     indexcurrent:0
+// }
+// CartRegion ={
+//     indexcurrent:0
+// }
+// CartPopupRegion ={
+//     indexcurrent:0
+// }
+// RegionSelect = {
+//     regioncurrent:'main-region',
+//     indexcurrent:0,
+// };

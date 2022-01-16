@@ -64,7 +64,12 @@ class FoodOrder extends Page
     public function clear()
     {
         $this->session->remove('foodorder');
-        //$this->response->jsonOutput(array('Cleared!'));
+        $result = array(
+            'statuscode' => 1,
+            'errors' => [],
+            'text' => ''
+        );
+        $this->response->jsonOutput($result);
     }
 
     public function saveOrder()
@@ -111,8 +116,8 @@ class FoodOrder extends Page
                 'content' => $content,
             );
             $result = $ctrNotification->save($notification_insert);
-            $this->sendToTelegram("<a href='".HTTPSERVER."?route=Core/Notification/View&id=".$result['data']['id']."'>".$notification_insert['title']."</a>");
-            $this->clear();
+            $this->sendToTelegram("<a href='".CORESYSTEM."?route=Core/Notification/View&id=".$result['data']['id']."'>".$notification_insert['title']."</a>");
+            $this->session->remove('foodorder');
         } else {
             $result = array(
                 'statuscode' => 0,
@@ -139,16 +144,12 @@ class FoodOrder extends Page
 
     public function sendToTelegram($content)
     {
-
-
         $curl = curl_init();
         $data = [
             "chat_id" => -1001690529871,
             "text" => $content,
             "parse_mode" => "html"
         ];
-
-
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.telegram.org/bot5014929892:AAG2a5P3ww78MN0U8fJQ9hYDiIW40XDP124/sendMessage',
             CURLOPT_RETURNTRANSFER => true,
