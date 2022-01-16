@@ -21,7 +21,7 @@ function myEventHandler(event) {
                     }
                 }else {
                     if(service.index >= 0){
-                        var sitemapid = $('[index=' + service.index + ']').attr('sitemapid');
+                        var sitemapid = $('#main-region [index=' + service.index + ']').attr('sitemapid');
                         console.log(sitemapid);
                         var url = HTTPSERVER + sitemapid + ".html";
                         window.location = url;

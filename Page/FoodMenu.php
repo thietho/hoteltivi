@@ -8,7 +8,7 @@ class FoodMenu extends Page
         //Body
         $this->setData('cart',$this->section->loadViewPage('Cart/cart.tpl'));
         $ctrFood = new \Lib\Food($this->api);
-        $condition = "&sitemapid=containsin_70";
+        $condition = "&sitemapid=containsin_".$this->data['sitemap']['id'];
         $result = $ctrFood->getGetList($condition);
         $foods = $result['data'];
 

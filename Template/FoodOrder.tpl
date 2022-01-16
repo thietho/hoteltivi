@@ -11,7 +11,7 @@
                     <div class="food-order-carousel">
                         <?php foreach($sitemaps as $key => $sitemap){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>" sitemapid="<?php echo $sitemap['sitemapid']?>">
-                            <a href="#" data-toggle="modal" data-target="#food-order-popup">
+                            <a href="<?php echo $this->request->createLink($sitemap['sitemapid'])?>">
                                 <p><?php echo $sitemap['sitemapname']?></p>
                                 <img src="<?php echo $sitemap['image']?>">
                             </a>
