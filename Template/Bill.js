@@ -25,9 +25,27 @@ function myEventHandler(event){
             window.location = '<?php echo $this->request->createLink()?>';
             break;
     }
+}
+$(document).ready(function () {
     if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {
-        $('#roomnumber').html(localStorage.getItem('roomnumber'))
+        $('#roomnumber').html(localStorage.getItem('roomnumber'));
+
+        $.getJSON(HTTPSERVER+'Bill/getServiceInfo.api?roomnumber='+localStorage.getItem('roomnumber'),function (result) {
+            console.log(result);
+            var str = '';
+            if(result.Status == "success"){
+                var listitem = result.Data;
+                for (var i in listitem) {
+                    str += '<tr>' +
+                        '   <td class="bill-date">'+listitem[i].Date+'<br><span>'+listitem[i].Time+'</span></td>' +
+                        '   <td class="bill-service">'+listitem[i].Name+'</td>' +
+                        '   <td class="bill-price">'+listitem[i].Total+' vnđ</td>' +
+                        '</tr>'
+                }
+                $('#listitems').html(str);
+            }
+        });
     }
-}
+})
