@@ -57,6 +57,10 @@ $(document).ready(function () {
     $('#videopopup #btnSkip').click(function () {
         TiviVideoPlayer.closePopup();
     });
+
+    TiviHistoryUrl.load();
+    TiviHistoryUrl.add(window.location.href);
+    console.log(TiviHistoryUrl.data);
 });
 
 $(document).ready(function () {
@@ -239,8 +243,8 @@ channel = {
         console.log("offset: " + this.offset)
         console.log("minindex: " + this.minindex)
         console.log("maxindex: " + this.maxindex)
-        $('.item img').removeClass('channelselect');
-        $('[index=' + channel.index + '] img').addClass('channelselect');
+        $('.main-content .item img').removeClass('channelselect');
+        $('.main-content [index=' + channel.index + '] img').addClass('channelselect');
     },
     playIPChannel: function (ip, port) {
         $('body').hide();
@@ -365,5 +369,29 @@ channel = {
         } else {
             console.log("[dawn7dew] channel.media is null");
         }
+    }
+}
+TiviHistoryUrl = {
+    data:null,
+    load:function (){
+        if(sessionStorage.getItem('history')!=null){
+            this.data = JSON.parse(sessionStorage.getItem('history'));
+        }else {
+            this.data = new Array();
+        }
+
+    },
+    add:function (url) {
+        if(url != this.data[this.data.length - 1]){
+            this.data.push(url);
+            sessionStorage.setItem('history',JSON.stringify(this.data));
+        }
+    },
+    clear:function () {
+        sessionStorage.removeItem('history');
+        this.data = new Array();
+    },
+    goBack:function () {
+        
     }
 }

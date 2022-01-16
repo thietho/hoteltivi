@@ -39,7 +39,6 @@ $(document).ready(function () {
         TiviVideoPlayer.openPopup($('#videointro').html());
         sessionStorage.setItem('hasPlayIntro',true);
     }
-
 });
 window.addEventListener("keyup", myEventHandler);
 sitemaps = JSON.parse('<?php echo json_encode($sitemaps)?>');

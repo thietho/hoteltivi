@@ -34,6 +34,9 @@ function myEventHandler(event) {
                 if (channel.index - channel.rows >= 0) {
                     channel.index -= channel.rows;
                     channel.selectChannel();
+                }else {
+                    channel.index = -3;
+                    $('.main-content .item img').removeClass('channelselect');
                 }
                 break;
             case 39: //Move right
