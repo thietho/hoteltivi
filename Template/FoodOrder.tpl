@@ -2,12 +2,11 @@
     <!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->
     <div class="container-fluid">
         <?php echo $header?>
-
         <div class="row">
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-4 px-0" id="cart-region">
                 <?php echo $cart?>
             </div>
-            <div class="col-lg-8 main-content">
+            <div class="col-lg-8 main-content" id="main-region">
                 <div class="content-wrapper">
                     <div class="food-order-carousel">
                         <?php foreach($sitemaps as $key => $sitemap){ ?>
@@ -72,48 +71,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="food-order-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title food-name">Mỳ xào giòn</h5>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-lg-12">
-                                <table width="100%" class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="food-qlt">
-                                            <div class="form-group">
-                                                <input id="after" class="form-control" type="number" value="1" min="1" max="10" />
-                                            </div>
-                                        </td>
-                                        <td class="food-price"><span>350.000 VNĐ</span></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col-lg-12">
-                                <p class="food-des">Mô tả món ăn...</p>
-                            </div>
-                            <div class="form-group form-inline col-lg-12">
-                                <label class="note" for="">Ghi chú</label>
-                                <textarea class="form-control" rows="5"></textarea>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-ok">OK</button>
-                    <button type="button" class="btn btn-cancel" data-dismiss="modal">CANCEL</button>
                 </div>
             </div>
         </div>

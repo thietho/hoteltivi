@@ -162,3 +162,16 @@ $(document).ready(function () {
         $('.content .name').html(customer.Name)
     })
 });
+MainRegion ={
+    indexcurrent:0
+}
+CartRegion ={
+    indexcurrent:0
+}
+CartPopupRegion ={
+    indexcurrent:0
+}
+RegionSelect = {
+    regioncurrent:'main-region',
+    indexcurrent:0,
+};

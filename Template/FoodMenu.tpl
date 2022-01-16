@@ -1,14 +1,14 @@
 <section class="main-wrapper food-order">
-    <!--<!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->-->
+    <!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->
     <div class="container-fluid">
         <?php echo $header?>
 
         <div class="row">
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-4 px-0" id="cart-region">
                 <?php echo $cart?>
 
             </div>
-            <div class="col-lg-8 main-content">
+            <div class="col-lg-8 main-content" id="main-region">
                 <div class="content-wrapper">
                     <div class="food-menu-carousel">
                         <?php foreach($foods as $key => $food){ ?>

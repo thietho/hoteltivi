@@ -15,7 +15,7 @@
             <p class="total">Total: <span></span></p>
         </div>
         <div class="col-lg-6">
-            <div class="basket-wrapper" id="btnBasket">
+            <div class="basket-wrapper" id="btnBasket" index="0">
                 <div id="countitem"></div>
                 <img class="basket-icon" src="<?php echo HTTPSERVER?>img/cart-icon.png"/>
             </div>

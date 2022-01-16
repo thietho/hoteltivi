@@ -125,6 +125,10 @@ function myEventHandler(event) {
             case 602: //Portal
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
+            case 9: //Tab
+            case 1001: //Exit
+
+                break;
         }
     }
 
@@ -180,7 +184,7 @@ $(document).ready(function () {
     $('.food-menu-carousel').on('afterChange', function (event, slick, currentSlide) {
         service.lockui = false;
     });
-    $('[index=' + service.index + '] img').addClass('serviceselect');
+    //$('[index=' + service.index + '] img').addClass('serviceselect');
     if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {

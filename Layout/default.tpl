@@ -121,15 +121,15 @@
             </div>
             <div class="modal-footer">
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name  mr-2"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> level
+                    <h5 class="modal-title food-name  mr-2" index="0"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> level
                         <span>back</span></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> empty
+                    <h5 class="modal-title food-name" index="1"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> empty
                         <span>basket</span></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name ml-2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> order
+                    <h5 class="modal-title food-name ml-2" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> order
                         <span>now</span></h5>
                 </div>
             </div>
