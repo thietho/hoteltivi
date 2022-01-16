@@ -99,3 +99,6 @@ header nav{
     font-weight: bold;
     text-transform: uppercase;
 }
+.regioncurrent{
+    border: #f58220 solid 2px;
+}

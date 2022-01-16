@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
-                    <div class="bill-content">
+                    <div class="bill-content regioncurrent">
                         <table class="table">
                             <thead>
                             <tr class="head">

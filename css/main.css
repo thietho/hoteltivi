@@ -691,6 +691,7 @@ section.list-channel {
     height: 360px;
     position: relative;
     padding: 15px;
+    overflow: auto;
 }
 
 .sidebar-carousel .item {

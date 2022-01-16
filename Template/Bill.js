@@ -7,16 +7,18 @@ function myEventHandler(event){
 
             break;
         case 38: //Move top
-
+            $('.regioncurrent').animate({scrollTop:$('.regioncurrent').scrollTop()-100}, '100');
             break;
         case 40: //Move down
-
+            $('.regioncurrent').animate({scrollTop:$('.regioncurrent').scrollTop()+100}, '100');
             break;
         case 37: //Move left
-
+            $('.bill-content').removeClass('regioncurrent');
+            $('.main-sidebar').addClass('regioncurrent');
             break;
         case 39: //Move right
-
+            $('.bill-content').addClass('regioncurrent');
+            $('.main-sidebar').removeClass('regioncurrent');
             break;
         case 461: //Back
             window.history.back();
@@ -26,6 +28,7 @@ function myEventHandler(event){
             break;
     }
 }
+
 $(document).ready(function () {
     if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
@@ -46,6 +49,14 @@ $(document).ready(function () {
                         '</tr>'
                     sum += common.stringtoNumber(listitem[i].Total);
                 }
+                for (var i in listitem) {
+                    str += '<tr>' +
+                        '   <td class="bill-date">'+listitem[i].Date+'<br><span>'+listitem[i].Time+'</span></td>' +
+                        '   <td class="bill-service">'+listitem[i].Name+'</td>' +
+                        '   <td class="bill-price">'+listitem[i].Total+' vnđ</td>' +
+                        '</tr>'
+                    sum += common.stringtoNumber(listitem[i].Total);
+                }
                 $('#listitems').html(str);
                 $('#billtotal').html(common.formateNumber(sum));
             }
@@ -56,7 +67,40 @@ $(document).ready(function () {
             for (var i in result) {
                 console.log(i);
                 var sum = 0;
-                for (const j in result[i]) {
+                for (var j in result[i]) {
+                    sum+= common.stringtoNumber(result[i][j].Total);
+                }
+                str += '<tr>' +
+                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
+                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
+                    '</tr>';
+            }
+            for (var i in result) {
+                console.log(i);
+                var sum = 0;
+                for (var j in result[i]) {
+                    sum+= common.stringtoNumber(result[i][j].Total);
+                }
+                str += '<tr>' +
+                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
+                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
+                    '</tr>';
+            }
+            for (var i in result) {
+                console.log(i);
+                var sum = 0;
+                for (var j in result[i]) {
+                    sum+= common.stringtoNumber(result[i][j].Total);
+                }
+                str += '<tr>' +
+                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
+                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
+                    '</tr>';
+            }
+            for (var i in result) {
+                console.log(i);
+                var sum = 0;
+                for (var j in result[i]) {
                     sum+= common.stringtoNumber(result[i][j].Total);
                 }
                 str += '<tr>' +
