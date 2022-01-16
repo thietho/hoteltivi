@@ -14,6 +14,9 @@ function myEventHandler(event){
                             var scr = $('.serviceselect').parent().attr('video')
                             TiviVideoPlayer.openPopup(scr);
                             break;
+                        case 'Service':
+                            $('#room-service-popup').modal();
+                            break;
                         default:
                             window.location = $('.serviceselect').parent().attr('href');
                     }

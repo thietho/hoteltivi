@@ -143,5 +143,34 @@
     <video id="videoplayer" muted onended="TiviVideoPlayer.closePopup()"></video>
     <button type="button" id="btnSkip">Press Ok to Skip</button>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="room-service-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">call <span>taxi</span></h5>
+            </div>
+            <div class="modal-body">
+                <p>Please help us book taxi:</p>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group form-inline col-lg-12">
+                            <label class="title" for="">Number of seats</label>
+                            <input type="number" class="form-control number-seat qlt" id="" placeholder="">
+                            <label class="title" for="">Qlt</label>
+                            <input type="number" class="form-control number-seat qlt" id="" placeholder="">
+                            <label class="title" for="">At time</label>
+                            <input type="datetime-local" class="form-control datetime at-time" id="" placeholder="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-ok">OK</button>
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
