@@ -44,43 +44,7 @@
                                 <th class="bill-price" scope="col">price (vnđ)</th>
                             </tr>
                             </thead>
-                            <tbody id="listitems">
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            <tr>
-                                <td class="bill-date">15.10.2021<br><span>09:45</span></td>
-                                <td class="bill-service">Thuê xe máy<br><span>02 chiếc</span></td>
-                                <td class="bill-price">1.500.000 vnđ</td>
-                            </tr>
-                            </tbody>
+                            <tbody id="listitems"></tbody>
                         </table>
                     </div>
 

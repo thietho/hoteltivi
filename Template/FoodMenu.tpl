@@ -96,7 +96,7 @@
                                 <table width="100%" class="table">
                                     <tbody>
                                     <tr>
-                                        <td class=""></td>
+                                        <td class="text-right">Số lượng: </td>
                                         <td class="food-qlt">
                                             <div class="form-group">
                                                 <input id="after" class="form-control quantity" type="number" value="1" min="1"/>
@@ -109,13 +109,6 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="col-lg-12">
-                                <p class="food-des">Mô tả món ăn...</p>
-                            </div>
-                            <div class="form-group form-inline col-lg-12">
-                                <label class="note" for="">Ghi chú</label>
-                                <textarea class="form-control" rows="5"></textarea>
                             </div>
                         </div>
                     </form>

@@ -51,9 +51,6 @@
 <script type="text/javascript" src="<?php echo HTTPSERVER?>slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo HTTPSERVER?>js/main.js"></script>
 <script src="<?php echo HTTPSERVER?>js/toastr.min.js"></script>
-<script type="text/javascript">
-    <?php echo $this->loadPageResoure($sitemap['sitemaptype'].'.js')?>
-</script>
 <!-- Basket -->
 <div class="modal fade" id="basket-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -172,5 +169,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    <?php echo $this->loadPageResoure($sitemap['sitemaptype'].'.js')?>
+</script>
 </body>
 </html>

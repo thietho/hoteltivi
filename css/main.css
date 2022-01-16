@@ -1203,6 +1203,7 @@ section.list-channel {
 #food-order-popup table td {
     border-bottom: 1px solid #F58220 !important;
     font-weight: bold;
+    font-size: 1.6em;
 }
 
 #food-order-popup .food-qlt .form-group {

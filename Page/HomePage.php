@@ -15,6 +15,7 @@ class HomePage extends Page
         }
         $random = rand(0,count($listvideo)-1);
         $this->setData('videointro',$listvideo[$random]);
+        //$this->setData('videointro',$listvideo[0]);
         $this->setData('sitemaps',$sitemaps);
         $this->setTemplate('HomePage.tpl');
         $this->setLayout('default.tpl');

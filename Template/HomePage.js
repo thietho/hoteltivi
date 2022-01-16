@@ -15,12 +15,14 @@ $(document).ready(function () {
         "onSuccess": function (s) {
             var_room_info = s.value;
             localStorage.setItem('roomnumber', var_room_info);
+            localStorage.setItem('roomnumber', 'V0023');
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
         "onFailure": function (f) {
             localStorage.setItem('roomnumber', 'V0023');
         }
     });
+
     $('.list-item-sub').removeClass('slick-current');
     // if(localStorage.getItem('roomid') == null){
     //     mainmenu.opensettingAction();
@@ -28,12 +30,16 @@ $(document).ready(function () {
     //     $('#roomnumber').html(localStorage.getItem('roomnumber'))
     // }
     //channel.stopChannel();
-    channel.playMediaSilent();
+    //channel.playMediaSilent();
     mainmenu.getWeather()
     setInterval(function () {
         mainmenu.getWeather();
     }, 30000);
-    TiviVideoPlayer.openPopup($('#videointro').html());
+    if(sessionStorage.getItem('hasPlayIntro') == null){
+        TiviVideoPlayer.openPopup($('#videointro').html());
+        sessionStorage.setItem('hasPlayIntro',true);
+    }
+
 });
 window.addEventListener("keyup", myEventHandler);
 sitemaps = JSON.parse('<?php echo json_encode($sitemaps)?>');

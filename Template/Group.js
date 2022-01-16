@@ -21,6 +21,9 @@ function myEventHandler(event){
                             window.location = $('.serviceselect').parent().attr('href');
                     }
                 }
+                if(service.popupshow){
+                    $('#room-service-popup').modal('hide');
+                }
                 break;
             case 38: //Move top
 

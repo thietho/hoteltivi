@@ -335,7 +335,6 @@ channel = {
         });
     },
     stopMedia: function () {
-
         if (channel.media != null) {
             channel.media.stop({
                 "onSuccess": function () {
