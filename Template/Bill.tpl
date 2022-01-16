@@ -12,25 +12,12 @@
                             <th class="bill-price sidebar" scope="col">mount</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td class="bill-date sidebar"><span>15.10.2021</span></td>
-                            <td class="bill-price sidebar"><span>1.500.000 vnđ</span></td>
-                        </tr>
-                        <tr>
-                            <td class="bill-date sidebar"><span>15.10.2021</span></td>
-                            <td class="bill-price sidebar"><span>1.500.000 vnđ</span></td>
-                        </tr>
-                        <tr>
-                            <td class="bill-date sidebar"><span>15.10.2021</span></td>
-                            <td class="bill-price sidebar"><span>1.500.000 vnđ</span></td>
-                        </tr>
-                        </tbody>
+                        <tbody id="listdate"></tbody>
                     </table>
                 </div>
                 <div class="col-lg-12 bill-total px-0">
                     <p class="price-vat">Prices are subject to 10% service charge and 10% government VAT</p>
-                    <p class="price-total">YOUR TOTAL: 5.000.000 VNĐ</p>
+                    <p class="price-total">YOUR TOTAL: <span id="billtotal"></span> VNĐ</p>
                 </div>
             </div>
             <div class="col-lg-8 main-content">
