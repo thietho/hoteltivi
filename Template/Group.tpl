@@ -6,7 +6,7 @@
         <div class="row bodyview">
             <?php foreach($sitemaps as $key => $sitemap){ ?>
             <div class="item col-lg-4" index="<?php echo $key?>">
-                <a href="<?php echo $this->request->createLink($sitemap['sitemapid'])?>">
+                <a href="<?php echo $this->request->createLink($sitemap['sitemapid'])?>" pagetype="<?php echo $sitemap['sitemaptype']?>" video="<?php echo $sitemap['video']?>">
                     <p><?php echo $sitemap['sitemapname']?></p>
                     <img src="<?php echo $sitemap['image']?>">
                 </a>

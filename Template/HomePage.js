@@ -33,6 +33,7 @@ $(document).ready(function () {
     setInterval(function () {
         mainmenu.getWeather();
     }, 30000);
+    TiviVideoPlayer.openPopup($('#videointro').html());
 });
 window.addEventListener("keyup", myEventHandler);
 sitemaps = JSON.parse('<?php echo json_encode($sitemaps)?>');
@@ -127,31 +128,36 @@ function myEventHandler(event) {
     $('#log').html(event.keyCode);
     switch (event.keyCode) {
         case 13:
-            if (!mainmenu.opensetting) {
-                console.log(mainmenu.current);
-                console.log(sitemaps[mainmenu.current + 1].sitemapid);
-                if ($('.menucurent').attr('appid') != undefined) {
-                    console.log($('.menucurent').attr('appid'))
-                    hcap.preloadedApplication.launchPreloadedApplication({
-                        "id": $('.menucurent').attr('appid'),
-
-                        "onSuccess": function () {
-                        },
-                        "onFailure": function (f) {
-                            console.log("onFailure : errorMessage = " + f.errorMessage);
-                        }
-                    });
-                } else {
-                    var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
-                    var url = HTTPSERVER + sitemapid + ".html";
-                    window.location = url;
-                }
-
+            if (TiviVideoPlayer.isplay) {
+                TiviVideoPlayer.closePopup();
             } else {
-                localStorage.setItem('roomid', $('.settingroom.selected').attr('roomitemid'));
-                localStorage.setItem('roomnumber', $('.settingroom.selected').attr('roomnumber'));
-                window.location.reload();
+                if (!mainmenu.opensetting) {
+                    console.log(mainmenu.current);
+                    console.log(sitemaps[mainmenu.current + 1].sitemapid);
+                    if ($('.menucurent').attr('appid') != undefined) {
+                        console.log($('.menucurent').attr('appid'))
+                        hcap.preloadedApplication.launchPreloadedApplication({
+                            "id": $('.menucurent').attr('appid'),
+
+                            "onSuccess": function () {
+                            },
+                            "onFailure": function (f) {
+                                console.log("onFailure : errorMessage = " + f.errorMessage);
+                            }
+                        });
+                    } else {
+                        var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
+                        var url = HTTPSERVER + sitemapid + ".html";
+                        window.location = url;
+                    }
+
+                } else {
+                    localStorage.setItem('roomid', $('.settingroom.selected').attr('roomitemid'));
+                    localStorage.setItem('roomnumber', $('.settingroom.selected').attr('roomnumber'));
+                    window.location.reload();
+                }
             }
+
 
             break;
         case 38: //Move top

@@ -54,6 +54,9 @@ $(document).ready(function () {
         prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
         nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
     });
+    $('#videopopup #btnSkip').click(function () {
+        TiviVideoPlayer.closePopup();
+    });
 });
 
 $(document).ready(function () {
@@ -108,9 +111,7 @@ $(document).ready(function () {
 
 
 (function ($) {
-
     $.fn.bootstrapNumber = function (options) {
-
         var settings = $.extend({
             upClass: 'up',
             downClass: 'down',
@@ -183,6 +184,31 @@ $("[name='checkbox2']").change(function () {
 
 $('#after').bootstrapNumber();
 $('.basket').bootstrapNumber();
+
+TiviVideoPlayer = {
+    vid:null,
+    isplay:false,
+    openPopup:function (url){
+        $('#videopopup').show();
+        console.log(url)
+        $('#videoplayer').attr('src',url);
+        //document.getElementById('videoplayer').play();
+        this.vid = document.getElementById('videoplayer')
+        this.vid.play();
+        this.isplay=true;
+        setTimeout(function () {
+            $('#btnSkip').show()
+        },5000)
+    },
+    closePopup:function () {
+        if($('#btnSkip').is(":visible")){
+            this.vid.pause();
+            this.vid.currentTime = 0;
+            $('#videopopup').hide();
+            this.isplay = false;
+        }
+    }
+}
 channel = {
     index: 0,
     iteminfram: 12,
@@ -193,7 +219,7 @@ channel = {
     max: $('.item').length - 1,
     lockui: false,
     popupshow: false,
-    playing:false,
+    playing: false,
     selectChannel: function () {
         if (this.index > this.maxindex - 1) {
             this.lockui = true;
@@ -249,8 +275,8 @@ channel = {
 
 
     },
-    media : null,
-    playMedia:function(srcVideo){
+    media: null,
+    playMedia: function (srcVideo) {
         $('body').hide();
         alert(srcVideo);
         console.log(srcVideo);
@@ -282,8 +308,8 @@ channel = {
             }
         });
     },
-    playMediaSilent:function () {
-        var srcVideo = HTTPSERVER +'img/keepsilent.mp4';
+    playMediaSilent: function () {
+        var srcVideo = HTTPSERVER + 'img/keepsilent.mp4';
         hcap.Media.startUp({
             "onSuccess": function () {
                 //log("onSuccess : startUp");
@@ -308,7 +334,7 @@ channel = {
             }
         });
     },
-    stopMedia:function () {
+    stopMedia: function () {
 
         if (channel.media != null) {
             channel.media.stop({

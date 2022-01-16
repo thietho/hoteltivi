@@ -139,5 +139,9 @@
         </div>
     </div>
 </div>
+<div id="videopopup">
+    <video id="videoplayer" muted onended="TiviVideoPlayer.closePopup()"></video>
+    <button type="button" id="btnSkip">Press Ok to Skip</button>
+</div>
 </body>
 </html>

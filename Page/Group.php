@@ -9,6 +9,7 @@ class Group extends Page
         $sitemaps = $this->sitemap->getChilds($this->data['sitemap']['id']);
         foreach ($sitemaps as &$sitemap){
             $sitemap['image'] = IMAGESERVER."fixsize-360x180/upload/cms_sitemap/".$sitemap['id']."/".$sitemap['image'];
+            $sitemap['video'] = !empty($sitemap['video'])?FILESERVER."upload/cms_sitemap/".$sitemap['id']."/".$sitemap['video']:'';
         }
         $this->setData('sitemaps',$sitemaps);
         //Body

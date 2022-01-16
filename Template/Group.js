@@ -5,7 +5,19 @@ function myEventHandler(event){
     if(service.lockui == false){
         switch (event.keyCode) {
             case 13:
-                window.location = $('.serviceselect').parent().attr('href');
+                if (TiviVideoPlayer.isplay) {
+                    TiviVideoPlayer.closePopup();
+                } else {
+                    var pagetype = $('.serviceselect').parent().attr('pagetype');
+                    switch (pagetype) {
+                        case 'Video':
+                            var scr = $('.serviceselect').parent().attr('video')
+                            TiviVideoPlayer.openPopup(scr);
+                            break;
+                        default:
+                            window.location = $('.serviceselect').parent().attr('href');
+                    }
+                }
                 break;
             case 38: //Move top
 
