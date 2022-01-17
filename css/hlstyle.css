@@ -65,6 +65,9 @@ header nav{
 .channelselect{
     border: #F58220 solid 2px;
 }
+.groupchannelselect{
+    background: #05577a !important;
+}
 .settingroom.selected{
     background: #f58220 !important;
 }

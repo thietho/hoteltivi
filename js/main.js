@@ -215,6 +215,7 @@ TiviVideoPlayer = {
 }
 channel = {
     index: 0,
+    groupindex:$('.groupchannelselect').index(),
     iteminfram: 12,
     offset: 0,
     rows: 3,

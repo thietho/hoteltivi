@@ -19,7 +19,7 @@ if($request->get('object') == ''){
     $api->checkCacheVersion();
     $cachefile = md5(json_encode($request->getDataGet())).'.tpl';
     $output = $cache->get($cachefile);
-    //$output = '';
+    $output = '';
     if(empty($output)){
         $sitemapid = $request->get('sitemapid')==''?'Home':$request->get('sitemapid');
 

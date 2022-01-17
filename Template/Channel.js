@@ -6,28 +6,48 @@ function myEventHandler(event) {
     if (channel.lockui == false) {
         switch (event.keyCode) {
             case 13:
-                var ip = $('[index='+channel.index+']').attr('ip');
-                var port = $('[index='+channel.index+']').attr('port');
-                console.log('ip: '+ip);
-                console.log('port: '+port);
-
-                if(port == 1){
-                    channel.playMedia(ip);
+                if(channel.index<0){
+                    window.location = $('.groupchannelselect').attr('href');
                 }else {
-                    channel.stopMedia();
-                    channel.playIPChannel(ip, port);
+                    var ip = $('[index='+channel.index+']').attr('ip');
+                    var port = $('[index='+channel.index+']').attr('port');
+                    console.log('ip: '+ip);
+                    console.log('port: '+port);
+
+                    if(port == 1){
+                        channel.playMedia(ip);
+                    }else {
+                        channel.stopMedia();
+                        channel.playIPChannel(ip, port);
+                    }
                 }
+
                 break;
             case 38: //Move top
-                if (channel.index - 1 >= 0) {
-                    channel.index -= 1;
-                    channel.selectChannel();
+                if(channel.index<0){
+                    if(channel.groupindex > 0){
+                        $('.list-group-channel').removeClass('groupchannelselect');
+                        $($('.list-group-channel')[--channel.groupindex]).addClass('groupchannelselect');
+                    }
+                }else {
+                    if (channel.index - 1 >= 0) {
+                        channel.index -= 1;
+                        channel.selectChannel();
+                    }
                 }
+
                 break;
             case 40: //Move down
-                if (channel.index < channel.max) {
-                    channel.index += 1;
-                    channel.selectChannel();
+                if(channel.index<0){
+                    if(channel.groupindex < $('.list-group-channel').length - 1){
+                        $('.list-group-channel').removeClass('groupchannelselect');
+                        $($('.list-group-channel')[++channel.groupindex]).addClass('groupchannelselect');
+                    }
+                }else {
+                    if (channel.index < channel.max) {
+                        channel.index += 1;
+                        channel.selectChannel();
+                    }
                 }
                 break;
             case 37: //Move left
@@ -37,6 +57,7 @@ function myEventHandler(event) {
                 }else {
                     channel.index = -3;
                     $('.main-content .item img').removeClass('channelselect');
+                    $($('.list-group-channel')[channel.groupindex]).addClass('groupchannelselect');
                 }
                 break;
             case 39: //Move right
