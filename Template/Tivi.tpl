@@ -1,6 +1,7 @@
 <style>
     .slick-current{
-        border: 6px solid #F58220 !important;
+        outline: #F58220 solid 6px!important;
+        outline-offset: -7px!important;
     }
 </style>
 <section class="main-wrapper info-sunset">

@@ -325,7 +325,7 @@ body {
     content: " ";
     position: absolute;
     height: 2px;
-    top: 72px;
+    top: 35px;
     width: 100%;
     background-color: #f58220;
 }
@@ -333,6 +333,7 @@ body {
 .welcome {
     position: relative;
     margin-left: 175px;
+    top: -34px;
 }
 
 .welcome .logo, .welcome .content {
@@ -364,7 +365,7 @@ body {
 .welcome .content .des {
     font-family: 'Bonheur Royale', cursive;
     font-size: 1.5em;
-    line-height: 27px;
+    line-height: 10px;
 }
 
 .welcome .content .des span {
@@ -688,10 +689,14 @@ section.list-channel {
 
 .main-sidebar {
     padding: 0;
-    height: 360px;
+    height: 500px;
     position: relative;
-    padding: 15px;
-    overflow: auto;
+    /*padding: 15px;*/
+    /*overflow: auto;*/
+}
+
+.main-sidebar .sidebar-carousel .slick-list{
+    height: 500px!important;
 }
 
 .sidebar-carousel .item {
@@ -714,6 +719,7 @@ section.list-channel {
 
 .sidebar-carousel .item img {
     width: 100%;
+    height: 165px;
 }
 
 .sidebar-carousel .slick-arrow {
@@ -1354,4 +1360,7 @@ section.list-channel {
     bottom: 100px;
     right: 100px;
     display: none;
+}
+.slick-slider .slick-track{
+    float: left;
 }
