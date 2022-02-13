@@ -57,33 +57,37 @@ function myEventHandler(event) {
 
                 break;
             case 37: //Move left
-                if (service.popupshow == false) {
-                    if (service.index - service.rows >= 0) {
-                        service.index -= service.rows;
-                        service.selectService();
-                    }else {
-                        $('.item img').removeClass('serviceselect');
-                        $('#btnBasket').addClass('serviceselect');
-                        service.index = -2;
-                    }
-                }
+
                 if(FoodOrder.basketOpen){
                     FoodOrder.selectReduce();
+                }else {
+                    if (service.popupshow == false) {
+                        if (service.index - service.rows >= 0) {
+                            service.index -= service.rows;
+                            service.selectService();
+                        }else {
+                            $('.item img').removeClass('serviceselect');
+                            $('#btnBasket').addClass('serviceselect');
+                            service.index = -2;
+                        }
+                    }
                 }
                 break;
             case 39: //Move right
-                if(service.index == -2){
-                    $('#btnBasket').removeClass('serviceselect');
-                }
-                if (service.popupshow == false) {
-                    service.index += service.rows;
-                    if (service.index > service.max) {
-                        service.index = service.max;
-                    }
-                    service.selectService();
-                }
+
                 if(FoodOrder.basketOpen){
                     FoodOrder.selectIncre();
+                }else {
+                    if(service.index == -2){
+                        $('#btnBasket').removeClass('serviceselect');
+                    }
+                    if (service.popupshow == false) {
+                        service.index += service.rows;
+                        if (service.index > service.max) {
+                            service.index = service.max;
+                        }
+                        service.selectService();
+                    }
                 }
                 break;
             case 107://+
@@ -117,7 +121,11 @@ function myEventHandler(event) {
                 break;
             case 461: //Back
             case 8: //Back
-                window.history.back();
+                if(FoodOrder.basketOpen == false){
+                    window.history.back();
+                }else {
+                    FoodOrder.updateOrder();
+                }
                 break;
             case 602: //Portal
             case 80: //Portal

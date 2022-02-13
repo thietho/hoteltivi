@@ -126,13 +126,21 @@ FoodOrder = {
         console.log(this.selectindex);
     },
     selectIncre:function () {
-        var qty = Number($('.selectrow .basket').val());
-        $('.selectrow .basket').val(qty+1);
+        if($('.selectrow .basket').length){
+            var qty = Number($('.selectrow .basket').val());
+            $('.selectrow .basket').val(qty+1);
+        }else {
+            this.selectMoveDown();
+        }
     },
     selectReduce:function () {
-        var qty = Number($('.selectrow .basket').val());
-        if(qty>0){
-            $('.selectrow .basket').val(qty-1);
+        if($('.selectrow .basket').length){
+            var qty = Number($('.selectrow .basket').val());
+            if(qty>0){
+                $('.selectrow .basket').val(qty-1);
+            }
+        }else {
+            this.selectMoveUp();
         }
     },
     orderFood:function () {
