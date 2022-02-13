@@ -52,7 +52,7 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span>smart</span></p>
+                                            <p>press <span>PORTAL</span></p>
                                             <p>to close page</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
