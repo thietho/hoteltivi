@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-lg-4 sub-menu-title">
         <div class="text-wrapper">
-            <p class="top">info</p>
-            <p class="bottom">sunset sanato</p>
+            <p class="bottom"><?php echo $sitemap['sitemapname']?></p>
         </div>
     </div>
     <div class="col-lg-6 sub-menu-breadcrumb">
@@ -12,7 +11,7 @@
                 <p id="roomnumber">room 198</p>
             </div>
             <div class="bottom">
-                <p>Home <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
+                <p>Trang chủ <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
             </div>
         </div>
     </div>

@@ -32,11 +32,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p>to level up</p>
+                                            <p>Nhấn <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
+                                            <p>trở lại</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>level <span>back</span></p>
+                                            <p>Trở <span>lại</span></p>
                                         </div>
                                     </div>
                                 </a>
@@ -47,11 +47,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span>PORTAL</span></p>
-                                            <p>to close page</p>
+                                            <p>Nhấn <span>PORTAL</span></p>
+                                            <p>về trang chủ</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>the <span>menu</span></p>
+                                            <p>Trang <span>chủ</span></p>
                                         </div>
                                     </div>
                                 </a>

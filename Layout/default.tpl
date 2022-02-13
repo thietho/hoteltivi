@@ -138,7 +138,7 @@
 </div>
 <div id="videopopup">
     <video id="videoplayer" muted onended="TiviVideoPlayer.closePopup()"></video>
-    <button type="button" id="btnSkip">Press Ok to Skip</button>
+    <button type="button" id="btnSkip">Nhấn Ok to Skip</button>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="room-service-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">

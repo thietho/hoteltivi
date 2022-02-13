@@ -23,11 +23,14 @@
                         <img src="<?php echo IMAGES?>home-logo.png"/>
                     </div>
                     <div class="content">
-                        <h1 class="title">Welcome</h1>
+                        <h1 class="title">Xin chào</h1>
                         <p class="name">Mr. Leo</p>
-                        <p class="des">To your hotel room <span id="roomnumber">198</span></p>
-                        <p class="des">We hope you will enjoy your stay at our hotel</p>
-                        <div id="log">dfghdhe</div>
+                        <div style="padding-top: 10px">
+                            <p class="des">Số phòng của bạn là <span id="roomnumber">198</span></p>
+                            <p class="des">Chúng tôi hy vọng bạn sẽ tận hưởng kỳ nghỉ của bạn tại Sunset Santo của chúng tôi</p>
+                            <div id="log"></div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="language text-center">
@@ -38,7 +41,7 @@
                                 <a href="#">Việt Nam</a>
                             </td>
                             <td>
-                                <img src="<?php echo IMAGES?>en-flag.png"/><br>
+                                <img src="<?php echo IMAGES?>en-flag-dis.png"/><br>
                                 <a href="#">English</a>
                             </td>
                         </tr>

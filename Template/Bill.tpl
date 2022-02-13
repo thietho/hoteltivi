@@ -4,16 +4,21 @@
         <?php echo $header?>
         <div class="row">
             <div class="col-lg-4 px-0">
-                <div class="col-lg-12 main-sidebar">
+                <div class="col-lg-12 main-sidebar-bill">
                     <table width="100%" class="table">
                         <thead>
                         <tr class="head">
-                            <th class="bill-date sidebar" scope="col">date</th>
-                            <th class="bill-price sidebar" scope="col">mount</th>
+                            <th class="bill-date sidebar" scope="col">Ngày</th>
+                            <th class="bill-price sidebar" scope="col">Số tiền</th>
                         </tr>
                         </thead>
-                        <tbody id="listdate"></tbody>
+
                     </table>
+                    <div class="showcontent">
+                        <table width="100%" class="table">
+                            <tbody id="listdate"></tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-lg-12 bill-total px-0">
                     <p class="price-vat">Prices are subject to 10% service charge and 10% government VAT</p>
@@ -26,13 +31,18 @@
                         <table class="table">
                             <thead>
                             <tr class="head">
-                                <th class="bill-date" scope="col">date</th>
-                                <th class="bill-service" scope="col">service</th>
-                                <th class="bill-price" scope="col">price (vnđ)</th>
+                                <th class="bill-date" scope="col">Ngày</th>
+                                <th class="bill-service" scope="col">Dịch vụ</th>
+                                <th class="bill-price" scope="col">Đơn giá (vnđ)</th>
                             </tr>
                             </thead>
-                            <tbody id="listitems"></tbody>
                         </table>
+                        <div class="showcontent">
+                            <table class="table">
+                                <tbody id="listitems"></tbody>
+                            </table>
+                        </div>
+
                     </div>
 
                 </div>
@@ -43,11 +53,12 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p>to level up</p>
+                                            <p>Nhấn <span class="icon"><img
+                                                            src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
+                                            <p>trở lại</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>level <span>back</span></p>
+                                            <p>Trở <span>lại</span></p>
                                         </div>
                                     </div>
                                 </a>
@@ -58,11 +69,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>press <span>PORTAL</span></p>
-                                            <p>to close page</p>
+                                            <p>Nhấn <span>PORTAL</span></p>
+                                            <p>về trang chủ</p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>the <span>menu</span></p>
+                                            <p>Trang <span>chủ</span></p>
                                         </div>
                                     </div>
                                 </a>

@@ -419,7 +419,7 @@ body {
 }
 
 .home-menu .about-us {
-    width: 100%;
+    width: 206px;
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
@@ -546,8 +546,8 @@ section.list-channel {
     top: 5px;
     right: 5px;
 }
-.langcurrent{
-    border: 5px solid #f58220;
+.langcurrent img{
+    border: 2px solid #f58220;
 }
 .main-wrapper p {
     margin: 0;
@@ -732,25 +732,34 @@ section.list-channel {
     bottom: 7px;
 }
 .bill-content{
-    overflow: auto;
     height: 100%;
     background: #fff;
 }
 .my-bill table {
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
 }
 
-.my-bill .main-sidebar {
+.my-bill .main-sidebar-bill {
     background: #fcdabc;
 }
-
+.main-sidebar-bill {
+    padding: 0;
+    height: 359px;
+    position: relative;
+}
+.main-sidebar-bill .showcontent{
+    height: 310px;overflow: auto;
+}
 .my-bill table .head {
     font-weight: bold;
     background: #f58220;
     text-transform: uppercase;
 
 }
-
+.bill-content .showcontent{
+    height: 327px;overflow: auto;
+}
 .my-bill table .head:hover {
     background: #f58220;
 }

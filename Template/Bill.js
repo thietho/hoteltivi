@@ -7,18 +7,18 @@ function myEventHandler(event){
 
             break;
         case 38: //Move top
-            $('.regioncurrent').animate({scrollTop:$('.regioncurrent').scrollTop()-100}, '100');
+            $('.regioncurrent .showcontent').animate({scrollTop:$('.regioncurrent .showcontent').scrollTop()-100}, '100');
             break;
         case 40: //Move down
-            $('.regioncurrent').animate({scrollTop:$('.regioncurrent').scrollTop()+100}, '100');
+            $('.regioncurrent .showcontent').animate({scrollTop:$('.regioncurrent .showcontent').scrollTop()+100}, '100');
             break;
         case 37: //Move left
             $('.bill-content').removeClass('regioncurrent');
-            $('.main-sidebar').addClass('regioncurrent');
+            $('.main-sidebar-bill').addClass('regioncurrent');
             break;
         case 39: //Move right
             $('.bill-content').addClass('regioncurrent');
-            $('.main-sidebar').removeClass('regioncurrent');
+            $('.main-sidebar-bill').removeClass('regioncurrent');
             break;
         case 461: //Back
             common.showLoading();
