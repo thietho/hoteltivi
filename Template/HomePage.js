@@ -125,7 +125,11 @@ lang = {
 var counttop = 0;
 var timer = setInterval(function () {
     counttop = 0;
-}, 3000)
+}, 3000);
+var allowmove = true;
+var timerallowmove = setInterval(function () {
+    allowmove = true;
+}, 1000);
 var currentRegion = 'menu';
 
 function myEventHandler(event) {
@@ -153,6 +157,7 @@ function myEventHandler(event) {
                     } else {
                         var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
                         var url = HTTPSERVER + sitemapid + ".html";
+                        common.showLoading();
                         window.location = url;
                     }
 
@@ -198,50 +203,58 @@ function myEventHandler(event) {
 
             break;
         case 37: //Move left
-            switch (currentRegion) {
-                case "menu":
-                    if (mainmenu.current >= 0) {
-                        $('.home-static').removeClass('curent');
-                        mainmenu.current--;
-                        $('.list-item-sub').removeClass('slick-current');
-                        $('.list-item-sub').removeClass('menucurent');
-                        $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
-                        $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
-
-                        console.log(mainmenu.current);
-                        $('.list-item').slick('slickGoTo', mainmenu.current);
-                        if (mainmenu.current < 0) {
+            if(allowmove){
+                allowmove = false;
+                switch (currentRegion) {
+                    case "menu":
+                        if (mainmenu.current >= 0) {
+                            $('.home-static').removeClass('curent');
+                            mainmenu.current--;
                             $('.list-item-sub').removeClass('slick-current');
+                            $('.list-item-sub').removeClass('menucurent');
+                            $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
+                            $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
+
+                            console.log(mainmenu.current);
+                            $('.list-item').slick('slickGoTo', mainmenu.current);
+                            if (mainmenu.current < 0) {
+                                $('.list-item-sub').removeClass('slick-current');
+                                $('.home-static').addClass('curent');
+                            }
+                        } else {
                             $('.home-static').addClass('curent');
                         }
-                    } else {
-                        $('.home-static').addClass('curent');
-                    }
-                    break;
-                case "lang":
-                    lang.back();
-                    break;
+                        break;
+                    case "lang":
+                        lang.back();
+                        break;
+                }
             }
+
 
             break;
         case 39: //Move right
-            switch (currentRegion) {
-                case "menu":
-                    if (mainmenu.current < mainmenu.max) {
-                        $('.home-static').removeClass('curent');
-                        mainmenu.current++;
-                        $('.list-item-sub').removeClass('slick-current');
-                        $('.list-item-sub').removeClass('menucurent');
-                        $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
-                        $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
-                        console.log(mainmenu.current);
-                        $('.list-item').slick('slickGoTo', mainmenu.current);
-                    }
-                    break;
-                case "lang":
-                    lang.next();
-                    break;
+            if(allowmove) {
+                allowmove = false;
+                switch (currentRegion) {
+                    case "menu":
+                        if (mainmenu.current < mainmenu.max) {
+                            $('.home-static').removeClass('curent');
+                            mainmenu.current++;
+                            $('.list-item-sub').removeClass('slick-current');
+                            $('.list-item-sub').removeClass('menucurent');
+                            $('[data-slick-index=' + mainmenu.current + ']').addClass('slick-current');
+                            $('[data-slick-index=' + mainmenu.current + ']').addClass('menucurent');
+                            console.log(mainmenu.current);
+                            $('.list-item').slick('slickGoTo', mainmenu.current);
+                        }
+                        break;
+                    case "lang":
+                        lang.next();
+                        break;
+                }
             }
+
 
             break;
         case 1001:

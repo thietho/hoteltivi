@@ -144,14 +144,35 @@ FoodOrder = {
         }
     },
     orderFood:function () {
+        common.showLoading();
         $.post(HTTPSERVER+'FoodOrder/saveOrder.api',{
             roomnumber:localStorage.getItem('roomnumber')
         },function (result) {
             console.log(result);
+            common.endLoading();
             if(result.statuscode){
                 $('#basket-popup').modal('hide');
                 FoodOrder.load();
                 toastr["success"]("Đặt thức ăn thành công", "Success");
+            }else {
+                var arr = new Array();
+                for (var i in result.errors) {
+                    arr.push(result.errors[i])
+                }
+                toastr["error"](arr.join('<br>'), result.text);
+            }
+        });
+    },
+    orderService:function (servicename) {
+        common.showLoading();
+        $.post(HTTPSERVER+'FoodOrder/orderService.api',{
+            roomnumber:localStorage.getItem('roomnumber'),
+            servicename:servicename
+        },function (result) {
+            common.endLoading();
+            $('#room-service-popup').modal('hide');
+            if(result.statuscode){
+                toastr["success"](result.text, "Success");
             }else {
                 var arr = new Array();
                 for (var i in result.errors) {

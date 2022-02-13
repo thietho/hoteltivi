@@ -5,6 +5,10 @@ function myEventHandler(event){
     if(service.lockui == false){
         switch (event.keyCode) {
             case 13:
+                if(service.popupshow){
+                    var servicename = $('.serviceselect').attr('servicename');
+                    FoodOrder.orderService(servicename);
+                }
                 if (TiviVideoPlayer.isplay) {
                     TiviVideoPlayer.closePopup();
                 } else {
@@ -16,14 +20,15 @@ function myEventHandler(event){
                             break;
                         case 'Service':
                             $('#room-service-popup').modal();
+                            var servicename = $('.serviceselect').attr('servicename');
+                            $('#room-service-popup .modal-body p').html('Bạn có muốn đặt dịch vụ '+ servicename.toLowerCase() +'?');
                             break;
                         default:
+                            common.showLoading();
                             window.location = $('.serviceselect').parent().attr('href');
                     }
                 }
-                if(service.popupshow){
-                    $('#room-service-popup').modal('hide');
-                }
+
                 break;
             case 38: //Move top
 
@@ -47,10 +52,17 @@ function myEventHandler(event){
                 break;
             case 461: //Back
             case 8: //Back
-                window.history.back();
+                if(service.popupshow){
+                    $('#room-service-popup').modal('hide');
+                }else {
+                    common.showLoading();
+                    window.history.back();
+                }
+
                 break;
             case 602: //Portal
             case 80: //Portal
+                common.showLoading();
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
         }
@@ -65,9 +77,6 @@ $('#room-service-popup').on('hidden.bs.modal', function (e) {
     // do something...
     service.popupshow = false;
 })
-$('.btn-ok').click(function () {
-    alert('Ok click')
-});
 service ={
     index:0,
     iteminfram:6,

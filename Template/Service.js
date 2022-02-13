@@ -7,8 +7,11 @@ function myEventHandler(event){
             case 13:
                 if(service.popupshow == false){
                     $('#room-service-popup').modal();
+                    var servicename = $('.serviceselect').attr('servicename');
+                    $('#room-service-popup .modal-body p').html('Bạn có muốn đặt dịch vụ '+ servicename.toLowerCase() +'?');
                 }else {
-                    $('.btn-ok').click();
+                    var servicename = $('.serviceselect').attr('servicename');
+                    FoodOrder.orderService(servicename);
                 }
 
                 break;
@@ -41,10 +44,16 @@ function myEventHandler(event){
                 break;
             case 461: //Back
             case 8: //Back
-                window.history.back();
+                if(service.popupshow){
+                    $('#room-service-popup').modal('hide');
+                }else {
+                    common.showLoading();
+                    window.history.back();
+                }
                 break;
             case 602: //Portal
             case 80: //Portal
+                common.showLoading();
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
         }
@@ -59,9 +68,6 @@ $('#room-service-popup').on('hidden.bs.modal', function (e) {
     // do something...
     service.popupshow = false;
 })
-$('.btn-ok').click(function () {
-    alert('Ok click')
-});
 service ={
     index:0,
     iteminfram:6,

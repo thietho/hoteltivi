@@ -19,9 +19,12 @@ function myEventHandler(event){
 
             break;
         case 461: //Back
+        case 8: //Back
+            common.showLoading();
             window.history.back();
             break;
         case 602: //Portal
+            common.showLoading();
             window.location = '<?php echo $this->request->createLink()?>';
             break;
     }

@@ -11,7 +11,7 @@
                         <div class="item col-lg-12" index="<?php echo $key?>">
                             <a href="#">
                                 <p><?php echo $service['servicename']?></p>
-                                <img src="<?php echo $service['image']?>">
+                                <img src="<?php echo $service['image']?>" servicename="<?php echo $service['servicename']?>">
                             </a>
                         </div>
                         <?php } ?>

@@ -7,6 +7,7 @@ function myEventHandler(event) {
         switch (event.keyCode) {
             case 13:
                 if(channel.index<0){
+                    common.showLoading();
                     window.location = $('.groupchannelselect').attr('href');
                 }else {
                     var ip = $('[index='+channel.index+']').attr('ip');
@@ -74,6 +75,7 @@ function myEventHandler(event) {
                     channel.stopMedia();
                     channel.playMediaSilent();
                 }else {
+                    common.showLoading();
                     window.location.back();
                 }
 
@@ -82,6 +84,7 @@ function myEventHandler(event) {
                 channel.stopChannel();
                 channel.stopMedia();
                 channel.playMediaSilent();
+                common.showLoading();
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
             case 1001: //Exit

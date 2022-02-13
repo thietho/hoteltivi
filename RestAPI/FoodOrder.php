@@ -171,4 +171,16 @@ class FoodOrder extends Page
         return $response;
 
     }
+
+    public function orderService(){
+        $data = $this->request->getDataPost();
+        $content = $data['roomnumber']." đặt dịch vụ ". strtolower($data['servicename'])."!";
+        $this->sendToTelegram($content);
+        $result = array(
+            'statuscode' => 1,
+            'errors' => [],
+            'text' => 'Dịch vự '.$data['servicename'].' đã gửi yêu cầu đến lễ tân!<br>Lễ tân sẽ liên hệ lại bạn về thông tin dịch vụ!'
+        );
+        $this->response->jsonOutput($result);
+    }
 }

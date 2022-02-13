@@ -145,22 +145,10 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">call <span>taxi</span></h5>
+                <h5 class="modal-title">Đặt dịch vụ</span></h5>
             </div>
             <div class="modal-body">
-                <p>Please help us book taxi:</p>
-                <form>
-                    <div class="form-row">
-                        <div class="form-group form-inline col-lg-12">
-                            <label class="title" for="">Number of seats</label>
-                            <input type="number" class="form-control number-seat qlt" id="" placeholder="">
-                            <label class="title" for="">Qlt</label>
-                            <input type="number" class="form-control number-seat qlt" id="" placeholder="">
-                            <label class="title" for="">At time</label>
-                            <input type="datetime-local" class="form-control datetime at-time" id="" placeholder="">
-                        </div>
-                    </div>
-                </form>
+                <p></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-ok">OK</button>

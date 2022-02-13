@@ -122,6 +122,7 @@ function myEventHandler(event) {
             case 461: //Back
             case 8: //Back
                 if(FoodOrder.basketOpen == false){
+                    common.showLoading();
                     window.history.back();
                 }else {
                     FoodOrder.updateOrder();
@@ -129,6 +130,7 @@ function myEventHandler(event) {
                 break;
             case 602: //Portal
             case 80: //Portal
+                common.showLoading();
                 window.location = '<?php echo $this->request->createLink()?>';
                 break;
         }

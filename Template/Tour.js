@@ -19,9 +19,11 @@ function myEventHandler(event){
             $('.slick-next').click();
             break;
         case 461: //Back
+            common.showLoading();
             window.history.back();
             break;
         case 602: //Portal
+            common.showLoading();
             window.location = '<?php echo $this->request->createLink()?>';
             break;
     }

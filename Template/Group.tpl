@@ -8,7 +8,7 @@
             <div class="item col-lg-4" index="<?php echo $key?>">
                 <a href="<?php echo $this->request->createLink($sitemap['sitemapid'])?>" pagetype="<?php echo $sitemap['sitemaptype']?>" video="<?php echo $sitemap['video']?>">
                     <p><?php echo $sitemap['sitemapname']?></p>
-                    <img src="<?php echo $sitemap['image']?>">
+                    <img src="<?php echo $sitemap['image']?>" servicename="<?php echo $sitemap['sitemapname']?>">
                 </a>
             </div>
             <?php } ?>
