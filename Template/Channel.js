@@ -70,13 +70,14 @@ function myEventHandler(event) {
                 channel.selectChannel();
                 break;
             case 461: //Back
+            case 8: //Back
                 if(channel.playing){
                     channel.stopChannel();
                     channel.stopMedia();
                     channel.playMediaSilent();
                 }else {
                     common.showLoading();
-                    window.location.back();
+                    window.history.back();
                 }
 
                 break;

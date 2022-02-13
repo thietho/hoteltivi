@@ -9,7 +9,7 @@ class Tivi extends Page
         $childs = $this->sitemap->getChilds($this->data['sitemap']['id']);
         switch ($this->data['sitemap']['sitemapid']){
             case 'youtube':
-                $this->response->rezdirect('https://www.youtube.com/');
+                $this->response->redirect('https://www.youtube.com/');
                 break;
         }
         foreach ($childs as &$sitemap){
