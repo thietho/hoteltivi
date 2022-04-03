@@ -1,7 +1,6 @@
 window.addEventListener("keyup", myEventHandler);
 function myEventHandler(event){
     //console.log(event);
-    $('#log').html(event.keyCode);
     if(service.lockui == false){
         switch (event.keyCode) {
             case 13:

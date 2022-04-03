@@ -7,8 +7,8 @@
     <div class="col-lg-6 sub-menu-breadcrumb">
         <div class="text-wrapper">
             <div class="top text-right">
-                <p class="name">Mr Leo</p>
-                <p id="roomnumber">room 198</p>
+                <p class="name"></p>
+                <p id="roomnumber"></p>
             </div>
             <div class="bottom">
                 <p>Trang chủ <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>

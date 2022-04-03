@@ -30,3 +30,5 @@ require CONTROL.'Content.php';
 require CONTROL.'Sitemap.php';
 require CONTROL.'Setting.php';
 require CONTROL.'OptionSet.php';
+
+define('DIHOTELENPOIN','http://115.79.241.38:8123/');

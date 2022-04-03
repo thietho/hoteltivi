@@ -4,7 +4,7 @@ class Bill extends Page{
         $roomnumber = $this->request->get('roomnumber');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://dev-iptv.dihotel.top:8123/api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
+            CURLOPT_URL => DIHOTELENPOIN.'api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -21,7 +21,7 @@ class Bill extends Page{
         $roomnumber = $this->request->get('roomnumber');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://dev-iptv.dihotel.top:8123/api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
+            CURLOPT_URL => DIHOTELENPOIN.'api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

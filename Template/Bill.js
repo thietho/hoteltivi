@@ -1,7 +1,6 @@
 window.addEventListener("keyup", myEventHandler);
 function myEventHandler(event){
     //console.log(event);
-    $('#log').html(event.keyCode);
     switch (event.keyCode) {
         case 13:
 
@@ -51,14 +50,6 @@ $(document).ready(function () {
                         '</tr>'
                     sum += common.stringtoNumber(listitem[i].Total);
                 }
-                for (var i in listitem) {
-                    str += '<tr>' +
-                        '   <td class="bill-date">'+listitem[i].Date+'<br><span>'+listitem[i].Time+'</span></td>' +
-                        '   <td class="bill-service">'+listitem[i].Name+'</td>' +
-                        '   <td class="bill-price">'+listitem[i].Total+' vnđ</td>' +
-                        '</tr>'
-                    sum += common.stringtoNumber(listitem[i].Total);
-                }
                 $('#listitems').html(str);
                 $('#billtotal').html(common.formateNumber(sum));
             }
@@ -66,39 +57,6 @@ $(document).ready(function () {
         $.getJSON(HTTPSERVER+'Bill/getServiceInfoDate.api?roomnumber='+localStorage.getItem('roomnumber'),function (result) {
             console.log(result);
             var str = '';
-            for (var i in result) {
-                console.log(i);
-                var sum = 0;
-                for (var j in result[i]) {
-                    sum+= common.stringtoNumber(result[i][j].Total);
-                }
-                str += '<tr>' +
-                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
-                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
-                    '</tr>';
-            }
-            for (var i in result) {
-                console.log(i);
-                var sum = 0;
-                for (var j in result[i]) {
-                    sum+= common.stringtoNumber(result[i][j].Total);
-                }
-                str += '<tr>' +
-                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
-                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
-                    '</tr>';
-            }
-            for (var i in result) {
-                console.log(i);
-                var sum = 0;
-                for (var j in result[i]) {
-                    sum+= common.stringtoNumber(result[i][j].Total);
-                }
-                str += '<tr>' +
-                    '   <td class="bill-date sidebar"><span>'+i+'</span></td>' +
-                    '   <td class="bill-price sidebar"><span>'+ common.formateNumber(sum)+' vnđ</span></td>' +
-                    '</tr>';
-            }
             for (var i in result) {
                 console.log(i);
                 var sum = 0;

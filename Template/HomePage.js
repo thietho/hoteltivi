@@ -15,11 +15,10 @@ $(document).ready(function () {
         "onSuccess": function (s) {
             var_room_info = s.value;
             localStorage.setItem('roomnumber', var_room_info);
-            localStorage.setItem('roomnumber', 'V0023');
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
         "onFailure": function (f) {
-            localStorage.setItem('roomnumber', 'V0023');
+            localStorage.setItem('roomnumber', 'chưa cài đặt');
         }
     });
 
@@ -35,10 +34,10 @@ $(document).ready(function () {
     setInterval(function () {
         mainmenu.getWeather();
     }, 30000);
-    if(sessionStorage.getItem('hasPlayIntro') == null){
-        TiviVideoPlayer.openPopup($('#videointro').html());
-        sessionStorage.setItem('hasPlayIntro',true);
-    }
+    // if(sessionStorage.getItem('hasPlayIntro') == null){
+    //     TiviVideoPlayer.openPopup($('#videointro').html());
+    //     sessionStorage.setItem('hasPlayIntro',true);
+    // }
 });
 window.addEventListener("keyup", myEventHandler);
 sitemaps = JSON.parse('<?php echo json_encode($sitemaps)?>');
