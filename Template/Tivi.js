@@ -31,8 +31,6 @@ function myEventHandler(event){
 }
 $(document).ready(function () {
     playVideo();
-
-
     $('.sidebar-carousel').on('afterChange', function(event, slick, currentSlide){
         playVideo();
         // console.log(currentSlide);
@@ -49,15 +47,24 @@ $(document).ready(function () {
     }else {
         $('#roomnumber').html(localStorage.getItem('roomnumber'))
     }
+    var timer;
     function playVideo(){
         var sitemapid = $('.video-list .slick-current').attr('sitemapid');
+        $('#showvideo').show();
         $('#showvideo').attr('src',$('[sitemapid='+sitemapid+']').attr('video'));
         $('#showbanner').hide();
+        clearInterval(timer);
         var vid = document.getElementById("showvideo");
         vid.onerror = function() {
             $('#showbanner').load(HTTPSERVER+"Sitemap/showBanner.api?id="+sitemapid,function () {
                 $('#showbanner').show();
+                var myCarousel = document.querySelector('.myCarousel')
+                var carousel = new bootstrap.Carousel(myCarousel);
+                timer = setInterval(function () {
+                    carousel.next();
+                },10000)
             });
+            $('#showvideo').hide();
         };
     }
 });
