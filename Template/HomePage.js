@@ -13,8 +13,8 @@ $(document).ready(function () {
     hcap.property.getProperty({
         "key": "room_number",
         "onSuccess": function (s) {
-            var_room_info = s.value;
-            localStorage.setItem('roomnumber', var_room_info);
+            var room_info = s.value;
+            localStorage.setItem('roomnumber', room_info);
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
         "onFailure": function (f) {

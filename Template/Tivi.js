@@ -30,14 +30,34 @@ function myEventHandler(event){
     }
 }
 $(document).ready(function () {
+    playVideo();
+
+
     $('.sidebar-carousel').on('afterChange', function(event, slick, currentSlide){
-        console.log(currentSlide);
-        console.log($('[data-slick-index='+currentSlide+']').attr('video'));
-        $('#showvideo').attr('src',$('[data-slick-index='+currentSlide+']').attr('video'));
+        playVideo();
+        // console.log(currentSlide);
+        // console.log($('[data-slick-index='+currentSlide+']').attr('video'));
+        // $('#showvideo').attr('src',$('[data-slick-index='+currentSlide+']').attr('video'));
+        // var vid = document.getElementById("showvideo");
+        // vid.onerror = function() {
+        //     alert("Error! Something went wrong");
+        // };
     });
+    //$('#showbanner').load(HTTPSERVER+"Sitemap/showBanner.api?id=110");
     if(localStorage.getItem('roomnumber') == null){
         window.location = HTTPSERVER;
     }else {
         $('#roomnumber').html(localStorage.getItem('roomnumber'))
+    }
+    function playVideo(){
+        var sitemapid = $('.video-list .slick-current').attr('sitemapid');
+        $('#showvideo').attr('src',$('[sitemapid='+sitemapid+']').attr('video'));
+        $('#showbanner').hide();
+        var vid = document.getElementById("showvideo");
+        vid.onerror = function() {
+            $('#showbanner').load(HTTPSERVER+"Sitemap/showBanner.api?id="+sitemapid,function () {
+                $('#showbanner').show();
+            });
+        };
     }
 });

@@ -15,8 +15,8 @@ class Tivi extends Page
         foreach ($childs as &$sitemap){
             $sitemap['image'] = IMAGESERVER."fixsize-587x251/upload/cms_sitemap/".$sitemap['id']."/".$sitemap['image'];
             $sitemap['video'] = FILESERVER."upload/cms_sitemap/".$sitemap['id']."/".$sitemap['video'];
+            $sitemap['banner'] = $this->sitemap->renderBanner($sitemap);
         }
-
         $this->setData('sitemaps',$childs);
         $this->setTemplate('Tivi.tpl');
         $this->setLayout('default.tpl');

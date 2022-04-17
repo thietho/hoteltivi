@@ -12,27 +12,22 @@ class Api
     function __construct(){
         $this->username = 'websiteapi';
         $this->password = '12345678';
+
         $this->http = CORESYSTEM;
         $this->session = new Session();
-        $this->token = $this->session->get('token');
+        //$this->token = $this->session->get('token');
         $this->iscache = true;
-        
-        if($this->token == ''){
-            $this->login();
-        }
+        $this->login();
     }
     public function checkCacheVersion(){
         $result = $this->post('?route=Core/Auth/getCacheVersion',array());
         $updatetime = $this->session->get('cacheVersion');
-        if(isset($result['updatetime'])){
-            if($updatetime != $result['updatetime']){
-                $this->session->set('cacheVersion',$result['updatetime']);
-                //echo 'Update Cache';
-                $cache = new Cache();
-                $cache->clear();
-            }
+        if($updatetime != $result['updatetime']){
+            $this->session->set('cacheVersion',$result['updatetime']);
+            //echo 'Update Cache';
+            $cache = new Cache();
+            $cache->clear();
         }
-
     }
     public function getFile($urlfile,$filename){
         $cache = new Cache();
@@ -63,14 +58,14 @@ class Api
     }
     public function post($url,$data){
         $curl = curl_init();
-        if(!function_exists('apache_request_headers')){
-            if(substr_count($url,'?')){
-                $url .= "&token=".$this->token;
-            }else{
-                $url .= "?token=".$this->token;
-            }
-
-        }
+//        if(!function_exists('apache_request_headers')){
+//            if(substr_count($url,'?')){
+//                $url .= "&token=".$this->token;
+//            }else{
+//                $url .= "?token=".$this->token;
+//            }
+//
+//        }
         if(substr_count($url,'?')){
             $url .= "&token=".$this->token;
         }else{
@@ -114,14 +109,9 @@ class Api
     }
     public function postJSON($url,$data){
         $curl = curl_init();
-        if(!function_exists('apache_request_headers')){
-            if(substr_count($url,'?')){
-                $url .= "&token=".$this->token;
-            }else{
-                $url .= "?token=".$this->token;
-            }
-
-        }
+//        if(!function_exists('apache_request_headers')){
+//            $url .= "&token=".$this->token;
+//        }
         if(substr_count($url,'?')){
             $url .= "&token=".$this->token;
         }else{
@@ -153,6 +143,16 @@ class Api
 
         $result = json_decode($response,true);
         return $result;
+        // if($result == null){
+        //     return $this->logindata;
+        // }
+        // if($result['statuscode'] == 2 || $result['statuscode'] == 0){
+        //     $this->login();
+        //     $result = $this->post($url,$data);
+        //     return $result;
+        // }else{
+        //     return $result;
+        // }
 
     }
     public function get($url,$debuger = false){
@@ -162,7 +162,7 @@ class Api
         if(empty($result) || $this->iscache == false || $debuger == true){
             $curl = curl_init();
             //if(!function_exists('apache_request_headers')){
-                $url .= "&token=".$this->token;
+            $url .= "&token=".$this->token;
             //}
             //echo $url;
             //echo $this->http.$url.PHP_EOL;
@@ -194,7 +194,7 @@ class Api
             // }
             // if($result['statuscode'] == 2 || $result['statuscode'] == 0){
             //     $this->login();
-            //     $result = $this->get($url); 
+            //     $result = $this->get($url);
             // }
             // $cache->create($filecache,json_encode($result));
             // return $result;
@@ -235,7 +235,7 @@ class Api
         $this->logindata = json_decode($response,true);
         if($this->logindata['statuscode']){
             $this->token = $this->logindata['token'];
-            $this->session->set('token', $this->token);
+            //$this->session->set('token', $this->token);
         }
 
     }

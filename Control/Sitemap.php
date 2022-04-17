@@ -74,7 +74,8 @@ class Sitemap extends Control
         if(empty($sitemap['gallery']))
             return '';
         $this->setData('id',$sitemap['id']);
-        $gallery = json_decode($sitemap['gallery'],true);
+        //var_dump($sitemap['gallery']);
+        $gallery = json_decode($this->string->formateJson($sitemap['gallery']),true);
         foreach($gallery as &$item){
             $item['image'] = IMAGESERVER.'fixsize-1600x500/upload/cms_sitemap/'.$sitemap['id'].'/'. $item['image'];
         }

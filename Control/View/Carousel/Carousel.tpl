@@ -1,5 +1,5 @@
 <?php if(!empty($banners)){ ?>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="carousel slide myCarousel" data-ride="carousel">
     <ol class="carousel-indicators">
         <?php foreach($banners as $key => $banner){ ?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $key?>" class="<?php echo $key==0?'active':'';?>"></li>

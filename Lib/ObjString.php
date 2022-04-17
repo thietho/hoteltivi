@@ -13,14 +13,33 @@ final class ObjString
         }
         return $result;
     }
-
+    public function formateJson($strjson){
+        $strjson = str_replace('\\"','"',$strjson);
+        $strjson = str_replace('"[','[',$strjson);
+        $strjson = str_replace(']"',']',$strjson);
+        return $strjson;
+    }
     public function numberFormate($num,$n=0)
     {
         $dec_point = '.';
         $thousands_sep = ',';
         return number_format($num, $n, $dec_point, $thousands_sep);
     }
-
+    public function arrayToString($arr){
+        if(empty($arr)){
+            return '';
+        }
+        foreach ($arr as &$val)
+        {
+            $val = "[$val]";
+        }
+        return implode(',',$arr);
+    }
+    public function stringToArray($str){
+        $str = str_replace('[','',$str);
+        $str = str_replace(']','',$str);
+        return explode(',',$str);
+    }
     public function toNumber($str)
     {
         if($str == ''){
@@ -267,11 +286,6 @@ final class ObjString
     }
     public function viewPlanText($str){
         return str_replace("\n","<br>",$str);
-    }
-    public function stringToArray($str){
-        $str = str_replace('[','',$str);
-        $str = str_replace(']','',$str);
-        return explode(',',$str);
     }
 }
 ?>
