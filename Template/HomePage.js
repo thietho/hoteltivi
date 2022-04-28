@@ -30,15 +30,17 @@ $(document).ready(function () {
     // }else {
     //     $('#roomnumber').html(localStorage.getItem('roomnumber'))
     // }
-    //channel.stopChannel();
+    channel.stopChannel(function () {});
     //channel.playMediaSilent();
     mainmenu.getWeather()
     setInterval(function () {
         mainmenu.getWeather();
     }, 30000);
     if(sessionStorage.getItem('hasPlayIntro') == null){
-        TiviVideoPlayer.openPopup($('#videointro').html());
-        sessionStorage.setItem('hasPlayIntro',true);
+        channel.stopMedia(function () {
+            TiviVideoPlayer.openPopup($('#videointro').html());
+            sessionStorage.setItem('hasPlayIntro',true);
+        });
     }
 });
 window.addEventListener("keyup", myEventHandler);
