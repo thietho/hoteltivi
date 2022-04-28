@@ -255,7 +255,8 @@ channel = {
     max: $('.item').length - 1,
     lockui: false,
     popupshow: false,
-    playing: false,
+    playingchannel: false,
+    playingvideo: false,
     selectChannel: function () {
         if (this.index > this.maxindex - 1) {
             this.lockui = true;
@@ -280,6 +281,7 @@ channel = {
         //$('.sub-menu-title').html(channel.index);
     },
     playIPChannel: function (ip, port, callcack) {
+        this.playingchannel = true;
         var param = {
             "channelType": hcap.channel.ChannelType.IP,
             "ip": ip,
@@ -291,25 +293,35 @@ channel = {
             },
             "onFailure": function (f) {
                 console.log("onFailure : errorMessage = " + f.errorMessage);
+                //$('.sub-menu-breadcrumb').html("onFailure : errorMessage = " + f.errorMessage);
+
             }
         };
         hcap.channel.requestChangeCurrentChannel(param);
     },
     stopChannel: function (callback) {
-        $('body').show();
-        hcap.channel.stopCurrentChannel({
-            "onSuccess": function () {
-                //log("onSuccess : stopCurrentChannel");
-                callback();
-            },
-            "onFailure": function (f) {
-                //log("onFailure : errorMessage = " + f.errorMessage);
-                callback();
-            }
-        });
+        if(this.playingchannel){
+            $('body').show();
+            this.playingchannel = false;
+            hcap.channel.stopCurrentChannel({
+                "onSuccess": function () {
+                    //log("onSuccess : stopCurrentChannel");
+                    callback();
+                },
+                "onFailure": function (f) {
+                    //log("onFailure : errorMessage = " + f.errorMessage);
+                    $('.sub-menu-title').html("onFailure : errorMessage = " + f.errorMessage);
+                    callback();
+                }
+            });
+        }else {
+            callback();
+        }
+
     },
     media: null,
     playMedia: function (srcVideo) {
+        this.playingvideo = true;
         $('body').hide();
         console.log(srcVideo);
         hcap.Media.startUp({
@@ -341,6 +353,7 @@ channel = {
         });
     },
     playMediaSilent: function () {
+        this.playingvideo = true;
         var srcVideo = HTTPSERVER + 'img/keepsilent.mp4';
         hcap.Media.startUp({
             "onSuccess": function () {
@@ -358,6 +371,7 @@ channel = {
                     },
                     "onFailure": function (f) {
                         //  log("onFailure : errorMessage = " + f.errorMessage);
+
                     }
                 });
             },
@@ -367,39 +381,49 @@ channel = {
         });
     },
     stopMedia: function (callback) {
-        if (channel.media != null) {
-            channel.media.stop({
-                "onSuccess": function () {
-                    console.log("onSuccess");
-                    channel.media.destroy({
-                        "onSuccess": function () {
-                            console.log("onSuccess");
-                            hcap.Media.shutDown({
-                                "onSuccess": function () {
-                                    console.log("onSuccess");
-                                    //channel.playing = false;
-                                    callback();
-                                },
-                                "onFailure": function (f) {
-                                    console.log("onFailure : errorMessage = " + f.errorMessage);
-                                    callback();
-                                }
-                            });
-                        },
-                        "onFailure": function (f) {
-                            callback();
-                            console.log("onFailure : errorMessage = " + f.errorMessage);
-                        }
-                    });
-                },
-                "onFailure": function (f) {
-                    callback();
-                    console.log("onFailure : errorMessage = " + f.errorMessage);
-                }
-            });
-        } else {
+        if(this.playingvideo){
+            this.playingvideo = false;
+            if (channel.media != null) {
+                channel.media.stop({
+                    "onSuccess": function () {
+                        console.log("onSuccess");
+                        channel.media.destroy({
+                            "onSuccess": function () {
+                                console.log("onSuccess");
+                                hcap.Media.shutDown({
+                                    "onSuccess": function () {
+                                        console.log("onSuccess");
+                                        //channel.playing = false;
+                                        callback();
+                                    },
+                                    "onFailure": function (f) {
+                                        console.log("onFailure : errorMessage = " + f.errorMessage);
+                                        //$('.sub-menu-title').html(f.errorMessage);
+                                        callback();
+                                    }
+                                });
+                            },
+                            "onFailure": function (f) {
+                                console.log("onFailure : errorMessage = " + f.errorMessage);
+                                //$('.sub-menu-title').html(f.errorMessage);
+                                callback();
+                            }
+                        });
+                    },
+                    "onFailure": function (f) {
+                        //$('.sub-menu-title').html(f.errorMessage);
+                        console.log("onFailure : errorMessage = " + f.errorMessage);
+                        callback();
+                    }
+                });
+            } else {
+                //$('.sub-menu-title').html("[dawn7dew] channel.media is null");
+                console.log("[dawn7dew] channel.media is null");
+                callback();
+            }
+        }else {
             callback();
-            console.log("[dawn7dew] channel.media is null");
         }
+
     }
 }

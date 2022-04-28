@@ -21,14 +21,13 @@ function myEventHandler(event) {
                         } else {
                             channel.stopMedia(function () {
                                 channel.playIPChannel(ip, port, function () {
-                                    channel.playing = true;
                                     $('html').hide();
                                 });
                             });
+
                             // channel.stopChannel(function () {
                             //     channel.stopMedia(function () {
                             //         channel.playIPChannel(ip, port, function () {
-                            //             channel.playing = true;
                             //             $('html').hide();
                             //         });
                             //     });
@@ -85,7 +84,7 @@ function myEventHandler(event) {
                 break;
             case 461: //Back
             case 8: //Back
-                if (channel.playing) {
+                if (channel.playingchannel) {
                     channel.playing = false
                     channel.stopMedia(function () {
                         channel.stopChannel(function () {
