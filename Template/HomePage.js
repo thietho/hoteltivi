@@ -15,10 +15,12 @@ $(document).ready(function () {
         "onSuccess": function (s) {
             var room_info = s.value;
             localStorage.setItem('roomnumber', room_info);
+            localStorage.setItem('istivi', 1);
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
         "onFailure": function (f) {
-            localStorage.setItem('roomnumber', 'chưa cài đặt');
+            localStorage.setItem('roomnumber', '1111');
+            localStorage.setItem('istivi', 0);
         }
     });
 
