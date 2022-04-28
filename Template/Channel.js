@@ -20,11 +20,11 @@ function myEventHandler(event) {
                             channel.playMedia(ip);
                         } else {
                             channel.stopMedia(function () {
-                                channel.playIPChannel(ip, port, function () {
-                                    $('html').hide();
-                                });
-                            });
 
+                            });
+                            channel.playIPChannel(ip, port, function () {
+                                $('html').hide();
+                            });
                             // channel.stopChannel(function () {
                             //     channel.stopMedia(function () {
                             //         channel.playIPChannel(ip, port, function () {
@@ -87,10 +87,10 @@ function myEventHandler(event) {
                 if (channel.playingchannel) {
                     channel.playing = false
                     channel.stopMedia(function () {
-                        channel.stopChannel(function () {
-                            channel.playMediaSilent();
-                            $('html').show();
-                        });
+                        channel.playMediaSilent();
+                    });
+                    channel.stopChannel(function () {
+                        $('html').show();
                     });
                 } else {
                     common.showLoading();
@@ -112,10 +112,10 @@ function myEventHandler(event) {
             case 1001: //Exit
                 channel.playing = false
                 channel.stopMedia(function () {
-                    channel.stopChannel(function () {
-                        channel.playMediaSilent();
-                        $('html').show();
-                    });
+                    channel.playMediaSilent();
+                });
+                channel.stopChannel(function () {
+                    $('html').show();
                 });
                 break;
             case 427://Tăng kênh
