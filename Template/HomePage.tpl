@@ -24,7 +24,7 @@
                     </div>
                     <div class="content">
                         <h1 class="title">Xin chào</h1>
-                        <p class="name"></p>
+                        <p class="name">Quý khách</p>
                         <div style="padding-top: 10px">
                             <p class="des">Số phòng của bạn là <span id="roomnumber"></span></p>
                             <p class="des">Chúng tôi hy vọng bạn sẽ tận hưởng kỳ nghỉ của bạn tại Sunset Santo của chúng tôi</p>

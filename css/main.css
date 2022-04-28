@@ -1366,8 +1366,8 @@ section.list-channel {
 }
 #btnSkip{
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 10px;
+    right: 10px;
     display: none;
 }
 .slick-slider .slick-track{

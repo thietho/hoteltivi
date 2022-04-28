@@ -115,9 +115,7 @@ function myEventHandler(event) {
                         channel.index++;
                         var ip = $('[index=' + channel.index + ']').attr('ip');
                         var port = $('[index=' + channel.index + ']').attr('port');
-                        channel.playIPChannel(ip, port, function () {
-
-                        });
+                        channel.playIPChannel(ip, port, function () {});
                     }
                 }
                 break;
@@ -127,9 +125,7 @@ function myEventHandler(event) {
                         channel.index--;
                         var ip = $('[index=' + channel.index + ']').attr('ip');
                         var port = $('[index=' + channel.index + ']').attr('port');
-                        channel.playIPChannel(ip, port, function () {
-
-                        });
+                        channel.playIPChannel(ip, port, function () {});
                     }
 
                 }
@@ -176,7 +172,7 @@ channel = {
     },
     playIPChannel: function (ip, port, callcack) {
         $('html').hide();
-        $('.sub-menu-title').html(ip);
+        //$('.sub-menu-title').html(ip);
         this.stopChannel(function () {
             var param = {
                 "channelType": hcap.channel.ChannelType.IP,
@@ -213,7 +209,6 @@ channel = {
     media: null,
     playMedia: function (srcVideo) {
         $('body').hide();
-        alert(srcVideo);
         console.log(srcVideo);
         hcap.Media.startUp({
             "onSuccess": function () {

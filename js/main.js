@@ -196,13 +196,19 @@ TiviVideoPlayer = {
         $('#videopopup').show();
         console.log(url)
         $('#videoplayer').attr('src',url);
+
+
         //document.getElementById('videoplayer').play();
         this.vid = document.getElementById('videoplayer')
         this.vid.play();
         this.isplay=true;
         setTimeout(function () {
             $('#btnSkip').show()
-        },5000)
+        },5000);
+        var vid = document.getElementById("videoplayer");
+        vid.onerror = function() {
+            TiviVideoPlayer.closePopup();
+        }
     },
     closePopup:function () {
         if($('#btnSkip').is(":visible")){
