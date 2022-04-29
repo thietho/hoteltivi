@@ -21,8 +21,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 bill-total px-0">
-                    <p class="price-vat">Prices are subject to 10% service charge and 10% government VAT</p>
-                    <p class="price-total">YOUR TOTAL: <span id="billtotal"></span> VNĐ</p>
+                    <p class="price-vat">Giá đã bao gồm 10% phí dịch vụ và 10% VAT</p>
+                    <p class="price-total">Tổng cộng: <span id="billtotal"></span> VNĐ</p>
                 </div>
             </div>
             <div class="col-lg-8 main-content">
