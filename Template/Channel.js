@@ -32,14 +32,20 @@ function myEventHandler(event) {
                                 });
                             }
 
-                            channel.playIPChannel(ip, port, function () {
-                                $('html').hide();
-                            });
                             setTimeout(function () {
                                 channel.playIPChannel(ip, port, function () {
                                     $('html').hide();
                                 });
-                            },1000)
+                            },1000);
+                            if(sessionStorage.getItem('fistplaychannel') == null){
+                                setTimeout(function () {
+                                    channel.playIPChannel(ip, port, function () {
+                                        $('html').hide();
+                                    });
+                                },2000);
+                                sessionStorage.setItem('fistplaychannel',true);
+                            }
+
                             // channel.stopChannel(function () {
                             //     channel.stopMedia(function () {
                             //         channel.playIPChannel(ip, port, function () {
@@ -180,8 +186,8 @@ $(document).ready(function () {
     $('.list-channel-carousel').on('afterChange', function (event, slick, currentSlide) {
         channel.lockui = false;
     });
-    //channel.playMediaSilent();
-    channel.stopMedia();
+    channel.playMediaSilent();
+    //channel.stopMedia();
     $('[index=' + channel.index + '] img').addClass('channelselect');
     if (localStorage.getItem('roomnumber') == null) {
         window.location = HTTPSERVER;
