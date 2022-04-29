@@ -2,16 +2,15 @@
     <!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->
     <div class="container-fluid">
         <?php echo $header?>
-
         <div class="row">
             <div class="col-lg-4 px-0" id="cart-region">
                 <?php echo $cart?>
-
             </div>
             <div class="col-lg-8 main-content" id="main-region">
                 <div class="content-wrapper">
                     <div class="food-menu-carousel">
-                        <?php foreach($foods as $key => $food){ ?>
+                        <?php $key = 0;?>
+                        <?php foreach($foods as  $food){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>"
                              foodid="<?php echo $food['id']?>"
                              foodname="<?php echo $food['foodname']?>"
@@ -23,6 +22,23 @@
                             </div>
                             <img src="<?php echo $food['image']?>">
                         </div>
+                        <?php $key++;?>
+                        <?php } ?>
+                        <?php if(count($foods)<=6){ ?>
+                        <?php foreach($foods as $food){ ?>
+                        <div class="item col-lg-12" index="<?php echo $key?>"
+                             foodid="<?php echo $food['id']?>"
+                             foodname="<?php echo $food['foodname']?>"
+                             price="<?php echo $food['price']?>"
+                        >
+                            <div class="food-name">
+                                <?php echo $food['foodname']?>
+                                <div class="text-right"><?php echo $this->string->numberFormate($food['price'])?></div>
+                            </div>
+                            <img src="<?php echo $food['image']?>">
+                        </div>
+                        <?php $key++;?>
+                        <?php } ?>
                         <?php } ?>
                     </div>
                 </div>

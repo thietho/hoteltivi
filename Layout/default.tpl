@@ -56,8 +56,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/cart-icon.png"/> <span class="cart-number">7</span>Shopping
-                    <span>Basket</span></h5>
+                <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/cart-icon.png"/>
+                    <span class="cart-number">7</span> Giỏ hàng</h5>
             </div>
             <div class="modal-body">
                 <form>
@@ -110,7 +110,7 @@
                         </div>
                         <hr>
                         <div class="col-lg-7">
-                            <h5 class="modal-title food-name food-total">Shopping <span>Basket</span></h5>
+                            <h5 class="modal-title food-name food-total">Tổng tiền</h5>
                             <p class="food-vat">Prices are subject to 10% service charge and 10% VAT</p>
                         </div>
                         <div class="col-lg-5">
@@ -121,16 +121,13 @@
             </div>
             <div class="modal-footer">
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name  mr-2" index="0" action="back"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> level
-                        <span>back</span></h5>
+                    <h5 class="modal-title food-name  mr-2" index="0" action="back"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> Trở lại</h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> empty
-                        <span>basket</span></h5>
+                    <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> Hủy đơn</h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> order
-                        <span>now</span></h5>
+                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> Xác nhận</h5>
                 </div>
             </div>
         </div>
