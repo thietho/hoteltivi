@@ -19,12 +19,27 @@ function myEventHandler(event) {
                         if (port == 1) {
                             channel.playMedia(ip);
                         } else {
-                            channel.stopMedia(function () {
+                            // $('html').hide();
+                            // channel.stopMedia(function () {
+                            //
+                            // });
+                            // channel.playIPChannel(ip, port, function () {
+                            //
+                            // });
+                            if(channel.playingvideo){
+                                channel.stopMedia(function () {
 
-                            });
+                                });
+                            }
+
                             channel.playIPChannel(ip, port, function () {
                                 $('html').hide();
                             });
+                            setTimeout(function () {
+                                channel.playIPChannel(ip, port, function () {
+                                    $('html').hide();
+                                });
+                            },1000)
                             // channel.stopChannel(function () {
                             //     channel.stopMedia(function () {
                             //         channel.playIPChannel(ip, port, function () {
@@ -82,21 +97,6 @@ function myEventHandler(event) {
                 }
                 channel.selectChannel();
                 break;
-            case 461: //Back
-            case 8: //Back
-                if (channel.playingchannel) {
-                    channel.playing = false
-                    channel.stopMedia(function () {
-                        channel.playMediaSilent();
-                    });
-                    channel.stopChannel(function () {
-                        $('html').show();
-                    });
-                } else {
-                    common.showLoading();
-                    window.history.back();
-                }
-                break;
             case 602: //Portal
                 channel.stopChannel(function () {
                     channel.stopMedia(function () {
@@ -109,33 +109,57 @@ function myEventHandler(event) {
                 });
 
                 break;
-            case 1001: //Exit
-                channel.playing = false
-                channel.stopMedia(function () {
-                    channel.playMediaSilent();
-                });
-                channel.stopChannel(function () {
+            case 461: //Back
+            case 8: //Back
+                if (channel.playingchannel) {
                     $('html').show();
+                    channel.playing = false
+                    // channel.stopMedia(function () {
+                    //
+                    // });
+
+                    channel.stopChannel(function () {
+                        channel.playMediaSilent();
+                    });
+                } else {
+                    common.showLoading();
+                    window.history.back();
+                }
+                break;
+            case 1001: //Exit
+                $('html').show();
+                channel.playing = false
+                // channel.stopMedia(function () {
+                //
+                // });
+
+                channel.stopChannel(function () {
+                    channel.playMediaSilent();
                 });
                 break;
             case 427://Tăng kênh
-                if (channel.playing) {
+                if (channel.playingchannel) {
                     if (channel.index < channel.max) {
                         channel.index++;
                         var ip = $('[index=' + channel.index + ']').attr('ip');
                         var port = $('[index=' + channel.index + ']').attr('port');
-                        channel.playIPChannel(ip, port, function () {
+                        channel.stopChannel(function () {
+                            channel.playIPChannel(ip, port, function () {
+                            });
                         });
+
                     }
                 }
                 break;
             case 428://Giảm kênh
-                if (channel.playing) {
+                if (channel.playingchannel) {
                     if (channel.index > 0) {
                         channel.index--;
                         var ip = $('[index=' + channel.index + ']').attr('ip');
                         var port = $('[index=' + channel.index + ']').attr('port');
-                        channel.playIPChannel(ip, port, function () {
+                        channel.stopChannel(function () {
+                            channel.playIPChannel(ip, port, function () {
+                            });
                         });
                     }
 
@@ -156,7 +180,8 @@ $(document).ready(function () {
     $('.list-channel-carousel').on('afterChange', function (event, slick, currentSlide) {
         channel.lockui = false;
     });
-    channel.playMediaSilent();
+    //channel.playMediaSilent();
+    channel.stopMedia();
     $('[index=' + channel.index + '] img').addClass('channelselect');
     if (localStorage.getItem('roomnumber') == null) {
         window.location = HTTPSERVER;

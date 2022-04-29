@@ -278,7 +278,6 @@ channel = {
         console.log("maxindex: " + this.maxindex)
         $('.main-content .item img').removeClass('channelselect');
         $('.main-content [index=' + channel.index + '] img').addClass('channelselect');
-        //$('.sub-menu-title').html(channel.index);
     },
     playIPChannel: function (ip, port, callcack) {
         this.playingchannel = true;
@@ -294,7 +293,7 @@ channel = {
             "onFailure": function (f) {
                 console.log("onFailure : errorMessage = " + f.errorMessage);
                 //$('.sub-menu-breadcrumb').html("onFailure : errorMessage = " + f.errorMessage);
-
+                callcack();
             }
         };
         hcap.channel.requestChangeCurrentChannel(param);
@@ -310,7 +309,6 @@ channel = {
                 },
                 "onFailure": function (f) {
                     //log("onFailure : errorMessage = " + f.errorMessage);
-                    $('.sub-menu-title').html("onFailure : errorMessage = " + f.errorMessage);
                     callback();
                 }
             });
@@ -382,7 +380,6 @@ channel = {
     },
     stopMedia: function (callback) {
         if(this.playingvideo){
-            this.playingvideo = false;
             if (channel.media != null) {
                 channel.media.stop({
                     "onSuccess": function () {
@@ -393,37 +390,33 @@ channel = {
                                 hcap.Media.shutDown({
                                     "onSuccess": function () {
                                         console.log("onSuccess");
-                                        //channel.playing = false;
                                         callback();
                                     },
                                     "onFailure": function (f) {
                                         console.log("onFailure : errorMessage = " + f.errorMessage);
-                                        //$('.sub-menu-title').html(f.errorMessage);
                                         callback();
                                     }
                                 });
                             },
                             "onFailure": function (f) {
                                 console.log("onFailure : errorMessage = " + f.errorMessage);
-                                //$('.sub-menu-title').html(f.errorMessage);
                                 callback();
                             }
                         });
                     },
                     "onFailure": function (f) {
-                        //$('.sub-menu-title').html(f.errorMessage);
                         console.log("onFailure : errorMessage = " + f.errorMessage);
                         callback();
                     }
                 });
             } else {
-                //$('.sub-menu-title').html("[dawn7dew] channel.media is null");
                 console.log("[dawn7dew] channel.media is null");
                 callback();
             }
         }else {
             callback();
         }
+        this.playingvideo = false;
 
     }
 }

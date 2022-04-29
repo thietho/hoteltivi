@@ -31,6 +31,7 @@ $(document).ready(function () {
     //     $('#roomnumber').html(localStorage.getItem('roomnumber'))
     // }
     channel.stopChannel(function () {});
+    channel.stopMedia(function () {});
     //channel.playMediaSilent();
     mainmenu.getWeather()
     setInterval(function () {
