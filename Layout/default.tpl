@@ -111,7 +111,7 @@
                         <hr>
                         <div class="col-lg-7">
                             <h5 class="modal-title food-name food-total">Tổng tiền</h5>
-                            <p class="food-vat">Prices are subject to 10% service charge and 10% VAT</p>
+                            <p class="food-vat">Giá đã bao gồm 10% phí dịch vụ và 10% VAY</p>
                         </div>
                         <div class="col-lg-5">
                             <p class="food-price-total">2.450.000 VNĐ</p>
