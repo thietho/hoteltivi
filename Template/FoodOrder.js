@@ -101,7 +101,7 @@ function myEventHandler(event) {
                 }
                 break;
             case 66:
-            case 403:
+            case 457: //Info
                 FoodOrder.openBasket();
                 break;
             case 8://return

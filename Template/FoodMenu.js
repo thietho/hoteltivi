@@ -130,7 +130,7 @@ function myEventHandler(event) {
                 }
                 break;
             case 66://b
-            case 403://
+            case 457: //Info
                 FoodOrder.openBasket();
                 break;
             case 27://esc
