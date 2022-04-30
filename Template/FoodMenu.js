@@ -181,7 +181,11 @@ $('#food-order-popup').on('hidden.bs.modal', function (e) {
     service.popupshow = false;
 })
 $('.btn-ok').click(function () {
-    alert('Ok click')
+    var foodid = $('#foodid').val();
+    var foodname = $('#foodname').val();
+    var price = $('#price').val();
+    var quantity = $('.quantity').val();
+    FoodOrder.add(foodid,foodname,price,quantity);
 });
 service = {
     index: 0,

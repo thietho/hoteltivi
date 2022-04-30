@@ -1,18 +1,25 @@
 FoodOrder = {
     basketOpen:false,
+    allOrder:false,
     selectindex:0,
     add:function (foodid,foodname,price,quantity) {
-        $.post(HTTPSERVER+'FoodOrder/add.api',{
-            foodid:foodid,
-            foodname:foodname,
-            price:price,
-            quantity:quantity,
-        },function (result) {
-            console.log(result);
-            $('.quantity').val(1);
+        if(this.allOrder){
+            $.post(HTTPSERVER+'FoodOrder/add.api',{
+                foodid:foodid,
+                foodname:foodname,
+                price:price,
+                quantity:quantity,
+            },function (result) {
+                console.log(result);
+                $('.quantity').val(1);
+                $('#food-order-popup').modal('hide');
+                FoodOrder.load();
+            });
+        }else {
+            toastr["error"]('Không được phép đặt món!', 'Cảnh báo!');
             $('#food-order-popup').modal('hide');
-            FoodOrder.load();
-        });
+        }
+
     },
     update:function (foodid,quantity) {
         $.post(HTTPSERVER+'FoodOrder/updateQuantity.api',{
@@ -202,14 +209,20 @@ $(document).ready(function () {
     $.getJSON(HTTPSERVER+'RoomItem/getGuestInfo.api?roomnumber='+localStorage.getItem('roomnumber'),function (result) {
         console.log(result);
         var customer = new Object();
-        for (var i in result.Data) {
-            if(result.Data[i].IsMainGuest){
-                customer = result.Data[i];
+        if(result.Data.length >0 ){
+            for (var i in result.Data) {
+                if(result.Data[i].IsMainGuest){
+                    customer = result.Data[i];
+                }
             }
+            $('.sub-menu-breadcrumb .name').html(customer.Name)
+            $('#roomnumber').html(localStorage.getItem('roomnumber'))
+            $('.content .name').html(customer.Name)
+            FoodOrder.allOrder = true;
+        }else {
+            FoodOrder.allOrder = false;
         }
-        $('.sub-menu-breadcrumb .name').html(customer.Name)
-        $('#roomnumber').html(localStorage.getItem('roomnumber'))
-        $('.content .name').html(customer.Name)
+
     })
 });
 // MainRegion ={
