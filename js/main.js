@@ -67,7 +67,7 @@ $(document).ready(function () {
     // slick carousel
     $('.tour-travel-carousel').slick({
         arrows: true,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
         verticalSwiping: true,
         prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",

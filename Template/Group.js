@@ -31,10 +31,20 @@ function myEventHandler(event){
 
                 break;
             case 38: //Move top
-
+                service.index -= 3;
+                if(service.index < 0){
+                    service.index = 0;
+                }
+                service.selectService();
                 break;
             case 40: //Move down
-
+                if(service.index >= 0) {
+                    service.index += 3;
+                    if(service.index > service.max){
+                        service.index = service.max;
+                    }
+                    service.selectService();
+                }
                 break;
             case 37: //Move left
                 if(service.index - 1 >= 0) {

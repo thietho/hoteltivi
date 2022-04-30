@@ -10,8 +10,8 @@ class Api
     private $iscache;
     public $logindata;
     function __construct(){
-        $this->username = 'websiteapi';
-        $this->password = '12345678';
+        $this->username = 'hoteltivi';
+        $this->password = 'sunset@2022';
 
         $this->http = CORESYSTEM;
         $this->session = new Session();
