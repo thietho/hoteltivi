@@ -15,9 +15,12 @@ class Api
 
         $this->http = CORESYSTEM;
         $this->session = new Session();
-        //$this->token = $this->session->get('token');
+        $this->token = $this->session->get('token');
         $this->iscache = true;
-        $this->login();
+        if(empty($this->token)){
+            $this->login();
+        }
+
     }
     public function checkCacheVersion(){
         $result = $this->post('?route=Core/Auth/getCacheVersion',array());
@@ -90,6 +93,11 @@ class Api
             ),
         ));
         $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        if($httpcode == 401){
+            $this->login();
+            $this->post($url,$data);
+        }
         $err = curl_error($curl);
         curl_close($curl);
 
@@ -138,6 +146,11 @@ class Api
         ));
 
         $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        if($httpcode == 401){
+            $this->login();
+            $this->postJSON($url,$data);
+        }
         $err = curl_error($curl);
         curl_close($curl);
 
@@ -165,7 +178,7 @@ class Api
             $url .= "&token=".$this->token;
             //}
             //echo $url;
-            //echo $this->http.$url.PHP_EOL;
+            //$this->http.$url.PHP_EOL;
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $this->http.$url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -184,6 +197,11 @@ class Api
                 ),
             ));
             $response = curl_exec($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            if($httpcode == 401){
+                $this->login();
+                $this->get($url,$debuger);
+            }
             $err = curl_error($curl);
             curl_close($curl);
             $cache->create($filecache,$response);
@@ -235,7 +253,7 @@ class Api
         $this->logindata = json_decode($response,true);
         if($this->logindata['statuscode']){
             $this->token = $this->logindata['token'];
-            //$this->session->set('token', $this->token);
+            $this->session->set('token', $this->token);
         }
 
     }
