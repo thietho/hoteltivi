@@ -8,8 +8,8 @@
                     <table width="100%" class="table">
                         <thead>
                         <tr class="head">
-                            <th class="bill-date sidebar" scope="col">Ngày</th>
-                            <th class="bill-price sidebar" scope="col">Số tiền</th>
+                            <th class="bill-date sidebar" scope="col"><?php echo $this->labels['lbl_date']?></th>
+                            <th class="bill-price sidebar" scope="col"><?php echo $this->labels['lbl_amout']?></th>
                         </tr>
                         </thead>
 
@@ -21,8 +21,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 bill-total px-0">
-                    <p class="price-vat">Giá đã bao gồm 10% phí dịch vụ và 10% VAT</p>
-                    <p class="price-total">Tổng cộng: <span id="billtotal"></span> VNĐ</p>
+                    <p class="price-vat"><?php echo $this->labels['lbl_warring_service_vat']?></p>
+                    <p class="price-total"><?php echo $this->labels['lbl_total']?>: <span id="billtotal"></span> VNĐ</p>
                 </div>
             </div>
             <div class="col-lg-8 main-content">
@@ -31,9 +31,9 @@
                         <table class="table">
                             <thead>
                             <tr class="head">
-                                <th class="bill-date" scope="col">Ngày</th>
-                                <th class="bill-service" scope="col">Dịch vụ</th>
-                                <th class="bill-price" scope="col">Đơn giá (vnđ)</th>
+                                <th class="bill-date" scope="col"><?php echo $this->labels['lbl_date']?></th>
+                                <th class="bill-service" scope="col"><?php echo $this->labels['lbl_service']?></th>
+                                <th class="bill-price" scope="col"><?php echo $this->labels['lbl_unit_price']?> (vnđ)</th>
                             </tr>
                             </thead>
                         </table>
@@ -53,12 +53,12 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>Nhấn <span class="icon"><img
+                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img
                                                             src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p>trở lại</p>
+                                            <p><?php echo $this->labels['lbl_return']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>Trở <span>lại</span></p>
+                                            <p><?php echo $this->labels['lbl_return']?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -69,11 +69,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>Nhấn <span>PORTAL</span></p>
-                                            <p>về trang chủ</p>
+                                            <p><?php echo $this->labels['lbl_press']?> <span>PORTAL</span></p>
+                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>Trang <span>chủ</span></p>
+                                            <p><?php echo $this->labels['lbl_homepage']?></p>
                                         </div>
                                     </div>
                                 </a>
