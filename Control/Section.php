@@ -12,18 +12,16 @@ class Section extends Control
     private $session;
     public $language;
     public $member;
-    public function __construct(Api $api)
+    public function __construct(Api $api,$setting)
     {
+        global $ctlSetting,$language,$request;
         parent::__construct($api);
-        $this->request = new Request();
-        $ctlSetting = new \Lib\Setting($api);
+        $this->request = $request;
         $this->session = new Session();
-        $data = $ctlSetting->getGetList();
-        $this->language = new \Lib\Language('vn');
-        foreach($data as $item){
-            $this->setting[$item['code']] = $item;
-        }
+        $this->language = $language;
+        $this->setting = $setting;
         $this->member = $this->session->get('member');
+
     }
 
     public function loadView($view, $data = array())

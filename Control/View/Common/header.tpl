@@ -1,7 +1,9 @@
 <div class="row">
     <div class="col-lg-4 sub-menu-title">
         <div class="text-wrapper">
-            <p class="bottom"><?php echo $sitemap['sitemapname']?></p>
+            <p class="bottom">
+                <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
+            </p>
         </div>
     </div>
     <div class="col-lg-6 sub-menu-breadcrumb">
@@ -11,7 +13,9 @@
                 <p id="roomnumber"></p>
             </div>
             <div class="bottom">
-                <p>Trang chủ <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/> <?php echo $sitemap['sitemapname']?></p>
+                <p><?php echo $this->labels['lbl_homepage']?> <img src="<?php echo HTTPSERVER?>img/right-arrow.png"/>
+                    <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
+                </p>
             </div>
         </div>
     </div>

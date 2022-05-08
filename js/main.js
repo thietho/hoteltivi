@@ -58,9 +58,9 @@ $(document).ready(function () {
         TiviVideoPlayer.closePopup();
     });
 
-    TiviHistoryUrl.load();
-    TiviHistoryUrl.add(window.location.href);
-    console.log(TiviHistoryUrl.data);
+    // TiviHistoryUrl.load();
+    // TiviHistoryUrl.add(window.location.href);
+    // console.log(TiviHistoryUrl.data);
 });
 
 $(document).ready(function () {
@@ -70,8 +70,8 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
 });
 
@@ -84,8 +84,8 @@ $(document).ready(function () {
         rows: 3,
         verticalSwiping: true,
         infinite: false,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
 });
 
@@ -98,8 +98,8 @@ $(document).ready(function () {
         rows: 2,
         infinite: false,
         verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
     $('.food-menu-carousel').slick({
         arrows: true,
@@ -108,8 +108,8 @@ $(document).ready(function () {
         rows: 2,
         infinite: false,
         verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
 });
 

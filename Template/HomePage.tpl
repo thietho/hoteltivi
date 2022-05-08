@@ -23,11 +23,11 @@
                         <img src="<?php echo IMAGES?>home-logo.png"/>
                     </div>
                     <div class="content">
-                        <h1 class="title">Xin chào</h1>
-                        <p class="name">Quý khách</p>
+                        <h1 class="title"><?php echo $this->labels['lbl_hello']?></h1>
+                        <p class="name"><?php echo $this->labels['lbl_customers']?></p>
                         <div style="padding-top: 10px">
-                            <p class="des">Số phòng của bạn là <span id="roomnumber"></span></p>
-                            <p class="des">Chúng tôi hy vọng bạn sẽ tận hưởng kỳ nghỉ của bạn tại Sunset Santo của chúng tôi</p>
+                            <p class="des"><?php echo $this->labels['lbl_your_room_number_is']?> <span id="roomnumber"></span></p>
+                            <p class="des"><?php echo $this->labels['lbl_wellcom']?></p>
                             <!--<div id="log"></div>-->
                         </div>
 
@@ -37,12 +37,21 @@
                     <table style="margin: 0 auto">
                         <tr id="langRegion">
                             <td>
+                                <?php if($this->request->getLang() == 'vn'){ ?>
                                 <img src="<?php echo IMAGES?>vi-flag.png"/><br>
-                                <a href="#">Việt Nam</a>
+                                <?php }else{ ?>
+                                <img src="<?php echo IMAGES?>vi-flag-dis.png"/><br>
+                                <?php } ?>
+                                <a href="<?php echo $this->request->createLinkLang('vn')?>">Việt Nam</a>
                             </td>
                             <td>
+                                <?php if($this->request->getLang() == 'en'){ ?>
+                                <img src="<?php echo IMAGES?>en-flag.png"/><br>
+                                <?php }else{ ?>
                                 <img src="<?php echo IMAGES?>en-flag-dis.png"/><br>
-                                <a href="#">English</a>
+                                <?php } ?>
+
+                                <a href="<?php echo $this->request->createLinkLang('en')?>">English</a>
                             </td>
                         </tr>
                     </table>
@@ -68,10 +77,16 @@
             <div class="col-lg-10 list-item">
                 <?php for($i=1; $i < count($sitemaps); $i++){ ?>
                 <div class="list-item-sub">
-                    <a href="#">
+                    <a href="<?php echo $this->request->createLink($sitemaps[$i]['sitemapid'])?>">
                         <div class="item-wrapper">
                             <div class="img-wrapper"><img src="<?php echo IMAGESERVER?>root/upload/cms_sitemap/<?php echo $sitemaps[$i]['id']?>/<?php echo $sitemaps[$i]['image']?>"/></div>
-                            <h4 class="title"><?php echo $sitemaps[$i]['sitemapname']?></h4>
+                            <h4 class="title">
+                                <?php if($this->request->getLang() == 'vn'){ ?>
+                                <?php echo $sitemaps[$i]['sitemapname']?>
+                                <?php }else{ ?>
+                                <?php echo $sitemaps[$i]['sitemapname_'.$this->request->getLang()]==''?$sitemaps[$i]['sitemapname']:$sitemaps[$i]['sitemapname_'.$this->request->getLang()]?>
+                                <?php } ?>
+                            </h4>
                         </div>
                     </a>
                 </div>

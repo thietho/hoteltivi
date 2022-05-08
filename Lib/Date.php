@@ -61,7 +61,10 @@ final class Date
     {
         return date( 'Y-m-d' ,$this->timeToInt($date));
     }
-
+    function getWeedDay($date)
+    {
+        return date( 'w' ,$this->timeToInt($date));
+    }
     function getToday()
     {
         $today = $this->getVietnamToday();

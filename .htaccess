@@ -9,12 +9,17 @@ Options -Indexes
 
 
 RewriteEngine On
-#RewriteRule ^([a-zA-Z0-9_]*).html$ index.php?sitemapid=$1&%{QUERY_STRING} [L,QSA]
-RewriteRule ^([^?]*).html$ index.php?sitemapid=$1&%{QUERY_STRING} [L,QSA]
-RewriteRule ^([^?]*)/([a-zA-Z0-9_]*).html$ index.php?&sitemapid=$1&id=$2&%{QUERY_STRING} [L,QSA]
-#RewriteRule ^([a-zA-Z0-9_]*)/([a-zA-Z0-9_]*)/([^?]*).html$ index.php?page=$1&sitemapid=$2&id=$3&%{QUERY_STRING} [L,QSA]
+
+RewriteRule ^([a-z]{2})$ index.php?lang=$1&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-z]{2})/$ index.php?lang=$1&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-z]{2})/([^?]*).html$ index.php?lang=$1&sitemapid=$2&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-z]{2})/([^?]*)/([a-zA-Z0-9_]*).html$ index.php?lang=$1&sitemapid=$2&id=$3&%{QUERY_STRING} [L,QSA]
+
 RewriteRule ^([a-zA-Z0-9_]*).api$ index.php?object=$1&%{QUERY_STRING} [L,QSA]
 RewriteRule ^([a-zA-Z0-9_]*)/([a-zA-Z0-9_]*).api$ index.php?&object=$1&method=$2&%{QUERY_STRING} [L,QSA]
+
+RewriteRule ^([a-z]{2})/([a-zA-Z0-9_]*).api$ index.php?lang=$1&object=$2&%{QUERY_STRING} [L,QSA]
+RewriteRule ^([a-z]{2})/([a-zA-Z0-9_]*)/([a-zA-Z0-9_]*).api$ index.php?lang=$1&object=$2&method=$3&%{QUERY_STRING} [L,QSA]
 
 <IfModule mod_headers.c>
    Header add Access-Control-Allow-Origin: *

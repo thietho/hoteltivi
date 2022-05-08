@@ -159,35 +159,43 @@ function myEventHandler(event) {
                             }
                         });
                     } else {
-                        var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
-                        switch (sitemapid){
-                            case 'youtube':
-                                hcap.preloadedApplication.launchPreloadedApplication({
-                                    "id": '144115188075859002',
+                        switch (currentRegion) {
+                            case "menu":
+                                var sitemapid = sitemaps[mainmenu.current + 1].sitemapid
+                                switch (sitemapid){
+                                    case 'youtube':
+                                        hcap.preloadedApplication.launchPreloadedApplication({
+                                            "id": '144115188075859002',
 
-                                    "onSuccess": function () {
-                                    },
-                                    "onFailure": function (f) {
-                                        console.log("onFailure : errorMessage = " + f.errorMessage);
-                                    }
-                                });
-                                break;
-                            case 'sharescreen':
-                                hcap.preloadedApplication.launchPreloadedApplication({
-                                    "id": '144115188075855880',
+                                            "onSuccess": function () {
+                                            },
+                                            "onFailure": function (f) {
+                                                console.log("onFailure : errorMessage = " + f.errorMessage);
+                                            }
+                                        });
+                                        break;
+                                    case 'sharescreen':
+                                        hcap.preloadedApplication.launchPreloadedApplication({
+                                            "id": '144115188075855880',
 
-                                    "onSuccess": function () {
-                                    },
-                                    "onFailure": function (f) {
-                                        console.log("onFailure : errorMessage = " + f.errorMessage);
-                                    }
-                                });
+                                            "onSuccess": function () {
+                                            },
+                                            "onFailure": function (f) {
+                                                console.log("onFailure : errorMessage = " + f.errorMessage);
+                                            }
+                                        });
+                                        break;
+                                    default:
+                                        var url = $('.menucurent a').attr('href');
+                                        common.showLoading();
+                                        window.location = url;
+                                }
                                 break;
-                            default:
-                                var url = HTTPSERVER + sitemapid + ".html";
-                                common.showLoading();
-                                window.location = url;
+                            case "lang":
+                                window.location = $('.langcurrent a').attr('href');
+                                break;
                         }
+
 
                     }
 

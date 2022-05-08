@@ -6,7 +6,7 @@
 if($_SERVER['SERVER_NAME'] == 'localhost'){
     define('HTTPSERVER','http://localhost/hoteltivi/');
 }else{
-    define('HTTPSERVER','http://tivi.cntech.com.vn/');
+    define('HTTPSERVER','https://tivi.sunsetsanato.com/');
 }
 
 define('CONTROLVIEW','Control/View/');
@@ -30,5 +30,6 @@ require CONTROL.'Content.php';
 require CONTROL.'Sitemap.php';
 require CONTROL.'Setting.php';
 require CONTROL.'OptionSet.php';
+require CONTROL.'Label.php';
 
 define('DIHOTELENPOIN','http://115.79.241.38:8123/');

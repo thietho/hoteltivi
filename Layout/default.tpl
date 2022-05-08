@@ -39,6 +39,20 @@
 <?php echo $this->body?>
 <script type="text/javascript">
     var HTTPSERVER = "<?php echo HTTPSERVER?>";
+    var sitemapid = '<?php echo $this->request->get("sitemapid")?>';
+    var id = '<?php echo $this->request->get("id")?>';
+    try {
+        request = JSON.parse('<?php echo json_encode($this->request->getDataGet())?>');
+        console.log(request);
+    } catch (e) {
+        console.log(e);
+    }
+    try {
+        dataLang = JSON.parse('<?php echo json_encode($this->labels)?>');
+        console.log(dataLang);
+    } catch (e) {
+        console.log(e);
+    }
 </script>
 <script type="text/javascript" src="<?php echo JS?>jquery-3.6.0.js"></script>
 

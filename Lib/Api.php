@@ -10,8 +10,8 @@ class Api
     private $iscache;
     public $logindata;
     function __construct(){
-        $this->username = 'hoteltivi';
-        $this->password = 'sunset@2022';
+        $this->username = 'websiteapi';
+        $this->password = '12345678';
 
         $this->http = CORESYSTEM;
         $this->session = new Session();
@@ -25,12 +25,18 @@ class Api
     public function checkCacheVersion(){
         $result = $this->post('?route=Core/Auth/getCacheVersion',array());
         $updatetime = $this->session->get('cacheVersion');
-        if($updatetime != $result['updatetime']){
-            $this->session->set('cacheVersion',$result['updatetime']);
-            //echo 'Update Cache';
+        if(isset($result['updatetime'])){
+            if($updatetime != $result['updatetime']){
+                $this->session->set('cacheVersion',$result['updatetime']);
+                //echo 'Update Cache';
+                $cache = new Cache();
+                $cache->clear();
+            }
+        }else{
             $cache = new Cache();
             $cache->clear();
         }
+
     }
     public function getFile($urlfile,$filename){
         $cache = new Cache();
