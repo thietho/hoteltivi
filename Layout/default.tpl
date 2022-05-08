@@ -135,7 +135,7 @@
             </div>
             <div class="modal-footer">
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name  mr-2" index="0" action="back"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> Trở lại</h5>
+                    <h5 class="modal-title food-name  mr-2" index="0" action="back"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> <?php echo $this->labels['lbl_return']?></h5>
                 </div>
                 <div class="col-lg-4 px-0">
                     <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> Hủy đơn</h5>
@@ -149,7 +149,7 @@
 </div>
 <div id="videopopup">
     <video id="videoplayer" muted onended="TiviVideoPlayer.closePopup()"></video>
-    <button type="button" id="btnSkip">Nhấn Ok to Skip</button>
+    <button type="button" id="btnSkip"><?php echo $this->labels['lbl_press']?> Ok to Skip</button>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="room-service-popup" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">

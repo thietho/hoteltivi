@@ -36,11 +36,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>Nhấn <span class="icon"><img src="<?php echo HTTPSERVER?>img/ok-icon.png"/></span></p>
-                                            <p>để chọn</p>
+                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img src="<?php echo HTTPSERVER?>img/ok-icon.png"/></span></p>
+                                            <p><?php echo $this->labels['lbl_to_choose']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>dịch <span>vụ</span></p>
+                                            <p><?php echo $this->labels['lbl_service']?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -51,11 +51,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>Nhấn <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p>trở lại</p>
+                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
+                                            <p><?php echo $this->labels['lbl_return']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>Trở <span>lại</span></p>
+                                            <p><?php echo $this->labels['lbl_return']?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -66,11 +66,11 @@
                                 <a href="#">
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
-                                            <p>Nhấn <span>PORTAL</span></p>
-                                            <p>về trang chủ</p>
+                                            <p><?php echo $this->labels['lbl_press']?> <span>PORTAL</span></p>
+                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p>Trang <span>chủ</span></p>
+                                            <p><?php echo $this->labels['lbl_homepage']?></p>
                                         </div>
                                     </div>
                                 </a>
