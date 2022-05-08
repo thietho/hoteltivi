@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-3 pl-0">
                 <div class="list-group">
-                    <a href="<?php echo $this->request->createLink('listchannel')?>" class="list-group-item list-group-item-action list-group-channel <?php echo $this->request->get('group')==''?'groupchannelselect':''?>">Tất cả các kênh</a>
+                    <a href="<?php echo $this->request->createLink('listchannel')?>" class="list-group-item list-group-item-action list-group-channel <?php echo $this->request->get('group')==''?'groupchannelselect':''?>"><?php echo $this->labels['lbl_all_chanels']?></a>
                     <?php foreach($channelGroups as $key => $group){ ?>
-                    <a href="<?php echo $this->request->createLink('listchannel')?>?group=<?php echo $key?>" class="list-group-item list-group-item-action list-group-channel <?php echo $this->request->get('group')==$key?'groupchannelselect':''?>"><?php echo $group?></a>
+                    <a href="<?php echo $this->request->createLink('listchannel')?>?group=<?php echo $key?>" class="list-group-item list-group-item-action list-group-channel <?php echo $this->request->get('group')==$key?'groupchannelselect':''?>"><?php echo $this->labels['channel_'.$key]?></a>
                     <?php } ?>
                 </div>
             </div>
