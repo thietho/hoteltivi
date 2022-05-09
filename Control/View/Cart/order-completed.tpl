@@ -33,7 +33,7 @@
                                 <thead>
                                 <tr>
                                     <th class="cart-product-thumbnail">Sản phẩm</th>
-                                    <th class="cart-product-subtotal">Số lượng</th>
+                                    <th class="cart-product-subtotal"><?php echo $this->labels['lbl_quantity']?></th>
                                     <th class="cart-product-subtotal">Giá</th>
                                 </tr>
                                 </thead>

@@ -67,7 +67,7 @@
 <section class="home-menu">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 home-static curent">
+            <div class="col-lg-2 home-static curent" href="<?php echo $this->request->createLink('infosensetsanato')?>">
                 <div class="about-us">
                     <div class="item-wrapper">
                         <img src="<?php echo IMAGES?>logo.png"/>

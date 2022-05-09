@@ -13,11 +13,11 @@
                         <?php foreach($foods as  $food){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>"
                              foodid="<?php echo $food['id']?>"
-                             foodname="<?php echo $food['foodname']?>"
+                             foodname="<?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>"
                              price="<?php echo $food['price']?>"
                         >
                             <div class="food-name">
-                                <?php echo $food['foodname']?>
+                                <?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>
                                 <div class="text-right"><?php echo $this->string->numberFormate($food['price'])?></div>
                             </div>
                             <img src="<?php echo $food['image']?>">
@@ -28,11 +28,11 @@
                         <?php foreach($foods as $food){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>"
                              foodid="<?php echo $food['id']?>"
-                             foodname="<?php echo $food['foodname']?>"
+                             foodname="<?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>"
                              price="<?php echo $food['price']?>"
                         >
                             <div class="food-name">
-                                <?php echo $food['foodname']?>
+                                <?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>
                                 <div class="text-right"><?php echo $this->string->numberFormate($food['price'])?></div>
                             </div>
                             <img src="<?php echo $food['image']?>">
@@ -112,7 +112,7 @@
                                 <table width="100%" class="table">
                                     <tbody>
                                     <tr>
-                                        <td class="text-right">Số lượng: </td>
+                                        <td class="text-right"><?php echo $this->labels['lbl_quantity']?>: </td>
                                         <td class="food-qlt">
                                             <div class="form-group">
                                                 <input id="after" class="form-control quantity" type="number" value="1" min="1"/>

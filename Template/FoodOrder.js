@@ -21,9 +21,10 @@ function myEventHandler(event) {
                     }
                 }else {
                     if(service.index >= 0){
-                        var sitemapid = $('#main-region [index=' + service.index + ']').attr('sitemapid');
-                        console.log(sitemapid);
-                        var url = HTTPSERVER + sitemapid + ".html";
+                        // var sitemapid = $('#main-region [index=' + service.index + ']').attr('sitemapid');
+                        // console.log(sitemapid);
+                        // var url = HTTPSERVER + sitemapid + ".html";
+                        var url = $('#main-region [index=' + service.index + '] a').attr('href');
                         window.location = url;
                     }else {
                         FoodOrder.openBasket();

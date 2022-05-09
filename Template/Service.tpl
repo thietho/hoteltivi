@@ -10,8 +10,10 @@
                         <?php foreach($services as $key => $service){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>">
                             <a href="#">
-                                <p><?php echo $service['servicename']?></p>
-                                <img src="<?php echo $service['image']?>" servicename="<?php echo $service['servicename']?>">
+                                <p>
+                                    <?php echo $service[$this->request->translate('servicename')]!=''?$service[$this->request->translate('servicename')]:$service['servicename']?>
+                                </p>
+                                <img src="<?php echo $service['image']?>" servicename="<?php echo $service[$this->request->translate('servicename')]!=''?$service[$this->request->translate('servicename')]:$service['servicename']?>">
                             </a>
                         </div>
                         <?php } ?>

@@ -187,6 +187,9 @@ function myEventHandler(event) {
                                         break;
                                     default:
                                         var url = $('.menucurent a').attr('href');
+                                        if(url == undefined){
+                                            url = $('.curent').attr('href');
+                                        }
                                         common.showLoading();
                                         window.location = url;
                                 }

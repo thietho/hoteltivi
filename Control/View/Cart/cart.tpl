@@ -3,16 +3,16 @@
         <thead>
         <tr class="head">
             <th class="sidebar food-no" scope="col">No.</th>
-            <th class="sidebar food-name" scope="col">Name</th>
-            <th class="sidebar food-qlt" scope="col">Qlt</th>
-            <th class="sidebar food-price" scope="col">Price</th>
+            <th class="sidebar food-name" scope="col"><?php echo $this->labels['lbl_foodname']?></th>
+            <th class="sidebar food-qlt" scope="col"><?php echo $this->labels['lbl_qtl']?></th>
+            <th class="sidebar food-price" scope="col"><?php echo $this->labels['lbl_price']?></th>
         </tr>
         </thead>
         <tbody id="listfoodorder"></tbody>
     </table>
     <div class="row">
         <div class="col-lg-6">
-            <p class="total">Total: <span></span></p>
+            <p class="total"><?php echo $this->labels['lbl_total']?>: <span></span></p>
         </div>
         <div class="col-lg-6">
             <div class="basket-wrapper" id="btnBasket" index="0">

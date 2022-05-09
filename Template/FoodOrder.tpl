@@ -12,7 +12,9 @@
                         <?php foreach($sitemaps as $key => $sitemap){ ?>
                         <div class="item col-lg-12" index="<?php echo $key?>" sitemapid="<?php echo $sitemap['sitemapid']?>">
                             <a href="<?php echo $this->request->createLink($sitemap['sitemapid'])?>">
-                                <p><?php echo $sitemap['sitemapname']?></p>
+                                <p>
+                                    <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
+                                </p>
                                 <img src="<?php echo $sitemap['image']?>">
                             </a>
                         </div>

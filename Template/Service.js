@@ -7,7 +7,7 @@ function myEventHandler(event){
                 if(service.popupshow == false){
                     $('#room-service-popup').modal();
                     var servicename = $('.serviceselect').attr('servicename');
-                    $('#room-service-popup .modal-body p').html('Bạn có muốn đặt dịch vụ '+ servicename.toLowerCase() +'?');
+                    $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
                 }else {
                     var servicename = $('.serviceselect').attr('servicename');
                     FoodOrder.orderService(servicename);

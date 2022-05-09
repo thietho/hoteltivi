@@ -71,7 +71,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title food-name"><img src="<?php echo HTTPSERVER?>img/cart-icon.png"/>
-                    <span class="cart-number">7</span> Giỏ hàng</h5>
+                    <span class="cart-number">7</span> <?php echo $this->labels['lbl_cart']?></h5>
             </div>
             <div class="modal-body">
                 <form>
@@ -81,51 +81,18 @@
                                 <thead>
                                 <tr class="head">
                                     <th class="food-no" scope="col">No.</th>
-                                    <th class="food-name" scope="col">Name</th>
-                                    <th class="food-qlt" scope="col">Qlt</th>
-                                    <th class="food-price" scope="col">Price</th>
+                                    <th class="food-name" scope="col"><?php echo $this->labels['lbl_foodname']?></th>
+                                    <th class="food-qlt" scope="col"><?php echo $this->labels['lbl_qtl']?></th>
+                                    <th class="food-price" scope="col"><?php echo $this->labels['lbl_price']?></th>
                                 </tr>
                                 </thead>
-                                <tbody id="listfoodorderpopup">
-                                <tr>
-                                    <td class="food-no">1</td>
-                                    <td class="food-name">Mỳ xào giòn</td>
-                                    <td class="food-qlt">
-                                        <div class="form-group">
-                                            <input class="form-control basket" type="number" value="1" min="1"/>
-                                        </div>
-                                    </td>
-                                    <td class="food-price"><span>350.000 VNĐ</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="food-no">1</td>
-                                    <td class="food-name">Mỳ xào giòn</td>
-                                    <td class="food-qlt">
-                                        <div class="form-group">
-                                            <input class="form-control basket" type="number" value="1" min="1"
-                                                   max="10"/>
-                                        </div>
-                                    </td>
-                                    <td class="food-price"><span>350.000 VNĐ</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="food-no">1</td>
-                                    <td class="food-name">Mỳ xào giòn</td>
-                                    <td class="food-qlt">
-                                        <div class="form-group">
-                                            <input class="form-control basket" type="number" value="1" min="1"
-                                                   max="10"/>
-                                        </div>
-                                    </td>
-                                    <td class="food-price"><span>350.000 VNĐ</span></td>
-                                </tr>
-                                </tbody>
+                                <tbody id="listfoodorderpopup"></tbody>
                             </table>
                         </div>
                         <hr>
                         <div class="col-lg-7">
-                            <h5 class="modal-title food-name food-total">Tổng tiền</h5>
-                            <p class="food-vat">Giá đã bao gồm 10% phí dịch vụ và 10% VAY</p>
+                            <h5 class="modal-title food-name food-total"><?php echo $this->labels['lbl_total']?></h5>
+                            <p class="food-vat"><?php echo $this->labels['lbl_warring_service_vat']?></p>
                         </div>
                         <div class="col-lg-5">
                             <p class="food-price-total">2.450.000 VNĐ</p>
@@ -138,10 +105,10 @@
                     <h5 class="modal-title food-name  mr-2" index="0" action="back"><img src="<?php echo HTTPSERVER?>img/level-back-icon.png"/> <?php echo $this->labels['lbl_return']?></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> Hủy đơn</h5>
+                    <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> <?php echo $this->labels['lbl_cancelorder']?></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> Xác nhận</h5>
+                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> <?php echo $this->labels['lbl_confirm']?></h5>
                 </div>
             </div>
         </div>
@@ -156,7 +123,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Đặt dịch vụ</span></h5>
+                <h5 class="modal-title"><?php echo $this->request->translate('lbl_call_for_service')?></span></h5>
             </div>
             <div class="modal-body">
                 <p></p>
