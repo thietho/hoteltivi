@@ -10,7 +10,7 @@
                     <p>
                         <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
                     </p>
-                    <img src="<?php echo $sitemap['image']?>" servicename="<?php echo $sitemap['sitemapname']?>">
+                    <img src="<?php echo $sitemap['image']?>" servicename="<?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>">
                 </a>
             </div>
             <?php } ?>

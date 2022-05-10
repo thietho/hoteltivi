@@ -123,7 +123,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><?php echo $this->request->translate('lbl_call_for_service')?></span></h5>
+                <h5 class="modal-title"><?php echo $this->labels['lbl_call_for_service']?></span></h5>
             </div>
             <div class="modal-body">
                 <p></p>
