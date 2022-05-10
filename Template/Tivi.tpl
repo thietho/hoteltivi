@@ -36,7 +36,7 @@
                     <?php foreach($sitemaps as $sitemap){ ?>
                     <div class="item" video="<?php echo $sitemap['video']?>" sitemapid="<?php echo $sitemap['id']?>">
                         <a href="#">
-                            <p><?php echo $sitemap['sitemapname']?><p>
+                            <p>
                                 <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
                             </p>
                             <img src="<?php echo $sitemap['image']?>">
