@@ -16,7 +16,7 @@ FoodOrder = {
                 FoodOrder.load();
             });
         }else {
-            toastr["error"]('Không được phép đặt món!', 'Cảnh báo!');
+            toastr["error"](dataLang.alert_food_not_allow_order, dataLang.alert_warning);
             $('#food-order-popup').modal('hide');
         }
 
@@ -171,23 +171,29 @@ FoodOrder = {
         });
     },
     orderService:function (servicename) {
-        common.showLoading();
-        $.post(HTTPSERVER+'FoodOrder/orderService.api',{
-            roomnumber:localStorage.getItem('roomnumber'),
-            servicename:servicename
-        },function (result) {
-            common.endLoading();
-            $('#room-service-popup').modal('hide');
-            if(result.statuscode){
-                toastr["success"](result.text, "Success");
-            }else {
-                var arr = new Array();
-                for (var i in result.errors) {
-                    arr.push(result.errors[i])
+        if(this.allOrder){
+            common.showLoading();
+            $.post(HTTPSERVER+'FoodOrder/orderService.api',{
+                roomnumber:localStorage.getItem('roomnumber'),
+                servicename:servicename
+            },function (result) {
+                common.endLoading();
+                $('#room-service-popup').modal('hide');
+                if(result.statuscode){
+                    toastr["success"](result.text, "Success");
+                }else {
+                    var arr = new Array();
+                    for (var i in result.errors) {
+                        arr.push(result.errors[i])
+                    }
+                    toastr["error"](arr.join('<br>'), result.text);
                 }
-                toastr["error"](arr.join('<br>'), result.text);
-            }
-        });
+            });
+        }else {
+            toastr["error"](dataLang.alert_food_not_allow_service, dataLang.alert_warning);
+            $('#food-order-popup').modal('hide');
+        }
+
     }
 }
 
