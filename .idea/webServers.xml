@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e808e0d3-4a52-496d-b4f0-bd4bc0fda7f3" name="103.42.56.167" url="https://tivi.sunsetsanato.com/">
+      <webServer id="e808e0d3-4a52-496d-b4f0-bd4bc0fda7f3" name="tivi.sunsetsanato.com" url="https://tivi.sunsetsanato.com/">
         <fileTransfer rootFolder="/tivi.sunsetsanato.com" host="103.139.203.39" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

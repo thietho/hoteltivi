@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="103.42.56.167" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="tivi.sunsetsanato.com" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="103.42.56.167">
+      <paths name="tivi.sunsetsanato.com">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
