@@ -3,6 +3,7 @@ session_start();
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
+
 require 'startup.php';
 $request = new \Lib\Request();
 $cache = new \Lib\Cache();
@@ -13,6 +14,7 @@ $string = new \Lib\ObjString();
 $ctlSetting = new \Lib\Setting($api);
 $ctlSitemap = new \Lib\Sitemap($api);
 $language = new \Lib\Language('vn');
+
 $data = $ctlSetting->getGetList();
 $setting = array();
 foreach($data as $item){
@@ -31,11 +33,13 @@ foreach ($dataLable as $item){
 }
 if($request->get('object') == ''){
 
+
     $cachefile = md5(json_encode($request->getDataGet())).'.tpl';
     $sitemapid = $request->get('sitemapid')==''?'Home':$request->get('sitemapid');
     $sitemap = $ctlSitemap->getSitemap($sitemapid);
-    $page = $sitemap['sitemaptype'];
+    $page = isset($sitemap['sitemaptype'])?$sitemap['sitemaptype']:'HomePage';
     $arr_notcache = array('RoomBooking','Member','TicketBooking');
+
     if(in_array($page,$arr_notcache)){
         $output = '';
     }else{

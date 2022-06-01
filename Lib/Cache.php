@@ -8,17 +8,7 @@ class Cache
 
     public function __construct()
     {
-        $files = glob($this->dir . '*.*');
-        if ($files) {
-            foreach ($files as $file) {
-                $objFile = new \Lib\File();
-                $info = $objFile->getFileInfor($file);
-                if (time() - $info['atime'] > $this->expire) {
-                    unlink($file);
-                }
 
-            }
-        }
     }
 
     public function create($filename, $content)
@@ -32,8 +22,6 @@ class Cache
     public function check($filename)
     {
         if (file_exists($this->dir . $filename)) {
-            $objFile = new File();
-            $info = $objFile->getFileInfor($this->dir . $filename);
             return true;
         } else {
             return false;
@@ -46,19 +34,10 @@ class Cache
             return '';
         }
     }
-    public function get($filename, $expire = 0)
+    public function get($filename)
     {
         if (file_exists($this->dir . $filename)) {
-            $objFile = new File();
-            $info = $objFile->getFileInfor($this->dir . $filename);
-            if ($expire > 0) {
-                if (time() - $info['atime'] > $expire) {
-                    unlink($this->dir . $filename);
-                    return '';
-                }
-            } else {
-                return file_get_contents($this->dir . $filename);
-            }
+            return file_get_contents($this->dir . $filename);
         } else {
             return '';
         }
@@ -91,7 +70,7 @@ class Cache
             }
         }
     }
-    
+
     public function clearClass($classname){
         $files = glob($this->dir .$classname. '*');
         if ($files) {
