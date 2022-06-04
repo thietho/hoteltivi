@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="0b129f45-6120-40b8-98db-ea58175be219" name="tivi.cntech.com.vn" url="http://103.42.56.167">
+        <fileTransfer rootFolder="/tivi.cntech.com.vn" host="103.42.56.167" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

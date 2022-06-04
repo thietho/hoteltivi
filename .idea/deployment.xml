@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="tivi.sunsetsanato.com" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="tivi.cntech.com.vn">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="tivi.sunsetsanato.com">
         <serverdata>
           <mappings>

@@ -36,8 +36,8 @@ $(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/up-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/down-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/up-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/down-icon.png'>"
     });
 });
 
@@ -51,8 +51,8 @@ $(document).ready(function () {
         slidesToScroll: 1,
         infinite: false,
         verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='./img/left-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='./img/right-icon.png'>"
+        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
     $('#videopopup #btnSkip').click(function () {
         TiviVideoPlayer.closePopup();
