@@ -17,7 +17,7 @@ $(document).ready(function() {
                             errors.push(result.data[key])
                         }
                         $.alert({
-                            title: 'Cảnh báo',
+                            title: dataLang.alert_warning,
                             content: errors.join('<br>'),
                         });
                         common.endLoading();

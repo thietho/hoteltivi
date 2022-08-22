@@ -16,7 +16,8 @@ FoodOrder = {
                 FoodOrder.load();
             });
         }else {
-            toastr["error"](dataLang.alert_food_not_allow_order, dataLang.alert_warning);
+            //toastr["error"](dataLang.alert_food_not_allow_order, dataLang.alert_warning);
+            toastr["error"](dataLang.lbl_the_room_is_locked, dataLang.alert_warning);
             $('#food-order-popup').modal('hide');
         }
 

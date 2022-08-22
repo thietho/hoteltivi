@@ -69,7 +69,7 @@ $(document).ready(function() {
         }else {
             $.alert({
                 title: 'Cảnh báo!',
-                content: 'Bạn chưa chọn <?php echo $this->labels['lbl_quantity']?> phòng',
+                content: 'Bạn chưa chọn <?php echo $this->labels["lbl_quantity"]?> phòng',
             });
         }
     });
