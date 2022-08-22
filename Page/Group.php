@@ -13,7 +13,12 @@ class Group extends Page
         }
         $this->setData('sitemaps',$sitemaps);
         //Body
-        $this->setTemplate('Group.tpl');
+        if(count($sitemaps)>6){
+            $this->setTemplate('Group.tpl');
+        }else{
+            $this->setTemplate('Group_old.tpl');
+        }
+
         $this->setLayout('default.tpl');
         return $this->render();
     }

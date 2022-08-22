@@ -1,76 +1,154 @@
 window.addEventListener("keyup", myEventHandler);
+
 function myEventHandler(event){
     //console.log(event);
     if(service.lockui == false){
-        switch (event.keyCode) {
-            case 13:
-                if(service.popupshow){
-                    var servicename = $('.serviceselect').attr('servicename');
-                    FoodOrder.orderService(servicename);
-                }
-                if (TiviVideoPlayer.isplay) {
-                    TiviVideoPlayer.closePopup();
-                } else {
-                    var pagetype = $('.serviceselect').parent().attr('pagetype');
-                    switch (pagetype) {
-                        case 'Video':
-                            var scr = $('.serviceselect').parent().attr('video')
-                            TiviVideoPlayer.openPopup(scr);
-                            break;
-                        case 'Service':
-                            $('#room-service-popup').modal();
-                            var servicename = $('.serviceselect').attr('servicename');
-                            $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
-                            break;
-                        default:
-                            common.showLoading();
-                            window.location = $('.serviceselect').parent().attr('href');
+        if($('.item').length > 6){
+            switch (event.keyCode) {
+                case 13:
+                    if(service.popupshow){
+                        var servicename = $('.serviceselect').attr('servicename');
+                        FoodOrder.orderService(servicename);
                     }
-                }
+                    if (TiviVideoPlayer.isplay) {
+                        TiviVideoPlayer.closePopup();
+                    } else {
+                        var pagetype = $('.serviceselect').parent().attr('pagetype');
+                        switch (pagetype) {
+                            case 'Video':
+                                var scr = $('.serviceselect').parent().attr('video')
+                                TiviVideoPlayer.openPopup(scr);
+                                break;
+                            case 'Service':
+                                $('#room-service-popup').modal();
+                                var servicename = $('.serviceselect').attr('servicename');
+                                $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
+                                break;
+                            default:
+                                common.showLoading();
+                                window.location = $('.serviceselect').parent().attr('href');
+                        }
+                    }
 
-                break;
-            case 38: //Move top
-                if(service.index - 1 >= 0) {
-                    service.index -= 1;
-                    service.selectService();
-                }
-                break;
-            case 40: //Move down
-                if(service.index < service.max){
-                    service.index +=1;
-                    service.selectService();
-                }
-                break;
-            case 37: //Move left
-                if(service.index - service.rows >= 0){
-                    service.index -= service.rows;
-                    service.selectService();
-                }
+                    break;
+                case 38: //Move top
+                    if(service.index - 1 >= 0) {
+                        service.index -= 1;
+                        service.selectService();
+                    }
+                    break;
+                case 40: //Move down
+                    if(service.index < service.max){
+                        service.index +=1;
+                        service.selectService();
+                    }
+                    break;
+                case 37: //Move left
+                    if(service.index - service.rows >= 0){
+                        service.index -= service.rows;
+                        service.selectService();
+                    }
 
-                break;
-            case 39: //Move right
-                //$('.slick-next').click();
-                service.index +=service.rows;
-                if(service.index > service.max){
-                    service.index = service.max;
-                }
-                service.selectService();
-                break;
-            case 461: //Back
-            case 8: //Back
-                if(service.popupshow){
-                    $('#room-service-popup').modal('hide');
-                }else {
+                    break;
+                case 39: //Move right
+                    //$('.slick-next').click();
+                    service.index +=service.rows;
+                    if(service.index > service.max){
+                        service.index = service.max;
+                    }
+                    service.selectService();
+                    break;
+                case 461: //Back
+                case 8: //Back
+                    if(service.popupshow){
+                        $('#room-service-popup').modal('hide');
+                    }else {
+                        common.showLoading();
+                        window.history.back();
+                    }
+                    break;
+                case 602: //Portal
+                case 80: //Portal
                     common.showLoading();
-                    window.history.back();
-                }
-                break;
-            case 602: //Portal
-            case 80: //Portal
-                common.showLoading();
-                window.location = '<?php echo $this->request->createLink()?>';
-                break;
+                    window.location = '<?php echo $this->request->createLink()?>';
+                    break;
+            }
+        }else {
+            switch (event.keyCode) {
+                case 13:
+                    if(service.popupshow){
+                        var servicename = $('.serviceselect').attr('servicename');
+                        FoodOrder.orderService(servicename);
+                    }
+                    if (TiviVideoPlayer.isplay) {
+                        TiviVideoPlayer.closePopup();
+                    } else {
+                        var pagetype = $('.serviceselect').parent().attr('pagetype');
+                        switch (pagetype) {
+                            case 'Video':
+                                var scr = $('.serviceselect').parent().attr('video')
+                                TiviVideoPlayer.openPopup(scr);
+                                break;
+                            case 'Service':
+                                $('#room-service-popup').modal();
+                                var servicename = $('.serviceselect').attr('servicename');
+                                $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
+                                break;
+                            default:
+                                common.showLoading();
+                                window.location = $('.serviceselect').parent().attr('href');
+                        }
+                    }
+
+                    break;
+                case 38: //Move top
+                    service.index -= 3;
+                    if(service.index < 0){
+                        service.index = 0;
+                    }
+                    service.selectService();
+                    break;
+                case 40: //Move down
+                    if(service.index >= 0) {
+                        service.index += 3;
+                        if(service.index > service.max){
+                            service.index = service.max;
+                        }
+                        service.selectService();
+                    }
+                    break;
+                case 37: //Move left
+                    if(service.index - 1 >= 0) {
+                        service.index -= 1;
+                        service.selectService();
+                    }
+
+                    break;
+                case 39: //Move right
+                    //$('.slick-next').click();
+                    if(service.index < service.max){
+                        service.index +=1;
+                        service.selectService();
+                    }
+                    break;
+                case 461: //Back
+                case 8: //Back
+                    if(service.popupshow){
+                        $('#room-service-popup').modal('hide');
+                    }else {
+                        common.showLoading();
+                        window.history.back();
+                    }
+
+                    break;
+                case 602: //Portal
+                case 80: //Portal
+                    common.showLoading();
+                    window.location = '<?php echo $this->request->createLink()?>';
+                    break;
+            }
         }
+
     }
 
 }
