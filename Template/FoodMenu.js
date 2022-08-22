@@ -189,11 +189,11 @@ $('.btn-ok').click(function () {
 });
 service = {
     index: 0,
-    iteminfram: 4,
+    iteminfram: 6,
     offset: 0,
     rows: 2,
     minindex: 0,
-    maxindex: 4,
+    maxindex: 6,
     max: $('.item').length - 1,
     lockui: false,
     popupshow: false,

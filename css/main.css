@@ -871,9 +871,9 @@ section.list-channel {
     font-weight: bold;
 }
 
-.main-content .menu-bottom .text-wrapper.choise {
-    background: #f58220;
-}
+/*.main-content .menu-bottom .text-wrapper.choise {*/
+/*    background: #f58220;*/
+/*}*/
 
 .room-service-carousel .item, .tour-travel-carousel .item {
     position: relative;

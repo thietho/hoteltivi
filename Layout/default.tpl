@@ -108,7 +108,7 @@
                     <h5 class="modal-title food-name" index="1" action="emptybasket"><img src="<?php echo HTTPSERVER?>img/empty-basket-icon.png"/> <?php echo $this->labels['lbl_cancelorder']?></h5>
                 </div>
                 <div class="col-lg-4 px-0">
-                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> <?php echo $this->labels['lbl_confirm']?></h5>
+                    <h5 class="modal-title food-name ml-2" action="ordernow" index="2"><img src="<?php echo HTTPSERVER?>img/order-now-icon.png"/> <?php echo $this->labels['lbl_order_now']?></h5>
                 </div>
             </div>
         </div>

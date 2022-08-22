@@ -7,7 +7,7 @@ class FoodOrder extends Page
         $this->setData('header',$this->section->loadViewPage('Common/header.tpl',['sitemap' => $this->data['sitemap']]));
         //Body
         $this->setData('cart',$this->section->loadViewPage('Cart/cart.tpl'));
-        $childs = $this->sitemap->getChilds($this->data['sitemap']['id']);
+        $childs = $this->sitemap->getChilds(55);
 
         foreach ($childs as &$sitemap){
             $sitemap['image'] = IMAGESERVER."fixsize-586x310/upload/cms_sitemap/".$sitemap['id']."/".$sitemap['image'];

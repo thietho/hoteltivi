@@ -227,7 +227,8 @@ $(document).ready(function () {
             $('.content .name').html(customer.Name)
             FoodOrder.allOrder = true;
         }else {
-            FoodOrder.allOrder = false;
+            //FoodOrder.allOrder = false;
+            FoodOrder.allOrder = true;
         }
 
     })

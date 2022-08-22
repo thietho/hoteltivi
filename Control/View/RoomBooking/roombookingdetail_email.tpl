@@ -70,7 +70,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>10% VAT</td>
+                            <td>8% VAT</td>
                             <td class="text-right color-blue">
                                 <?php echo $this->string->numberFormate($bookingdetail['total']*0.1)?> VNĐ
                             </td>
