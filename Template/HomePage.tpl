@@ -8,7 +8,7 @@
                         <div class="temp">
                             <img src="<?php echo IMAGES?>weather/02d.png" id="weather-icon"/>
                             <span id="weather-current"></span>
-                            <p class="des">have a nice day</p>
+                            <p class="des"><?php echo $this->labels['lbl_have_a_nice_day']?></p>
                         </div>
                         <div class="time">
                             <span id="shorttime">09:30</span>
