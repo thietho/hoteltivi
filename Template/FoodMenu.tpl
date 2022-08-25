@@ -24,22 +24,6 @@
                         </div>
                         <?php $key++;?>
                         <?php } ?>
-                        <?php if(count($foods)<=6){ ?>
-                        <?php foreach($foods as $food){ ?>
-                        <div class="item col-lg-12" index="<?php echo $key?>"
-                             foodid="<?php echo $food['id']?>"
-                             foodname="<?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>"
-                             price="<?php echo $food['price']?>"
-                        >
-                            <div class="food-name">
-                                <?php echo $food[$this->request->translate('foodname')]!=''?$food[$this->request->translate('foodname')]:$food['foodname']?>
-                                <div class="text-right"><?php echo $this->string->numberFormate($food['price'])?></div>
-                            </div>
-                            <img src="<?php echo $food['image']?>">
-                        </div>
-                        <?php $key++;?>
-                        <?php } ?>
-                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -49,49 +33,13 @@
                 <div class="menu-bottom">
                     <div class="row">
                         <div class="col-lg-4 left pr-0">
-                            <div class="text-wrapper choise">
-                                <a href="#">
-                                    <div class="row">
-                                        <div class="col-lg-6 press-left text-left">
-                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img src="<?php echo HTTPSERVER?>img/ok-icon.png"/></span></p>
-                                            <p><?php echo $this->labels['lbl_to_choose']?></p>
-                                        </div>
-                                        <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_service']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php echo $btnOk?>
                         </div>
                         <div class="col-lg-4 left">
-                            <div class="text-wrapper">
-                                <a href="#">
-                                    <div class="row">
-                                        <div class="col-lg-6 press-left text-left">
-                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p><?php echo $this->labels['lbl_return']?></p>
-                                        </div>
-                                        <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_return']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php echo $btnBack?>
                         </div>
                         <div class="col-lg-4 right">
-                            <div class="text-wrapper">
-                                <a href="#">
-                                    <div class="row">
-                                        <div class="col-lg-6 press-left text-left">
-                                            <p><?php echo $this->labels['lbl_press']?> <span>PORTAL</span></p>
-                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
-                                        </div>
-                                        <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_homepage']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php echo $btnPortal?>
                         </div>
                     </div>
                 </div>
@@ -130,7 +78,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-ok">OK</button>
+                    <button type="button" class="btn btn-ok btn-handle">OK</button>
                     <button type="button" class="btn btn-cancel" data-dismiss="modal">CANCEL</button>
                 </div>
             </div>

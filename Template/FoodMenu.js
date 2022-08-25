@@ -22,11 +22,16 @@ function myEventHandler(event) {
                     }
                 }else {
                     if(FoodOrder.basketOpen == false){
-                        var foodid = $('#foodid').val();
-                        var foodname = $('#foodname').val();
-                        var price = $('#price').val();
-                        var quantity = $('.quantity').val();
-                        FoodOrder.add(foodid,foodname,price,quantity);
+                        if($('.btn-handle').hasClass('btn-ok')){
+                            var foodid = $('#foodid').val();
+                            var foodname = $('#foodname').val();
+                            var price = $('#price').val();
+                            var quantity = $('.quantity').val();
+                            FoodOrder.add(foodid,foodname,price,quantity);
+                        }else {
+                            $('#food-order-popup').modal('hide')
+                        }
+
                     }else {
                         var action = $('#basket-popup .serviceselect').attr('action')!=undefined?$('#basket-popup .serviceselect').attr('action'):'';
                         switch (action) {
@@ -85,22 +90,34 @@ function myEventHandler(event) {
                     if (service.popupshow == false) {
                         if (service.index - service.rows >= 0) {
                             service.index -= service.rows;
+                            $('.item img').addClass('serviceselect');
+                            $('#btnBasket').removeClass('serviceselect');
                             service.selectService();
                         }else {
                             $('.item img').removeClass('serviceselect');
                             $('#btnBasket').addClass('serviceselect');
                             service.index = -2;
                         }
+                    }else {
+                        $('.btn-ok').addClass('btn-handle');
+                        $('.btn-cancel').removeClass('btn-handle');
                     }
                 }
                 break;
             case 39: //Move right
                 if (service.popupshow == false) {
+                    if(service.index == -2){
+                        $('#btnBasket').removeClass('serviceselect');
+                    }
                     service.index += service.rows;
                     if (service.index > service.max) {
                         service.index = service.max;
                     }
                     service.selectService();
+
+                }else {
+                    $('.btn-ok').removeClass('btn-handle');
+                    $('.btn-cancel').addClass('btn-handle');
                 }
                 if(FoodOrder.basketOpen){
                     FoodOrder.selectIncre();
@@ -175,6 +192,8 @@ function myEventHandler(event) {
 $('#food-order-popup').on('show.bs.modal', function (e) {
     // do something...
     service.popupshow = true;
+    $('.btn-ok').addClass('btn-handle');
+    $('.btn-cancel').removeClass('btn-handle');
 })
 $('#food-order-popup').on('hidden.bs.modal', function (e) {
     // do something...

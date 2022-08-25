@@ -49,35 +49,10 @@
                 <div class="menu-bottom">
                     <div class="row">
                         <div class="col-lg-6 left">
-                            <div class="text-wrapper">
-                                <a href="#">
-                                    <div class="row">
-                                        <div class="col-lg-6 press-left text-left">
-                                            <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img
-                                                            src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p><?php echo $this->labels['lbl_return']?></p>
-                                        </div>
-                                        <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_return']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php echo $btnBack?>
                         </div>
                         <div class="col-lg-6 right">
-                            <div class="text-wrapper">
-                                <a href="#">
-                                    <div class="row">
-                                        <div class="col-lg-6 press-left text-left">
-                                            <p><?php echo $this->labels['lbl_press']?> <span>PORTAL</span></p>
-                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
-                                        </div>
-                                        <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_homepage']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php echo $btnPortal?>
                         </div>
                     </div>
                 </div>

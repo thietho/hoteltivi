@@ -20,7 +20,7 @@
             <div class="cover welcome-wrapper">
                 <div class="welcome">
                     <div class="logo">
-                        <img src="<?php echo IMAGES?>home-logo.png"/>
+                        <img src="<?php echo IMAGES?>logo3d.png"/>
                     </div>
                     <div class="content">
                         <h1 class="title"><?php echo $this->labels['lbl_hello']?></h1>

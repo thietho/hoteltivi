@@ -79,7 +79,7 @@ FoodOrder = {
                     '                                        <td class="food-name">'+result[i].foodname+'</td>' +
                     '                                        <td class="food-qlt">' +
                     '                                            <div class="form-group">' +
-                    '                                                <div class="input-group"><span class="input-group-btn"><button type="button" class="btn btn-down">-</button></span><input class="form-control basket" foodid="'+result[i].foodid+'" type="text" value="'+result[i].quantity+'" min="1" style="text-align: center;"><span class="input-group-btn"><button type="button" class="btn btn-up">+</button></span></div>' +
+                    '                                                <div class="input-group"><span class="input-group-btn"><button type="button" class="btn btn-down">-</button></span><input class="form-control basket" foodid="'+result[i].foodid+'" price="'+result[i].price+'" type="text" value="'+result[i].quantity+'" min="1" style="text-align: center;"><span class="input-group-btn"><button type="button" class="btn btn-up">+</button></span></div>' +
                     '                                            </div>' +
                     '                                        </td>' +
                     '                                        <td class="food-price"><span>'+common.formateNumber(result[i].price)+'</span></td>' +
@@ -137,6 +137,13 @@ FoodOrder = {
         if($('.selectrow .basket').length){
             var qty = Number($('.selectrow .basket').val());
             $('.selectrow .basket').val(qty+1);
+            var sum = 0;
+            $('#listfoodorderpopup .basket').each(function () {
+                var price = $(this).attr('price');
+                var quantity = $(this).val();
+                sum += Number(price)*Number(quantity)
+            });
+            $('.food-price-total').html(common.formateNumber(sum))
         }else {
             this.selectMoveDown();
         }
@@ -146,6 +153,13 @@ FoodOrder = {
             var qty = Number($('.selectrow .basket').val());
             if(qty>0){
                 $('.selectrow .basket').val(qty-1);
+                var sum = 0;
+                $('#listfoodorderpopup .basket').each(function () {
+                    var price = $(this).attr('price');
+                    var quantity = $(this).val();
+                    sum += Number(price)*Number(quantity)
+                });
+                $('.food-price-total').html(common.formateNumber(sum))
             }
         }else {
             this.selectMoveUp();

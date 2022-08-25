@@ -67,6 +67,9 @@ class Page
         }
         $this->member = $this->session->get('member');
         $this->labels = $labels;
+        $this->setData('btnOk',$this->section->loadView('Common/btnOk.tpl'));
+        $this->setData('btnBack',$this->section->loadView('Common/btnBack.tpl'));
+        $this->setData('btnPortal',$this->section->loadView('Common/btnPortal.tpl'));
     }
 
     /**
@@ -184,37 +187,5 @@ class Page
         $output = ob_get_contents();
         ob_end_clean();
         return $output;
-    }
-    protected function getDataBooking(){
-        $databooking = array();
-        if(!empty($this->request->get('checkin'))){
-            $this->session->set('checkin',$this->request->get('checkin'));
-            $this->session->set('checkout',$this->request->get('checkout'));
-            $this->session->set('adults',$this->request->get('adults'));
-            $this->session->set('childs',empty($this->request->get('childs'))?0:$this->request->get('childs'));
-            $this->session->set('ageofchild',empty($this->request->get('ageofchild'))?'':$this->request->get('ageofchild'));
-            $this->session->set('rooms',$this->request->get('rooms'));
-        }
-        if(!empty($this->request->get('checkdate'))){
-            $this->session->set('checkdate',$this->request->get('checkdate'));
-            $this->session->set('tickeadults',$this->request->get('tickeadults'));
-            $this->session->set('ticketchilds',empty($this->request->get('ticketchilds'))?0:$this->request->get('ticketchilds'));
-        }
-        $databooking['checkin'] = $this->session->get('checkin');
-        $databooking['checkout'] = $this->session->get('checkout');
-        $databooking['adults'] = $this->session->get('adults')==''?2:$this->session->get('adults');
-        $databooking['childs'] = $this->session->get('childs')==''?0:$this->session->get('childs');
-        $databooking['ageofchild'] = $this->session->get('ageofchild')==''?'':$this->session->get('ageofchild');
-        $databooking['rooms'] = $this->session->get('rooms')==''?1:$this->session->get('rooms');
-        $databooking['datecheckin'] = $this->date->formatViewDate($databooking['checkin']);
-        $databooking['datecheckout'] = $this->date->formatViewDate($databooking['checkout']);
-        $databooking['numdate'] = ($this->date->timeToInt($databooking['checkout']) - $this->date->timeToInt($databooking['datecheckin']))/24/60/60;
-
-
-        $databooking['checkdate'] = $this->session->get('checkdate');
-        $databooking['tickeadults'] = $this->session->get('tickeadults')==''?2:$this->session->get('tickeadults');
-        $databooking['ticketchilds'] = $this->session->get('ticketchilds')==''?0:$this->session->get('tickeadults');
-
-        return $databooking;
     }
 }

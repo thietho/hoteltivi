@@ -129,7 +129,7 @@
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-ok">OK</button>
+                <button type="button" class="btn btn-ok btn-handle">OK</button>
                 <button type="button" class="btn btn-cancel" data-dismiss="modal">CANCEL</button>
             </div>
         </div>

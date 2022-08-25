@@ -99,13 +99,15 @@ body {
 }
 
 .modal-footer .btn-ok {
-    background: #F58220;
+    background: #05577a;
 }
 
 .modal-footer .btn-cancel {
     background: #05577a;
 }
-
+.modal-footer .btn-handle {
+    background: #F58220;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
     display: table;

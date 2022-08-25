@@ -50,7 +50,7 @@
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
                     <div id="showbanner"></div>
-                    <video id="showvideo" autoplay src="" width="100%" height="100%" muted onended="$('.slick-next').click();"></video>
+                    <video id="showvideo" autoplay src="" width="100%" height="100%" muted onended="//$('.slick-next').click();"></video>
                 </div>
                 <div class="menu-bottom">
                     <div class="row">
@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
                                             <p><?php echo $this->labels['lbl_press']?> <span class="icon"><img src="<?php echo HTTPSERVER?>img/level-up.png"/></span></p>
-                                            <p><?php echo $this->labels['lbl_return']?></p>
+
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
                                             <p><?php echo $this->labels['lbl_return']?></p>
@@ -75,10 +75,9 @@
                                     <div class="row">
                                         <div class="col-lg-6 press-left text-left">
                                             <p><?php echo $this->labels['lbl_press']?> <span>PORTAL</span></p>
-                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
                                         </div>
                                         <div class="col-lg-6 press-right text-right">
-                                            <p><?php echo $this->labels['lbl_homepage']?></p>
+                                            <p><?php echo $this->labels['lbl_return_homepage']?></p>
                                         </div>
                                     </div>
                                 </a>
