@@ -6,8 +6,17 @@ function myEventHandler(event){
         switch (event.keyCode) {
             case 13:
                 if(service.popupshow){
-                    var servicename = $('.serviceselect').attr('servicename');
-                    FoodOrder.orderService(servicename);
+                    if($('.btn-handle').hasClass('btn-ok')){
+                        if($('.btn-handle').hasClass('btn-ok')){
+                            var servicename = $('.serviceselect').attr('servicename');
+                            FoodOrder.orderService(servicename);
+                        }else {
+                            $('#room-service-popup').modal('hide');
+                        }
+
+                    }else {
+                        $('#room-service-popup').modal('hide');
+                    }
                 }
                 if (TiviVideoPlayer.isplay) {
                     TiviVideoPlayer.closePopup();
@@ -47,18 +56,30 @@ function myEventHandler(event){
                 }
                 break;
             case 37: //Move left
-                if(service.index - 1 >= 0) {
-                    service.index -= 1;
-                    service.selectService();
+                if (service.popupshow == false) {
+                    if(service.index - 1 >= 0) {
+                        service.index -= 1;
+                        service.selectService();
+                    }
+                }else {
+                    $('.btn-ok').addClass('btn-handle');
+                    $('.btn-cancel').removeClass('btn-handle');
                 }
+
 
                 break;
             case 39: //Move right
-                //$('.slick-next').click();
-                if(service.index < service.max){
-                    service.index +=1;
-                    service.selectService();
+                if (service.popupshow == false) {
+                    if(service.index < service.max){
+                        service.index +=1;
+                        service.selectService();
+                    }
+                }else {
+                    $('.btn-ok').removeClass('btn-handle');
+                    $('.btn-cancel').addClass('btn-handle');
                 }
+
+
                 break;
             case 461: //Back
             case 8: //Back
@@ -82,6 +103,8 @@ function myEventHandler(event){
 $('#room-service-popup').on('show.bs.modal', function (e) {
     // do something...
     service.popupshow = true;
+    $('.btn-ok').addClass('btn-handle');
+    $('.btn-cancel').removeClass('btn-handle');
 })
 $('#room-service-popup').on('hidden.bs.modal', function (e) {
     // do something...
