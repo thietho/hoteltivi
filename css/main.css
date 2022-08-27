@@ -323,14 +323,14 @@ body {
     margin-top: 100px;
 }
 
-.welcome-wrapper::before {
-    content: " ";
-    position: absolute;
-    height: 2px;
-    top: 35px;
-    width: 100%;
-    background-color: #f58220;
-}
+/*.welcome-wrapper::before {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+/*    height: 2px;*/
+/*    top: 35px;*/
+/*    width: 100%;*/
+/*    background-color: #f58220;*/
+/*}*/
 
 .welcome {
     position: relative;
@@ -662,7 +662,7 @@ section.list-channel {
 }
 
 .menu-bottom .press-right {
-    font-size: 2.5em;
+    font-size: 2.3em;
     text-transform: uppercase;
     font-family: 'Big Shoulders Display', cursive;
 }
@@ -1108,7 +1108,7 @@ section.list-channel {
 }
 
 .food-order .total {
-    background: #808080;
+    background: #f58220;
     padding: 5px 10px;
     font-family: 'Big Shoulders Display', cursive;
     font-size: 1.3em;
