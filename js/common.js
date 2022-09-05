@@ -456,7 +456,12 @@ common = {
             return ''
         } else {
             var day = this.toDateNumber(dt.getDate());
-            var month = dt.toLocaleString('default', { month: 'short' });
+
+            var lang = 'vn';
+            if(request.lang != undefined){
+                lang = request.lang;
+            }
+            var month = dt.toLocaleString(lang, { month: 'short' });
             var year = dt.getFullYear();
             return day + " " + month + " " + year; // eg: 13 Nov 2021
         }

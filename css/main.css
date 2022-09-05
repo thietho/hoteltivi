@@ -343,7 +343,7 @@ body {
     vertical-align: top;
 }
 .welcome .logo img{
-    width: 250px;
+    width: 225px;
 }
 .welcome .content {
     margin-left: 20px;
@@ -536,7 +536,8 @@ section.tour-travel {
 }
 
 section.food-order {
-    background: url(../img/food-order-bg.jpg) no-repeat center center ;
+    /*background: url(../img/food-order-bg.jpg) no-repeat center center ;*/
+    background: url(../img/Backgroud-Oder.jpg) no-repeat center center ;
 }
 
 section.list-channel {
