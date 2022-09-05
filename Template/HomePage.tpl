@@ -11,8 +11,8 @@
                             <p class="des"><?php echo $this->labels['lbl_have_a_nice_day']?></p>
                         </div>
                         <div class="time">
-                            <span id="shorttime">09:30</span>
-                            <p class="date" id="fulltime">15 oCT 2021</p>
+                            <span id="shorttime"></span>
+                            <p class="date" id="fulltime"></p>
                         </div>
                     </div>
                 </div>

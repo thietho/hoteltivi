@@ -70,6 +70,7 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         verticalSwiping: true,
+        infinite: false,
         prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/left-icon.png'>",
         nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/right-icon.png'>"
     });
