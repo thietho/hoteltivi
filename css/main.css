@@ -695,7 +695,7 @@ section.list-channel {
     height: 500px;
     position: relative;
     /*padding: 15px;*/
-    /*overflow: auto;*/
+    overflow: hidden;
 }
 
 .main-sidebar .sidebar-carousel .slick-list{

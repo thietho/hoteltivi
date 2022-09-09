@@ -30,15 +30,15 @@ $('a[data-slide]').click(function (e) {
 
 $(document).ready(function () {
     // slick carousel
-    $('.sidebar-carousel').slick({
-        arrows: true,
-        vertical: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        verticalSwiping: true,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/up-icon.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/down-icon.png'>"
-    });
+    // $('.sidebar-carousel').slick({
+    //     arrows: true,
+    //     vertical: true,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     verticalSwiping: true,
+    //     prevArrow: "<img class='a-left control-c prev slick-prev' src='"+HTTPSERVER+"img/up-icon.png'>",
+    //     nextArrow: "<img class='a-right control-c next slick-next' src='"+HTTPSERVER+"img/down-icon.png'>"
+    // });
 });
 
 

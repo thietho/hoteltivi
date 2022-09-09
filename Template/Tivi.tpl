@@ -13,6 +13,9 @@
         height: 100%;
         display: none;
     }
+    .sidebar-carousel{
+        position: absolute;
+    }
 </style>
 <section class="main-wrapper info-sunset">
     <!--<div class="lang-icon"><img src="<?php echo HTTPSERVER?>img/lang-vi.png"/></div>-->
