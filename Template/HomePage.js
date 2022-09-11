@@ -19,7 +19,7 @@ $(document).ready(function () {
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
         },
         "onFailure": function (f) {
-            localStorage.setItem('roomnumber', 'V2350');
+            localStorage.setItem('roomnumber', '2431');
             localStorage.setItem('istivi', 0);
         }
     });

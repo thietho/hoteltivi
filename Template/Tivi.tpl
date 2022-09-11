@@ -34,20 +34,6 @@
                         </a>
                     </div>
                     <?php } ?>
-                    <?php if(count($sitemaps) < 4){ ?>
-                    <?php for($i=0;$i<4;$i++){ ?>
-                    <?php foreach($sitemaps as $sitemap){ ?>
-                    <div class="item" video="<?php echo $sitemap['video']?>" sitemapid="<?php echo $sitemap['id']?>">
-                        <a href="#">
-                            <p>
-                                <?php echo $sitemap[$this->request->translate('sitemapname')]!=''?$sitemap[$this->request->translate('sitemapname')]:$sitemap['sitemapname']?>
-                            </p>
-                            <img src="<?php echo $sitemap['image']?>">
-                        </a>
-                    </div>
-                    <?php } ?>
-                    <?php } ?>
-                    <?php }?>
                 </div>
             </div>
             <div class="col-lg-8 main-content">

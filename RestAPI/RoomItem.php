@@ -17,7 +17,7 @@ class RoomItem extends Page
         $roomnumber = $this->request->get('roomnumber');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => DIHOTELENPOIN.'api/RoomInfo/GuestInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
+            CURLOPT_URL => SMILEENPOIN.'api/IPTV/ListGuestByRoom?Room='.$roomnumber,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

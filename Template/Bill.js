@@ -40,12 +40,12 @@ $(document).ready(function () {
             console.log(result);
             var str = '';
             if(result.Status == "success"){
-                var listitem = result.Data;
+                var listitem = result.data;
                 var sum = 0;
                 for (var i in listitem) {
                     str += '<tr>' +
-                        '   <td class="bill-date">'+listitem[i].Date+'<br><span>'+listitem[i].Time+'</span></td>' +
-                        '   <td class="bill-service">'+listitem[i].Name+'</td>' +
+                        '   <td class="bill-date">'+listitem[i].arrival+'<br><span>00:00:00</span></td>' +
+                        '   <td class="bill-service">'+listitem[i].lastName+'</td>' +
                         '   <td class="bill-price">'+listitem[i].Total+' vnđ</td>' +
                         '</tr>'
                     sum += common.stringtoNumber(listitem[i].Total);

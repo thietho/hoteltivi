@@ -228,17 +228,14 @@ $(document).ready(function () {
         FoodOrder.selectindex = 0;
     })
     $.getJSON(HTTPSERVER+'RoomItem/getGuestInfo.api?roomnumber='+localStorage.getItem('roomnumber'),function (result) {
+        result = result[0];
         console.log(result);
         var customer = new Object();
-        if(result.Data.length >0 ){
-            for (var i in result.Data) {
-                if(result.Data[i].IsMainGuest){
-                    customer = result.Data[i];
-                }
-            }
-            $('.sub-menu-breadcrumb .name').html(customer.Name)
+        if(result.data.length >0 ){
+            customer = result.data[0];
+            $('.sub-menu-breadcrumb .name').html(customer.firstName + customer.lastName)
             $('#roomnumber').html(localStorage.getItem('roomnumber'))
-            $('.content .name').html(customer.Name)
+            $('.content .name').html(customer.firstName + customer.lastName)
             FoodOrder.allOrder = true;
         }else {
             //FoodOrder.allOrder = false;

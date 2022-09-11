@@ -33,3 +33,4 @@ require CONTROL.'OptionSet.php';
 require CONTROL.'Label.php';
 
 define('DIHOTELENPOIN','http://115.79.241.38:8123/');
+define('SMILEENPOIN','http://115.79.241.38:8089/');
