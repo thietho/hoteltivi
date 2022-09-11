@@ -66,7 +66,9 @@ Tivi = {
     current: 0,
     max: $('.sidebar-carousel .item').length,
     itemdisplay: 3,
+    currentpos:1,
     itemheigth: 170,
+    numberstep: 0,
     selectCurent: function () {
         $('.sidebar-carousel .item').removeClass('slick-current');
         $($('.sidebar-carousel .item')[this.current]).addClass('slick-current');
@@ -76,9 +78,11 @@ Tivi = {
         if (Tivi.current > 0) {
             this.current--;
             this.selectCurent();
-            if (this.current >= this.itemdisplay - 1) {
-                var numberstep = this.current - (this.itemdisplay - 1);
-                var top = -(this.itemheigth * numberstep)
+            if (this.currentpos > 1) {
+                this.currentpos--;
+            }else {
+                this.numberstep--;
+                var top = -(this.itemheigth * this.numberstep)
                 $('.sidebar-carousel').animate({top: top + 'px'});
             }
 
@@ -88,11 +92,17 @@ Tivi = {
         if (Tivi.current < Tivi.max - 1) {
             this.current++;
             this.selectCurent();
-            if (this.current > this.itemdisplay - 1) {
-                var numberstep = this.current - (this.itemdisplay - 1);
-                var top = -(this.itemheigth * numberstep)
+
+            if(this.currentpos < this.itemdisplay){
+                this.currentpos++;
+            }else {
+                this.numberstep++;
+                var top = -(this.itemheigth * this.numberstep)
                 $('.sidebar-carousel').animate({top: top + 'px'});
             }
+            // if (this.current > this.itemdisplay - 1) {
+            //
+            // }
         }
     },
     playVideo: function () {
