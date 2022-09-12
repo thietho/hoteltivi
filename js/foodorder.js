@@ -231,11 +231,13 @@ $(document).ready(function () {
         result = result[0];
         console.log(result);
         var customer = new Object();
+        localStorage.setItem('folioNum','');
         if(result.data.length >0 ){
             customer = result.data[0];
-            $('.sub-menu-breadcrumb .name').html(customer.firstName + customer.lastName)
-            $('#roomnumber').html(localStorage.getItem('roomnumber'))
-            $('.content .name').html(customer.firstName + customer.lastName)
+            $('.sub-menu-breadcrumb .name').html(customer.firstName + customer.lastName);
+            $('#roomnumber').html(customer.room);
+            $('.content .name').html(customer.firstName + customer.lastName);
+            localStorage.setItem('folioNum',customer.folioNum);
             FoodOrder.allOrder = true;
         }else {
             //FoodOrder.allOrder = false;

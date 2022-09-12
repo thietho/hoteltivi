@@ -1,10 +1,10 @@
 <?php
 class Bill extends Page{
     public function getServiceInfo(){
-        $roomnumber = $this->request->get('roomnumber');
+        $folioNum = $this->request->get('folioNum');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => DIHOTELENPOIN.'api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
+            CURLOPT_URL => SMILEENPOIN.'api/IPTV/PaymentInfor?FolioNumber='.$folioNum,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -18,10 +18,10 @@ class Bill extends Page{
         $this->response->jsonResult($response);
     }
     public function getServiceInfoDate(){
-        $roomnumber = $this->request->get('roomnumber');
+        $folioNum = $this->request->get('folioNum');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => DIHOTELENPOIN.'api/RoomInfo/ServiceInfo?Room='.$roomnumber.'&Username=cdr&Password=123',
+            CURLOPT_URL => SMILEENPOIN.'api/IPTV/PaymentInfor?FolioNumber='.$folioNum,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -33,10 +33,12 @@ class Bill extends Page{
         $response = curl_exec($curl);
         curl_close($curl);
         $data = json_decode($response,true);
+        $data = $data[0];
         $result = array();
-        if($data['Status']=='success'){
-            foreach ($data['Data'] as $item){
-                $result[$item['Date']][] = $item;
+        if($data['message']=='Success'){
+            foreach ($data['data'] as $item){
+                $arr = explode(' ',$item['date']);
+                $result[$arr[0]][] = $item;
             }
         }
         $this->response->jsonOutput($result);
