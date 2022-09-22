@@ -69,6 +69,7 @@ Tivi = {
     currentpos:1,
     itemheigth: 170,
     numberstep: 0,
+    fullscreen:false,
     selectCurent: function () {
         $('.sidebar-carousel .item').removeClass('slick-current');
         $($('.sidebar-carousel .item')[this.current]).addClass('slick-current');
@@ -126,13 +127,15 @@ Tivi = {
     },
     videoElement: document.getElementById("showvideo"),
     toggleFullScreen: function () {
-        if (!document.mozFullScreen && !document.webkitFullScreen && !document.fullscreen) {
+        if (!this.fullscreen) {
+            this.fullscreen = true;
             if (this.videoElement.mozRequestFullScreen) {
                 this.videoElement.mozRequestFullScreen();
             } else {
                 this.videoElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
             }
         } else {
+            this.fullscreen = false;
             if (document.mozCancelFullScreen) {
                 document.mozCancelFullScreen();
             } else {

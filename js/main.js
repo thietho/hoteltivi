@@ -197,24 +197,23 @@ TiviVideoPlayer = {
         $('#videopopup').show();
         console.log(url)
         $('#videoplayer').attr('src',url);
-
-
-        //document.getElementById('videoplayer').play();
-        this.vid = document.getElementById('videoplayer')
+        this.vid = document.getElementById('videoplayer');
         this.vid.play();
         this.isplay=true;
         setTimeout(function () {
             $('#btnSkip').show()
         },5000);
-        var vid = document.getElementById("videoplayer");
-        vid.onerror = function() {
-            TiviVideoPlayer.closePopup();
+
+        this.vid.onerror = function() {
+            setTimeout(function () {
+                TiviVideoPlayer.closePopup();
+            },5000);
+
         }
     },
     closePopup:function () {
         if($('#btnSkip').is(":visible")){
             this.vid.pause();
-            this.vid.currentTime = 0;
             $('#videopopup').hide();
             this.isplay = false;
         }
