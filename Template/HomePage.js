@@ -1,3 +1,11 @@
+var isPopup = false;
+document.body.addEventListener('focus',function (event) {
+    if(isPopup){
+        $('.popup-frame').remove();
+        isPopup = false;
+    }
+},true);
+
 $(document).ready(function () {
     hcap.property.setProperty({
         "key": "boot_sequence_option",
@@ -189,12 +197,15 @@ function myEventHandler(event) {
                                         });
                                         break;
                                     default:
+                                        debugger;
                                         var url = $('.menucurent a').attr('href');
                                         if(url == undefined){
                                             url = $('.curent').attr('href');
                                         }
-                                        common.showLoading();
-                                        window.location = url;
+                                        //window.location = url;
+                                        $('body').append('<iframe class="popup-frame" src="'+url+'"></iframe>');
+                                        $('.popup-frame')[0].focus();
+                                        isPopup = true;
                                 }
                                 break;
                             case "lang":

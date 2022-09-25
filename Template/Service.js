@@ -1,3 +1,10 @@
+var isPopup = false;
+document.body.addEventListener('focus',function (event) {
+    if(isPopup){
+        $('.popup-frame').remove();
+        isPopup = false;
+    }
+},true);
 window.addEventListener("keyup", myEventHandler);
 function myEventHandler(event){
     //console.log(event);
@@ -57,13 +64,15 @@ function myEventHandler(event){
                 }
 
                 break;
+            case 27://esc
             case 461: //Back
             case 8: //Back
                 if(service.popupshow){
                     $('#room-service-popup').modal('hide');
                 }else {
-                    common.showLoading();
-                    window.history.back();
+                    // common.showLoading();
+                    // window.history.back();
+                    parent.focus()
                 }
                 break;
             case 602: //Portal

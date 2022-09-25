@@ -1,3 +1,10 @@
+var isPopup = false;
+document.body.addEventListener('focus',function (event) {
+    if(isPopup){
+        $('.popup-frame').remove();
+        isPopup = false;
+    }
+},true);
 window.addEventListener("keyup", myEventHandler);
 
 function myEventHandler(event) {
@@ -25,7 +32,10 @@ function myEventHandler(event) {
                         // console.log(sitemapid);
                         // var url = HTTPSERVER + sitemapid + ".html";
                         var url = $('#main-region [index=' + service.index + '] a').attr('href');
-                        window.location = url;
+                        //window.location = url;
+                        $('body').append('<iframe class="popup-frame" src="'+url+'"></iframe>');
+                        $('.popup-frame')[0].focus();
+                        isPopup = true;
                     }else {
                         FoodOrder.openBasket();
                     }
@@ -105,11 +115,6 @@ function myEventHandler(event) {
             case 457: //Info
                 FoodOrder.openBasket();
                 break;
-            case 8://return
-                if (FoodOrder.basketOpen == true) {
-                    FoodOrder.updateOrder();
-                }
-                break;
             case 69://E
                 if (FoodOrder.basketOpen == true) {
                     FoodOrder.emptyOrder();
@@ -120,11 +125,13 @@ function myEventHandler(event) {
                     FoodOrder.orderFood();
                 }
                 break;
+            case 27://esc
             case 461: //Back
             case 8: //Back
                 if(FoodOrder.basketOpen == false){
-                    common.showLoading();
-                    window.history.back();
+                    // common.showLoading();
+                    // window.history.back();
+                    parent.focus();
                 }else {
                     FoodOrder.updateOrder();
                 }

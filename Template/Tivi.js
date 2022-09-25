@@ -1,3 +1,10 @@
+var isPopup = false;
+document.body.addEventListener('focus',function (event) {
+    if(isPopup){
+        $('.popup-frame').remove();
+        isPopup = false;
+    }
+},true);
 window.addEventListener("keyup", myEventHandler);
 
 function myEventHandler(event) {
@@ -23,11 +30,13 @@ function myEventHandler(event) {
         case 39: //Move right
 
             break;
+        case 27://esc
         case 461: //Back
         case 8: //Back
             if (!document.mozFullScreen && !document.webkitFullScreen && !document.fullscreen) {
-                common.showLoading();
-                window.history.back();
+                // common.showLoading();
+                // window.history.back();
+                parent.focus()
             }else {
                 Tivi.toggleFullScreen();
             }
