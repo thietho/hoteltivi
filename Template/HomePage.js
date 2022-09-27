@@ -3,6 +3,7 @@ document.body.addEventListener('focus',function (event) {
     if(isPopup){
         $('.popup-frame').remove();
         isPopup = false;
+        $('.home-menu').show()
     }
 },true);
 
@@ -197,15 +198,16 @@ function myEventHandler(event) {
                                         });
                                         break;
                                     default:
-                                        debugger;
                                         var url = $('.menucurent a').attr('href');
                                         if(url == undefined){
                                             url = $('.curent').attr('href');
                                         }
                                         //window.location = url;
-                                        $('body').append('<iframe class="popup-frame" src="'+url+'"></iframe>');
+                                        $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
+                                        $('.home-menu').hide();
                                         $('.popup-frame')[0].focus();
                                         isPopup = true;
+
                                 }
                                 break;
                             case "lang":

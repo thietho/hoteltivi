@@ -18,9 +18,12 @@ function myEventHandler(event){
         case 39: //Move right
             $('.slick-next').click();
             break;
+        case 27://esc
         case 461: //Back
-            common.showLoading();
-            window.history.back();
+        case 8: //Back
+            // common.showLoading();
+            // window.history.back();
+            parent.focus();
             break;
         case 602: //Portal
             common.showLoading();

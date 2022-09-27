@@ -33,7 +33,7 @@ function myEventHandler(event) {
                         // var url = HTTPSERVER + sitemapid + ".html";
                         var url = $('#main-region [index=' + service.index + '] a').attr('href');
                         //window.location = url;
-                        $('body').append('<iframe class="popup-frame" src="'+url+'"></iframe>');
+                        $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
                         $('.popup-frame')[0].focus();
                         isPopup = true;
                     }else {
