@@ -163,8 +163,8 @@ function myEventHandler(event) {
             case 27://esc
             case 461: //Back
             case 8: //Back
-                common.showLoading();
                 if(FoodOrder.basketOpen == false){
+                    //common.showLoading();
                     //window.history.back();
                     parent.focus();
                 }else {

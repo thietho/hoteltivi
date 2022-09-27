@@ -40,8 +40,8 @@ function myEventHandler(event){
                                 // window.location = $('.serviceselect').parent().attr('href');
                                 var url = $('.serviceselect').parent().attr('href');
                                 $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                $('.popup-frame')[0].focus();
                                 isPopup = true;
+                                $('.popup-frame')[0].focus();
                         }
                     }
 
@@ -131,8 +131,9 @@ function myEventHandler(event){
                                 // window.location = $('.serviceselect').parent().attr('href');
                                 var url = $('.serviceselect').parent().attr('href');
                                 $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                $('.popup-frame')[0].focus();
                                 isPopup = true;
+                                $('.popup-frame')[0].focus();
+
                         }
                     }
 

@@ -34,8 +34,9 @@ function myEventHandler(event) {
                         var url = $('#main-region [index=' + service.index + '] a').attr('href');
                         //window.location = url;
                         $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                        $('.popup-frame')[0].focus();
                         isPopup = true;
+                        $('.popup-frame')[0].focus();
+
                     }else {
                         FoodOrder.openBasket();
                     }
