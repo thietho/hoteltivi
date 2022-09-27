@@ -1,10 +1,3 @@
-var isPopup = false;
-document.body.addEventListener('focus',function (event) {
-    if(isPopup){
-        $('.popup-frame').remove();
-        isPopup = false;
-    }
-},true);
 window.addEventListener("keyup", myEventHandler);
 
 function myEventHandler(event){
@@ -36,12 +29,8 @@ function myEventHandler(event){
                                 $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
                                 break;
                             default:
-                                // common.showLoading();
-                                // window.location = $('.serviceselect').parent().attr('href');
-                                var url = $('.serviceselect').parent().attr('href');
-                                $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                isPopup = true;
-                                $('.popup-frame')[0].focus();
+                                common.showLoading();
+                                window.location = $('.serviceselect').parent().attr('href');
                         }
                     }
 
@@ -82,15 +71,13 @@ function myEventHandler(event){
                         $('.btn-cancel').addClass('btn-handle');
                     }
                     break;
-                case 27://esc
                 case 461: //Back
                 case 8: //Back
                     if(service.popupshow){
                         $('#room-service-popup').modal('hide');
                     }else {
-                        // common.showLoading();
-                        // window.history.back();
-                        parent.focus();
+                        common.showLoading();
+                        window.history.back();
                     }
                     break;
                 case 602: //Portal
@@ -127,12 +114,8 @@ function myEventHandler(event){
                                 $('#room-service-popup .modal-body p').html(dataLang.lbl_confirm_call_service+' '+ servicename.toLowerCase() +'?');
                                 break;
                             default:
-                                // common.showLoading();
-                                // window.location = $('.serviceselect').parent().attr('href');
-                                var url = $('.serviceselect').parent().attr('href');
-                                $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                $('.popup-frame')[0].focus();
-                                isPopup = true;
+                                common.showLoading();
+                                window.location = $('.serviceselect').parent().attr('href');
                         }
                     }
 
@@ -179,15 +162,13 @@ function myEventHandler(event){
                     }
 
                     break;
-                case 27://esc
                 case 461: //Back
                 case 8: //Back
                     if(service.popupshow){
                         $('#room-service-popup').modal('hide');
                     }else {
-                        // common.showLoading();
-                        // window.history.back();
-                        parent.focus();
+                        common.showLoading();
+                        window.history.back();
                     }
 
                     break;

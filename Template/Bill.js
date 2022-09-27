@@ -1,10 +1,3 @@
-var isPopup = false;
-document.body.addEventListener('focus',function (event) {
-    if(isPopup){
-        $('.popup-frame').remove();
-        isPopup = false;
-    }
-},true);
 window.addEventListener("keyup", myEventHandler);
 
 function myEventHandler(event) {
@@ -27,12 +20,9 @@ function myEventHandler(event) {
             $('.bill-content').addClass('regioncurrent');
             $('.main-sidebar-bill').removeClass('regioncurrent');
             break;
-        case 27://esc
         case 461: //Back
-        case 8: //Back
-            // common.showLoading();
-            // window.history.back();
-            parent.focus()
+            common.showLoading();
+            window.history.back();
             break;
         case 602: //Portal
             common.showLoading();

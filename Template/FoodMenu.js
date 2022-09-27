@@ -150,6 +150,12 @@ function myEventHandler(event) {
             case 457: //Info
                 FoodOrder.openBasket();
                 break;
+            case 27://esc
+            case 8://return
+                if(FoodOrder.basketOpen == true) {
+                    FoodOrder.updateOrder();
+                }
+                break;
             case 69://e
                 if(FoodOrder.basketOpen == true){
                     FoodOrder.emptyOrder();
@@ -160,13 +166,11 @@ function myEventHandler(event) {
                     FoodOrder.orderFood();
                 }
                 break;
-            case 27://esc
             case 461: //Back
             case 8: //Back
+                common.showLoading();
                 if(FoodOrder.basketOpen == false){
-                    //common.showLoading();
-                    //window.history.back();
-                    parent.focus();
+                    window.history.back();
                 }else {
                     FoodOrder.updateOrder();
                 }

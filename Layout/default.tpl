@@ -115,7 +115,7 @@
     </div>
 </div>
 <div id="videopopup">
-    <video id="videoplayer" onended="TiviVideoPlayer.closePopup()"></video>
+    <video id="videoplayer" muted onended="TiviVideoPlayer.closePopup()"></video>
     <button type="button" id="btnSkip"><?php echo $this->labels['lbl_press']?> Ok to Skip</button>
 </div>
 <!-- Modal -->

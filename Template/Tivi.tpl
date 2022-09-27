@@ -39,7 +39,7 @@
             <div class="col-lg-8 main-content">
                 <div class="content-wrapper">
                     <div id="showbanner"></div>
-                    <video id="showvideo" autoplay src="" width="100%" height="100%" controls onended="//$('.slick-next').click();"></video>
+                    <video id="showvideo" autoplay src="" width="100%" height="100%" muted onended="//$('.slick-next').click();"></video>
                 </div>
                 <div class="menu-bottom">
                     <div class="row">

@@ -115,7 +115,6 @@ function myEventHandler(event) {
                 });
 
                 break;
-            case 27://esc
             case 461: //Back
             case 8: //Back
                 if (channel.playingchannel) {
@@ -129,9 +128,8 @@ function myEventHandler(event) {
                         channel.playMediaSilent();
                     });
                 } else {
-                    // common.showLoading();
-                    // window.history.back();
-                    parent.focus();
+                    common.showLoading();
+                    window.history.back();
                 }
                 break;
             case 1001: //Exit

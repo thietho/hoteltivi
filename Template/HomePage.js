@@ -1,12 +1,3 @@
-var isPopup = false;
-document.body.addEventListener('focus',function (event) {
-    if(isPopup){
-        $('.popup-frame').remove();
-        isPopup = false;
-        $('.home-menu').show()
-    }
-},true);
-
 $(document).ready(function () {
     hcap.property.setProperty({
         "key": "boot_sequence_option",
@@ -202,12 +193,8 @@ function myEventHandler(event) {
                                         if(url == undefined){
                                             url = $('.curent').attr('href');
                                         }
-                                        //window.location = url;
-                                        $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                        $('.home-menu').hide();
-                                        $('.popup-frame')[0].focus();
-                                        isPopup = true;
-
+                                        common.showLoading();
+                                        window.location = url;
                                 }
                                 break;
                             case "lang":
