@@ -204,10 +204,9 @@ function myEventHandler(event) {
                                         }
                                         //window.location = url;
                                         $('body').prepend('<iframe class="popup-frame" width="100%" height="100%" src="'+url+'"></iframe>');
-                                        isPopup = true;
                                         $('.home-menu').hide();
                                         $('.popup-frame')[0].focus();
-
+                                        isPopup = true;
 
                                 }
                                 break;
