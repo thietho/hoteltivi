@@ -35,12 +35,14 @@ function myEventHandler(event) {
                             setTimeout(function () {
                                 channel.playIPChannel(ip, port, function () {
                                     $('html').hide();
+                                    $('body').hide();
                                 });
                             },1000);
                             if(sessionStorage.getItem('fistplaychannel') == null){
                                 setTimeout(function () {
                                     channel.playIPChannel(ip, port, function () {
                                         $('html').hide();
+                                        $('body').hide();
                                     });
                                 },2000);
                                 sessionStorage.setItem('fistplaychannel',true);
