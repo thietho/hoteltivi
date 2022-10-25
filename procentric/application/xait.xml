@@ -20,7 +20,7 @@
 					<version>8011</version>
 				</applicationDescriptor>
 				<HcapDescriptor>							
-					<url>http://tivi.cntech.com.vn/</url>
+					<url>https://tivi.cntech.com.vn/</url>
 				</HcapDescriptor>
 			</Application>
 		</ApplicationList>
