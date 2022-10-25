@@ -20,7 +20,7 @@
 					<version>8011</version>
 				</applicationDescriptor>
 				<HcapDescriptor>							
-					<url>https://tivi.sunsetsanato.com/</url>
+					<url>http://tivi.sunsetsanato.com/</url>
 				</HcapDescriptor>
 			</Application>
 		</ApplicationList>
