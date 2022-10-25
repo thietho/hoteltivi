@@ -6,7 +6,7 @@
 if($_SERVER['SERVER_NAME'] == 'localhost'){
     define('HTTPSERVER','http://localhost/hoteltivi/');
 }else{
-    define('HTTPSERVER','https://tivi.sunsetsanato.com/');
+    define('HTTPSERVER','http://tivi.cntech.com.vn/');
 }
 
 define('CONTROLVIEW','Control/View/');
